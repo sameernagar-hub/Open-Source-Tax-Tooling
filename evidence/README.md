@@ -13,9 +13,9 @@ Recommended layout:
 Evidence files should be named with the date, tool name, and evidence type when possible:
 
 ```text
-YYYY-MM-DD_tool-name_evidence-type.md
-YYYY-MM-DD_tool-name_command-output.txt
-YYYY-MM-DD_tool-name_release-snapshot.md
+MM-DD-YYYY_tool-name_evidence-type.md
+MM-DD-YYYY_tool-name_command-output.txt
+MM-DD-YYYY_tool-name_release-snapshot.md
 ```
 
 Do not store real taxpayer data, real financial account data, personally identifiable information, secrets, or live filing credentials here.

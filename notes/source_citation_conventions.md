@@ -36,14 +36,14 @@ Suggested categories:
 Use this shape in research notes and tool records:
 
 ```md
-- [DOC-beancount-001] Beancount documentation, "Title or page name", URL, accessed YYYY-MM-DD.
+- [DOC-beancount-001] Beancount documentation, "Title or page name", URL, accessed MM-DD-YYYY.
   - Used for: plain-language summary of the claim this source supports.
 ```
 
 For repository metadata:
 
 ```md
-- [META-ledger-001] Ledger repository snapshot, URL, accessed YYYY-MM-DD.
+- [META-ledger-001] Ledger repository snapshot, URL, accessed MM-DD-YYYY.
   - Observed: license, latest release, recent commit activity, documentation location.
 ```
 
@@ -54,13 +54,13 @@ Save command output in `evidence/commands/` when it supports setup, version, beh
 Recommended file name:
 
 ```text
-evidence/commands/YYYY-MM-DD_tool-slug_command-purpose.txt
+evidence/commands/MM-DD-YYYY_tool-slug_command-purpose.txt
 ```
 
 Reference it like this:
 
 ```md
-- [CMD-tool-slug-001] `command --version`, local output saved at `evidence/commands/YYYY-MM-DD_tool-slug_version.txt`.
+- [CMD-tool-slug-001] `command --version`, local output saved at `evidence/commands/MM-DD-YYYY_tool-slug_version.txt`.
   - Used for: installed version and environment verification.
 ```
 

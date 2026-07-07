@@ -1,0 +1,20 @@
+transaction_id,date,payee,description,account,category,tax_hint,amount_usd,cleared,memo
+T000,01-01-2025,Opening Balance,Synthetic starting checking balance,Assets:Checking,Equity:Opening Balances,None,1200.00,true,Seed balance for tests
+T001,01-15-2025,Acme Design Co,Freelance design project payment,Assets:Checking,Income:Freelance:Design,Schedule C gross receipts,2500.00,true,Synthetic client income
+T002,01-31-2025,CloudCode Tools,Monthly software subscription,Assets:Checking,Expenses:Business:Software,Schedule C software,-59.00,true,Synthetic business expense
+T003,02-03-2025,DeskHub Supply,Office chair purchase,Assets:Checking,Expenses:Business:Office Equipment,Schedule C office equipment,-320.00,true,Synthetic business expense
+T004,03-12-2025,Northstar Analytics,Freelance consulting payment,Assets:Checking,Income:Freelance:Consulting,Schedule C gross receipts,1800.00,true,Synthetic client income
+T005,03-16-2025,Metro Transit,Transit to client meeting,Assets:Checking,Expenses:Business:Travel,Schedule C local travel,-38.75,true,Synthetic business expense
+T006,03-31-2025,Sample Bank HYSA,Savings account interest,Assets:Checking,Income:Interest,Schedule B interest,42.18,true,Synthetic interest income
+T007,04-05-2025,City Library Foundation,Cash charitable donation,Assets:Checking,Expenses:Charity,Schedule A cash charity,-120.00,true,Synthetic charitable donation
+T008,05-08-2025,OfficeMart,Printer paper and ink,Assets:Checking,Expenses:Business:Office Supplies,Schedule C office supplies,-74.23,true,Synthetic business expense
+T009,06-01-2025,Sample Bank,Business checking service fee,Assets:Checking,Expenses:Business:Bank Fees,Schedule C bank fees,-12.00,true,Synthetic business expense
+T010,06-15-2025,Synthetic Federal Treasury,Quarterly estimated tax payment,Assets:Checking,Liabilities:Federal Tax:Estimated Payments,Form 1040 estimated payments,-400.00,true,Synthetic tax payment
+T011,06-20-2025,Acme Design Co,Freelance redesign payment,Assets:Checking,Income:Freelance:Design,Schedule C gross receipts,3200.00,true,Synthetic client income
+T012,07-04-2025,Open Source Finance Summit,Professional education ticket,Assets:Checking,Expenses:Business:Professional Education,Schedule C education placeholder,-249.00,true,Synthetic business expense
+T013,08-15-2025,CloudCode Tools,Annual software plan,Assets:Checking,Expenses:Business:Software,Schedule C software,-180.00,true,Synthetic business expense
+T014,09-03-2025,DeskHub Coworking,Coworking day passes,Assets:Checking,Expenses:Business:Coworking,Schedule C workspace,-210.00,true,Synthetic business expense
+T015,09-10-2025,Neighborhood Food Fund,Cash charitable donation,Assets:Checking,Expenses:Charity,Schedule A cash charity,-250.00,true,Synthetic charitable donation
+T016,10-01-2025,Sample Bank HYSA,Savings account interest,Assets:Checking,Income:Interest,Schedule B interest,35.57,true,Synthetic interest income
+T017,11-05-2025,Northstar Analytics,Freelance analytics payment,Assets:Checking,Income:Freelance:Consulting,Schedule C gross receipts,2750.00,true,Synthetic client income
+T018,12-15-2025,Synthetic Federal Treasury,Quarterly estimated tax payment,Assets:Checking,Liabilities:Federal Tax:Estimated Payments,Form 1040 estimated payments,-650.00,true,Synthetic tax payment

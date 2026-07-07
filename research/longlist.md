@@ -2,36 +2,36 @@
 
 Day 3 artifact for Phase 3: Starter Tool Inventory, expanded during Day 4 discovery search.
 
-Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04. Day 4 discovery executed on 2026-07-05 for the planned 2026-07-04 phase. This is still a first-pass inventory, not a final health assessment. Release and activity metadata should be normalized in `research/project_health_snapshot.md` during Day 5.
+Planned starter-inventory date: 07-03-2026. Day 3 source access date: 07-04-2026. Day 4 discovery executed on 07-05-2026 for the planned 07-04-2026 phase. This is still a first-pass inventory, not a final health assessment. Release and activity metadata should be normalized in `research/project_health_snapshot.md` during Day 5.
 
 ## Summary Matrix
 
 | Candidate | First-pass category | Latest visible release or status | License | Apparent integration surface | Initial disposition |
 |---|---|---|---|---|---|
-| GnuCash | Bookkeeping / personal finance | 5.16, released 2026-06-28 | Mostly GPL-2.0-or-later, with compatible GPL variants | Desktop app, file/database storage, import/export, optional Python bindings, `gnucash-cli` reports | Keep for full personal-finance system coverage |
-| Beancount | Plain-text bookkeeping | 3.2.3 on PyPI, uploaded 2026-05-05 | GPL-2.0-only | Plain-text ledger, Python library, CLI tools, query/report tooling, importer ecosystem | Strong candidate for transparent data and thin adapters |
-| Ledger CLI | Plain-text bookkeeping | v3.4.1, released 2025-10-26 | BSD-style / BSD-3-Clause | Command-line reports, plain-text journal, C++ API documentation | Keep as canonical CLI accounting comparator |
-| hledger | Plain-text bookkeeping / API-capable reporting | 1.52.1, released 2026-04-28 | GPL-3.0-or-later | CLI, TUI, web UI, CSV import rules, JSON output, hledger-web JSON API | Strong integration candidate |
-| Firefly III | Self-hosted personal finance | v6.6.6, released 2026-07-01 | AGPL-3.0 | JSON REST API, Swagger/OpenAPI docs, data importer, third-party app ecosystem | Strong API-native personal-finance candidate |
-| OpenTaxSolver | Tax calculation / form preparation | 23.06 for tax year 2025, visible 2026-03-20 | GPL-2.0 | Local GUI/textual app, source-distributed form calculators, print/PDF workflow | Keep as tax-form-oriented comparator |
+| GnuCash | Bookkeeping / personal finance | 5.16, released 06-28-2026 | Mostly GPL-2.0-or-later, with compatible GPL variants | Desktop app, file/database storage, import/export, optional Python bindings, `gnucash-cli` reports | Keep for full personal-finance system coverage |
+| Beancount | Plain-text bookkeeping | 3.2.3 on PyPI, uploaded 05-05-2026 | GPL-2.0-only | Plain-text ledger, Python library, CLI tools, query/report tooling, importer ecosystem | Strong candidate for transparent data and thin adapters |
+| Ledger CLI | Plain-text bookkeeping | v3.4.1, released 10-26-2025 | BSD-style / BSD-3-Clause | Command-line reports, plain-text journal, C++ API documentation | Keep as canonical CLI accounting comparator |
+| hledger | Plain-text bookkeeping / API-capable reporting | 1.52.1, released 04-28-2026 | GPL-3.0-or-later | CLI, TUI, web UI, CSV import rules, JSON output, hledger-web JSON API | Strong integration candidate |
+| Firefly III | Self-hosted personal finance | v6.6.6, released 07-01-2026 | AGPL-3.0 | JSON REST API, Swagger/OpenAPI docs, data importer, third-party app ecosystem | Strong API-native personal-finance candidate |
+| OpenTaxSolver | Tax calculation / form preparation | 23.06 for tax year 2025, visible 03-20-2026 | GPL-2.0 | Local GUI/textual app, source-distributed form calculators, print/PDF workflow | Keep as tax-form-oriented comparator |
 | IRS Direct File posture | Tax preparation / submission reference | IRS page says Direct File is no longer available; repo has no conventional releases | Public domain / CC0 for released code | Reference source, Fact Graph, MeF XML path, State API JSON/MeF transfer model | Treat as reference architecture, not active filing candidate |
 | OpenFile | Direct File fork / tax preparation reference | No releases published; README disclaims accuracy and notes official Direct File suspension | License visible but exact terms not normalized; verify on Day 5 | Dockerized fork of IRS Direct File with client/state API style surfaces inherited from upstream | Promote as cautionary reference/fork candidate |
-| OFX/QIF parser tooling | Adjacent import infrastructure | ofxtools 1.1.1 on 2026-06-12; ofxparse 0.21 on PyPI; QIF parsers vary | Mixed: GPL-3.0-or-later, MIT, GPL-3.0 | Python parsers/clients/generators for bank-file formats | Keep as import-layer support, not standalone tax tool |
+| OFX/QIF parser tooling | Adjacent import infrastructure | ofxtools 1.1.1 on 06-12-2026; ofxparse 0.21 on PyPI; QIF parsers vary | Mixed: GPL-3.0-or-later, MIT, GPL-3.0 | Python parsers/clients/generators for bank-file formats | Keep as import-layer support, not standalone tax tool |
 | CSV-to-ledger tooling | Adjacent import infrastructure | beangulp 0.2.0, smart_importer 1.2, beancount-import 1.4.0, ledger-autosync 1.2.0 on PyPI | Mixed: GPL-2.0, MIT, GPL-3.0 | CSV import rules, importer frameworks, ML-assisted categorization, OFX/bank sync | Keep as integration substrate and prior art |
 | UsTaxes | US tax preparation / form generation | README supports tax years 2020-2025; release metadata not normalized yet | AGPL-3.0 | Client-side web app, desktop build, schemas, PDF/form workflow | Promote as direct US 1040 candidate |
 | HabuTax | US tax solver / form calculation | Tags visible; package install documented; release metadata not normalized yet | GPL-2.0 | Python package and CLI over INI-style inputs, solution files/stdout, PDF fill path | Promote as scriptable tax-form candidate |
-| Filed Open Tax Engine | US federal 1040 calculation engine | v2.0.2, latest visible GitHub release 2026-05-11 | AGPL-3.0 plus commercial license | Single-binary CLI, JSON return data, form-node schemas, agent-oriented docs | Promote with maturity/accuracy caution |
-| PSL Tax-Calculator | Federal tax microsimulation | GitHub latest visible release 6.7.1 on 2026-07-03; docs still showed 6.7.0 on 2026-06-24 | CC0-1.0 visible in repo badge; verify license file on Day 5 | Python package, documented Python API, CLI, policy/input/output variables | Keep as programmatic tax-model comparator |
+| Filed Open Tax Engine | US federal 1040 calculation engine | v2.0.2, latest visible GitHub release 05-11-2026 | AGPL-3.0 plus commercial license | Single-binary CLI, JSON return data, form-node schemas, agent-oriented docs | Promote with maturity/accuracy caution |
+| PSL Tax-Calculator | Federal tax microsimulation | GitHub latest visible release 6.7.1 on 07-03-2026; docs still showed 6.7.0 on 06-24-2026 | CC0-1.0 visible in repo badge; verify license file on Day 5 | Python package, documented Python API, CLI, policy/input/output variables | Keep as programmatic tax-model comparator |
 | PolicyEngine US | US tax-benefit rules engine / microsimulation | Active-looking repository; package install documented; release cadence not normalized yet | AGPL-3.0 | Python package, household-level calculations, PolicyEngine/OpenFisca API patterns | Keep as rules-as-code comparator, not filing tool |
-| IRS Tax Withholding Estimator | Withholding estimator / official reference | README says TWE 2.0 went live 2026-02-27 | CC0-1.0 / public domain dedication | Web app/codebase, withholding math, W-4/W-4P output, not filing | Keep as official transparency/reference candidate |
+| IRS Tax Withholding Estimator | Withholding estimator / official reference | README says TWE 2.0 went live 02-27-2026 | CC0-1.0 / public domain dedication | Web app/codebase, withholding math, W-4/W-4P output, not filing | Keep as official transparency/reference candidate |
 | tenforty | Python tax calculation wrapper | Supports 2018-2025 in README; release metadata not normalized yet | MIT | Python library, validated function inputs, dataframe/grid evaluation, OpenTaxSolver-backed calculations | Keep as lightweight programmatic bridge |
-| Actual Budget | Local-first personal finance / budgeting | v26.7.0 release notes, released 2026-07-01; GitHub latest visible release 2026-07-02 | MIT | Node API package, stable CLI, import/export ecosystem, local/sync data model | Promote as API/CLI-native personal-finance comparator |
-| KMyMoney | Desktop personal finance | 5.2.0 release notes on 2025-06-21; health not normalized yet | KDE SPDX/GPL-family; verify exact SPDX mix on Day 5 | Local app/files, QIF/OFX/CSV import/export, GnuCash importer | Keep as desktop full-app comparator |
+| Actual Budget | Local-first personal finance / budgeting | v26.7.0 release notes, released 07-01-2026; GitHub latest visible release 07-02-2026 | MIT | Node API package, stable CLI, import/export ecosystem, local/sync data model | Promote as API/CLI-native personal-finance comparator |
+| KMyMoney | Desktop personal finance | 5.2.0 release notes on 06-21-2025; health not normalized yet | KDE SPDX/GPL-family; verify exact SPDX mix on Day 5 | Local app/files, QIF/OFX/CSV import/export, GnuCash importer | Keep as desktop full-app comparator |
 | HomeBank | Desktop personal finance | Active website; release metadata not normalized yet | GNU GPL per website | Desktop app, import/export, assignment rules, duplicate detection | Low-priority full-app comparator |
 | Money Manager Ex | Desktop/mobile personal finance | Stable release link visible; release metadata not normalized yet | GPL-2.0 | CSV/QIF/XML/HTML import/export, nonproprietary SQLite database | Low-priority full-app comparator |
 | Fava | Beancount web UI / ecosystem component | Tags and PyPI badge visible; release metadata not normalized yet | MIT | Web interface over Beancount, Python package, extension/API docs | Keep as Beancount ecosystem prior art |
-| Paisa | Plain-text-accounting web UI/reporting | v0.7.4, latest visible GitHub release 2025-08-03 | AGPL-3.0 | Reads Ledger/hledger/Beancount files into SQLite, web reports/charts | Keep as UI/reporting comparator around plain-text accounting |
-| ofxstatement | Bank-statement conversion infrastructure | 0.9.2, latest visible GitHub release 2024-11-25 | GPL-3.0 | CLI and plugin system converting proprietary statements to OFX | Keep as import-layer prior art |
+| Paisa | Plain-text-accounting web UI/reporting | v0.7.4, latest visible GitHub release 08-03-2025 | AGPL-3.0 | Reads Ledger/hledger/Beancount files into SQLite, web reports/charts | Keep as UI/reporting comparator around plain-text accounting |
+| ofxstatement | Bank-statement conversion infrastructure | 0.9.2, latest visible GitHub release 11-25-2024 | GPL-3.0 | CLI and plugin system converting proprietary statements to OFX | Keep as import-layer prior art |
 
 ## Candidate Entries
 
@@ -40,7 +40,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://github.com/Gnucash/gnucash
 - Docs URL: https://www.gnucash.org/docs.phtml
 - License: GnuCash's license file describes a mutually compatible license set, with most source under GPL-2.0-or-later and some files under GPL-2/GPL-3-compatible terms.
-- Latest visible release: 5.16, released 2026-06-28.
+- Latest visible release: 5.16, released 06-28-2026.
 - Category: bookkeeping / personal finance; tax-adjacent through reports, account structure, and import/export rather than tax calculation or e-file.
 - Apparent integration surface:
   - Native files and SQL-backed book storage.
@@ -59,7 +59,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://github.com/beancount/beancount
 - Docs URL: https://beancount.github.io/docs/
 - License: GPL-2.0-only.
-- Latest visible release: 3.2.3 on PyPI, uploaded 2026-05-05.
+- Latest visible release: 3.2.3 on PyPI, uploaded 05-05-2026.
 - Category: plain-text double-entry bookkeeping; tax-adjacent reporting, not tax filing.
 - Apparent integration surface:
   - Plain-text ledger language with Python parsing and in-memory data structures.
@@ -79,7 +79,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://github.com/ledger/ledger
 - Docs URL: https://ledger-cli.org/doc/ledger3.html
 - License: BSD-style license; downstream packages identify it as BSD-3-Clause.
-- Latest visible release: v3.4.1, released 2025-10-26.
+- Latest visible release: v3.4.1, released 10-26-2025.
 - Category: plain-text double-entry bookkeeping; tax-adjacent reporting, not tax calculation or submission.
 - Apparent integration surface:
   - CLI-first workflow over plain-text journal files.
@@ -98,7 +98,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://github.com/simonmichael/hledger
 - Docs URL: https://hledger.org/manual.html
 - License: GPL-3.0-or-later.
-- Latest visible release: 1.52.1, released 2026-04-28.
+- Latest visible release: 1.52.1, released 04-28-2026.
 - Category: plain-text double-entry bookkeeping with stronger built-in API/export story.
 - Apparent integration surface:
   - CLI, terminal UI, and web UI over hledger/ledger-style journals.
@@ -118,7 +118,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Docs URL: https://docs.firefly-iii.org/
 - API docs URL: https://api-docs.firefly-iii.org/
 - License: AGPL-3.0.
-- Latest visible release: v6.6.6, released 2026-07-01.
+- Latest visible release: v6.6.6, released 07-01-2026.
 - Category: self-hosted personal finance / budgeting; tax-adjacent bookkeeping and reporting, not a tax-form or filing system.
 - Apparent integration surface:
   - JSON REST API with dedicated API documentation and Swagger/OpenAPI-style interaction.
@@ -136,7 +136,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://sourceforge.net/projects/opentaxsolver/
 - Website / download URL: https://opentaxsolver.sourceforge.net/
 - License: GPL-2.0.
-- Latest visible release: 23.06 for the 2025 tax year, visible on SourceForge 2026-03-20.
+- Latest visible release: 23.06 for the 2025 tax year, visible on SourceForge 03-20-2026.
 - Category: US tax calculation / tax form preparation; prints/fills forms for mailing rather than acting as a general bookkeeping system.
 - Apparent integration surface:
   - Local desktop/terminal-style C application with graphical and textual interfaces.
@@ -202,10 +202,10 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
   - rgoring/qif: GPL-3.0.
   - qifparse: not checked beyond PyPI first pass.
 - Latest visible releases:
-  - ofxtools 1.1.1, released/uploaded 2026-06-12.
-  - ofxparse 0.21 on PyPI, uploaded 2021-05-31.
+  - ofxtools 1.1.1, released/uploaded 06-12-2026.
+  - ofxparse 0.21 on PyPI, uploaded 05-31-2021.
   - rgoring/qif has no conventional GitHub latest release observed in the first pass.
-  - qifparse 0.5, released 2013-11-03.
+  - qifparse 0.5, released 11-03-2013.
 - Category: adjacent import infrastructure for bank/brokerage files.
 - Apparent integration surface:
   - Python libraries and command-style tooling for parsing, generating, or downloading financial exchange data.
@@ -231,10 +231,10 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
   - beancount-import: GPL-2.0.
   - ledger-autosync: GPL-3.0.
 - Latest visible releases:
-  - beangulp 0.2.0 on PyPI, uploaded 2025-01-20.
-  - smart_importer v1.2 / PyPI 1.2, released/uploaded 2025-10-17.
-  - beancount-import v1.4.0 / PyPI 1.4.0, released/uploaded 2024-04-19.
-  - ledger-autosync 1.2.0 on PyPI, uploaded 2024-08-22; GitHub latest release page showed v1.0.2 from 2020, so PyPI/GitHub release metadata should be reconciled later.
+  - beangulp 0.2.0 on PyPI, uploaded 01-20-2025.
+  - smart_importer v1.2 / PyPI 1.2, released/uploaded 10-17-2025.
+  - beancount-import v1.4.0 / PyPI 1.4.0, released/uploaded 04-19-2024.
+  - ledger-autosync 1.2.0 on PyPI, uploaded 08-22-2024; GitHub latest release page showed v1.0.2 from 2020, so PyPI/GitHub release metadata should be reconciled later.
 - Category: adjacent import automation and prior art for code-driven bookkeeping.
 - Apparent integration surface:
   - Rules-based CSV conversion into hledger journals.
@@ -291,7 +291,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Project URL: https://github.com/filedcom/opentax
 - Website / docs URL: https://opentax.filed.com/
 - License: dual-licensed under AGPL-3.0 and a Filed commercial license.
-- Latest visible release: v2.0.2, latest visible GitHub release dated 2026-05-11.
+- Latest visible release: v2.0.2, latest visible GitHub release dated 05-11-2026.
 - Category: US federal 1040 calculation engine / agent-oriented deterministic tax calculator.
 - Apparent integration surface:
   - Single-binary CLI for macOS, Linux, and Windows.
@@ -309,8 +309,8 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Docs URL: https://taxcalc.pslmodels.org/
 - License: CC0-1.0 is visible in the repository badge; verify the license file during Day 5.
 - Latest visible release:
-  - GitHub showed release 6.7.1 with a latest visible date of 2026-07-03.
-  - The documentation landing page still showed 6.7.0, dated 2026-06-24, so release metadata should be reconciled during Day 5.
+  - GitHub showed release 6.7.1 with a latest visible date of 07-03-2026.
+  - The documentation landing page still showed 6.7.0, dated 06-24-2026, so release metadata should be reconciled during Day 5.
 - Category: federal individual income and payroll tax microsimulation / policy model.
 - Apparent integration surface:
   - Python package installable with PyPI or conda.
@@ -347,7 +347,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Official tool URL: https://www.irs.gov/individuals/tax-withholding-estimator
 - License: CC0-1.0 / public domain dedication as stated in the repository README.
 - Latest visible release/status:
-  - README says TWE 2.0 went live on 2026-02-27 and that the public repository exists for transparency, collaboration, and research.
+  - README says TWE 2.0 went live on 02-27-2026 and that the public repository exists for transparency, collaboration, and research.
 - Category: official federal withholding estimator / W-4 and W-4P recommendation engine.
 - Apparent integration surface:
   - Public web-app codebase for estimating federal withholding and pre-populating Forms W-4/W-4P.
@@ -386,8 +386,8 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - CLI docs URL: https://actualbudget.org/docs/api/cli/
 - License: MIT.
 - Latest visible release:
-  - Release notes show 26.7.0 with release date 2026-07-01.
-  - GitHub showed v26.7.0 as the latest visible release dated 2026-07-02.
+  - Release notes show 26.7.0 with release date 07-01-2026.
+  - GitHub showed v26.7.0 as the latest visible release dated 07-02-2026.
 - Category: local-first personal finance / budgeting; tax-adjacent through transaction data, reports, imports, and exports.
 - Apparent integration surface:
   - Official Node.js API package `@actual-app/api`.
@@ -406,7 +406,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Website URL: https://kmymoney.org/
 - Import/export docs: https://docs.kde.org/trunk_kf6/en/kmymoney/kmymoney/details.impexp.html
 - License: KDE SPDX license set / GPL-family visible from repository; exact file-level mix should be checked during Day 5.
-- Latest visible release: 5.2.0 release notes dated 2025-06-21 were visible in the Day 4 pass.
+- Latest visible release: 5.2.0 release notes dated 06-21-2025 were visible in the Day 4 pass.
 - Category: desktop personal finance manager.
 - Apparent integration surface:
   - Desktop app with local files.
@@ -479,7 +479,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 - Website / docs URL: https://paisa.fyi/
 - Related hledger note: https://hledger.org/paisa.html
 - License: AGPL-3.0-or-later.
-- Latest visible release: v0.7.4, latest visible GitHub release dated 2025-08-03.
+- Latest visible release: v0.7.4, latest visible GitHub release dated 08-03-2025.
 - Category: plain-text-accounting web UI / personal-finance reporting.
 - Apparent integration surface:
   - Reads Ledger, hledger, or Beancount files.
@@ -495,7 +495,7 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 
 - Project URL: https://github.com/kedder/ofxstatement
 - License: GPL-3.0.
-- Latest visible release: 0.9.2, latest visible GitHub release dated 2024-11-25.
+- Latest visible release: 0.9.2, latest visible GitHub release dated 11-25-2024.
 - Category: bank-statement conversion / adjacent import infrastructure.
 - Apparent integration surface:
   - Python CLI `ofxstatement`.
@@ -520,157 +520,157 @@ Planned starter-inventory date: 2026-07-03. Day 3 source access date: 2026-07-04
 
 ## Source Index
 
-- [REPO-gnucash-001] GnuCash repository, https://github.com/Gnucash/gnucash, accessed 2026-07-04.
+- [REPO-gnucash-001] GnuCash repository, https://github.com/Gnucash/gnucash, accessed 07-04-2026.
   - Used for: source location and project identity.
-- [REL-gnucash-001] GnuCash releases, https://github.com/Gnucash/gnucash/releases, accessed 2026-07-04.
-  - Observed: 5.16 release on 2026-06-28.
-- [DOC-gnucash-001] GnuCash documentation, https://www.gnucash.org/docs.phtml, accessed 2026-07-04.
+- [REL-gnucash-001] GnuCash releases, https://github.com/Gnucash/gnucash/releases, accessed 07-04-2026.
+  - Observed: 5.16 release on 06-28-2026.
+- [DOC-gnucash-001] GnuCash documentation, https://www.gnucash.org/docs.phtml, accessed 07-04-2026.
   - Used for: documentation home.
-- [DOC-gnucash-002] GnuCash Python Bindings guide, https://www.gnucash.org/docs/v5/C/gnucash-guide/ch_python_bindings.html, accessed 2026-07-04.
+- [DOC-gnucash-002] GnuCash Python Bindings guide, https://www.gnucash.org/docs/v5/C/gnucash-guide/ch_python_bindings.html, accessed 07-04-2026.
   - Used for: optional Python scripting surface.
-- [DOC-gnucash-003] GnuCash external interfaces wiki, https://wiki.gnucash.org/wiki/List_of_external_software_interfaces, accessed 2026-07-04.
+- [DOC-gnucash-003] GnuCash external interfaces wiki, https://wiki.gnucash.org/wiki/List_of_external_software_interfaces, accessed 07-04-2026.
   - Used for: QIF/OFX/HBCI/import surface notes.
-- [REPO-piecash-001] piecash repository, https://github.com/sdementen/piecash, accessed 2026-07-04.
+- [REPO-piecash-001] piecash repository, https://github.com/sdementen/piecash, accessed 07-04-2026.
   - Used for: visible Python interface to GnuCash SQL documents.
-- [REPO-beancount-001] Beancount repository, https://github.com/beancount/beancount, accessed 2026-07-04.
+- [REPO-beancount-001] Beancount repository, https://github.com/beancount/beancount, accessed 07-04-2026.
   - Used for: source location, license, and project identity.
-- [REL-beancount-001] Beancount PyPI page, https://pypi.org/project/beancount/, accessed 2026-07-04.
+- [REL-beancount-001] Beancount PyPI page, https://pypi.org/project/beancount/, accessed 07-04-2026.
   - Observed: 3.2.3 release metadata.
-- [DOC-beancount-001] Beancount documentation, https://beancount.github.io/docs/, accessed 2026-07-04.
+- [DOC-beancount-001] Beancount documentation, https://beancount.github.io/docs/, accessed 07-04-2026.
   - Used for: docs home, CLI/report/import surface.
-- [REPO-beangulp-001] beangulp repository, https://github.com/beancount/beangulp, accessed 2026-07-04.
+- [REPO-beangulp-001] beangulp repository, https://github.com/beancount/beangulp, accessed 07-04-2026.
   - Used for: importer framework identity and license.
-- [REL-beangulp-001] beangulp PyPI page, https://pypi.org/project/beangulp/, accessed 2026-07-04.
+- [REL-beangulp-001] beangulp PyPI page, https://pypi.org/project/beangulp/, accessed 07-04-2026.
   - Observed: 0.2.0 package metadata.
-- [REPO-smart-importer-001] smart_importer repository, https://github.com/beancount/smart_importer, accessed 2026-07-04.
+- [REPO-smart-importer-001] smart_importer repository, https://github.com/beancount/smart_importer, accessed 07-04-2026.
   - Used for: ML-assisted import hook identity and license.
-- [REL-smart-importer-001] smart-importer PyPI page, https://pypi.org/project/smart-importer/, accessed 2026-07-04.
+- [REL-smart-importer-001] smart-importer PyPI page, https://pypi.org/project/smart-importer/, accessed 07-04-2026.
   - Observed: 1.2 package metadata.
-- [REPO-beancount-import-001] beancount-import repository, https://github.com/jbms/beancount-import, accessed 2026-07-04.
+- [REPO-beancount-import-001] beancount-import repository, https://github.com/jbms/beancount-import, accessed 07-04-2026.
   - Used for: import/reconciliation UI identity and license.
-- [REL-beancount-import-001] beancount-import PyPI page, https://pypi.org/project/beancount-import/, accessed 2026-07-04.
+- [REL-beancount-import-001] beancount-import PyPI page, https://pypi.org/project/beancount-import/, accessed 07-04-2026.
   - Observed: 1.4.0 package metadata.
-- [DOC-ledger-001] Ledger website, https://ledger-cli.org/, accessed 2026-07-04.
+- [DOC-ledger-001] Ledger website, https://ledger-cli.org/, accessed 07-04-2026.
   - Used for: project identity, category, and license summary.
-- [REPO-ledger-001] Ledger repository, https://github.com/ledger/ledger, accessed 2026-07-04.
+- [REPO-ledger-001] Ledger repository, https://github.com/ledger/ledger, accessed 07-04-2026.
   - Used for: source location and latest release link.
-- [REL-ledger-001] Ledger releases, https://github.com/ledger/ledger/releases, accessed 2026-07-04.
+- [REL-ledger-001] Ledger releases, https://github.com/ledger/ledger/releases, accessed 07-04-2026.
   - Observed: v3.4.1 release metadata.
-- [DOC-ledger-002] Ledger manual, https://ledger-cli.org/doc/ledger3.html, accessed 2026-07-04.
+- [DOC-ledger-002] Ledger manual, https://ledger-cli.org/doc/ledger3.html, accessed 07-04-2026.
   - Used for: CLI/text journal behavior.
-- [DOC-ledger-api-001] Ledger C++ API docs, https://ledger-cli.org/doc/api/, accessed 2026-07-04.
+- [DOC-ledger-api-001] Ledger C++ API docs, https://ledger-cli.org/doc/api/, accessed 07-04-2026.
   - Used for: API documentation existence.
-- [REPO-ledger-autosync-001] ledger-autosync repository, https://github.com/egh/ledger-autosync, accessed 2026-07-04.
+- [REPO-ledger-autosync-001] ledger-autosync repository, https://github.com/egh/ledger-autosync, accessed 07-04-2026.
   - Used for: bank/OFX sync prior art.
-- [REL-ledger-autosync-001] ledger-autosync PyPI page, https://pypi.org/project/ledger-autosync/, accessed 2026-07-04.
+- [REL-ledger-autosync-001] ledger-autosync PyPI page, https://pypi.org/project/ledger-autosync/, accessed 07-04-2026.
   - Observed: 1.2.0 package metadata.
-- [REPO-hledger-001] hledger repository, https://github.com/simonmichael/hledger, accessed 2026-07-04.
+- [REPO-hledger-001] hledger repository, https://github.com/simonmichael/hledger, accessed 07-04-2026.
   - Used for: source location, license, and release metadata.
-- [DOC-hledger-001] hledger manual, https://hledger.org/manual.html, accessed 2026-07-04.
+- [DOC-hledger-001] hledger manual, https://hledger.org/manual.html, accessed 07-04-2026.
   - Used for: CLI/text accounting behavior.
-- [DOC-hledger-api-001] hledger-web manual, https://hledger.org/1.52/hledger-web.html, accessed 2026-07-04.
+- [DOC-hledger-api-001] hledger-web manual, https://hledger.org/1.52/hledger-web.html, accessed 07-04-2026.
   - Used for: JSON API notes.
-- [DOC-hledger-csv-001] hledger CSV import tutorial, https://hledger.org/import-csv.html, accessed 2026-07-04.
+- [DOC-hledger-csv-001] hledger CSV import tutorial, https://hledger.org/import-csv.html, accessed 07-04-2026.
   - Used for: CSV rules import surface.
-- [DOC-hledger-export-001] hledger export documentation, https://hledger.org/export.html, accessed 2026-07-04.
+- [DOC-hledger-export-001] hledger export documentation, https://hledger.org/export.html, accessed 07-04-2026.
   - Used for: structured export surface.
-- [REPO-firefly-001] Firefly III repository, https://github.com/firefly-iii/firefly-iii, accessed 2026-07-04.
+- [REPO-firefly-001] Firefly III repository, https://github.com/firefly-iii/firefly-iii, accessed 07-04-2026.
   - Used for: source location, license, and project identity.
-- [REL-firefly-001] Firefly III releases, https://github.com/firefly-iii/firefly-iii/releases, accessed 2026-07-04.
+- [REL-firefly-001] Firefly III releases, https://github.com/firefly-iii/firefly-iii/releases, accessed 07-04-2026.
   - Observed: v6.6.6 release metadata.
-- [DOC-firefly-001] Firefly III docs, https://docs.firefly-iii.org/, accessed 2026-07-04.
+- [DOC-firefly-001] Firefly III docs, https://docs.firefly-iii.org/, accessed 07-04-2026.
   - Used for: documentation home.
-- [DOC-firefly-api-001] Firefly III API docs, https://api-docs.firefly-iii.org/, accessed 2026-07-04.
+- [DOC-firefly-api-001] Firefly III API docs, https://api-docs.firefly-iii.org/, accessed 07-04-2026.
   - Used for: REST/API surface.
-- [DOC-firefly-api-002] Firefly III API feature docs, https://docs.firefly-iii.org/how-to/firefly-iii/features/api/, accessed 2026-07-04.
+- [DOC-firefly-api-002] Firefly III API feature docs, https://docs.firefly-iii.org/how-to/firefly-iii/features/api/, accessed 07-04-2026.
   - Used for: JSON REST API description.
-- [DOC-firefly-third-party-001] Firefly III third-party tools docs, https://docs.firefly-iii.org/references/firefly-iii/third-parties/apps/, accessed 2026-07-04.
+- [DOC-firefly-third-party-001] Firefly III third-party tools docs, https://docs.firefly-iii.org/references/firefly-iii/third-parties/apps/, accessed 07-04-2026.
   - Used for: visible third-party API ecosystem.
-- [REPO-firefly-importer-001] Firefly III Data Importer repository, https://github.com/firefly-iii/data-importer, accessed 2026-07-04.
+- [REPO-firefly-importer-001] Firefly III Data Importer repository, https://github.com/firefly-iii/data-importer, accessed 07-04-2026.
   - Used for: official-adjacent import tooling.
-- [PROJ-ots-001] OpenTaxSolver SourceForge project, https://sourceforge.net/projects/opentaxsolver/, accessed 2026-07-04.
+- [PROJ-ots-001] OpenTaxSolver SourceForge project, https://sourceforge.net/projects/opentaxsolver/, accessed 07-04-2026.
   - Used for: project identity, category, license, last update, and feature summary.
-- [DOC-ots-001] OpenTaxSolver website, https://opentaxsolver.sourceforge.net/, accessed 2026-07-04.
+- [DOC-ots-001] OpenTaxSolver website, https://opentaxsolver.sourceforge.net/, accessed 07-04-2026.
   - Used for: project/download home.
-- [REL-ots-001] OpenTaxSolver 2025 download page, https://opentaxsolver.sourceforge.net/download2025.html, accessed 2026-07-04.
+- [REL-ots-001] OpenTaxSolver 2025 download page, https://opentaxsolver.sourceforge.net/download2025.html, accessed 07-04-2026.
   - Observed: 23.06 package notes for tax year 2025.
-- [REPO-direct-file-001] IRS Direct File repository, https://github.com/IRS-Public/direct-file, accessed 2026-07-04.
+- [REPO-direct-file-001] IRS Direct File repository, https://github.com/IRS-Public/direct-file, accessed 07-04-2026.
   - Used for: source location, status, and architecture notes.
-- [DOC-direct-file-001] IRS Direct File status page, https://www.irs.gov/filing/irs-direct-file-for-free, accessed 2026-07-04.
+- [DOC-direct-file-001] IRS Direct File status page, https://www.irs.gov/filing/irs-direct-file-for-free, accessed 07-04-2026.
   - Used for: current availability and 2024 eligibility/scope notes.
-- [LIC-direct-file-001] IRS Direct File license file, https://raw.githubusercontent.com/IRS-Public/direct-file/main/LICENSE, accessed 2026-07-04.
+- [LIC-direct-file-001] IRS Direct File license file, https://raw.githubusercontent.com/IRS-Public/direct-file/main/LICENSE, accessed 07-04-2026.
   - Used for: public-domain/CC0 licensing.
-- [REPO-openfile-001] OpenFile repository, https://github.com/openfiletax/openfile, accessed 2026-07-04.
+- [REPO-openfile-001] OpenFile repository, https://github.com/openfiletax/openfile, accessed 07-04-2026.
   - Used for: visible Direct File fork and caveat.
-- [DOC-openfile-001] OpenFile docs reference, https://docs.openfile.tax/en/latest/reference.html, accessed 2026-07-04.
+- [DOC-openfile-001] OpenFile docs reference, https://docs.openfile.tax/en/latest/reference.html, accessed 07-04-2026.
   - Used for: Direct File fork/reference notes.
-- [REPO-ofxtools-001] ofxtools repository, https://github.com/csingley/ofxtools, accessed 2026-07-04.
+- [REPO-ofxtools-001] ofxtools repository, https://github.com/csingley/ofxtools, accessed 07-04-2026.
   - Used for: source location, release metadata, and license.
-- [DOC-ofxtools-001] ofxtools docs, https://ofxtools.readthedocs.io/en/latest/, accessed 2026-07-04.
+- [DOC-ofxtools-001] ofxtools docs, https://ofxtools.readthedocs.io/en/latest/, accessed 07-04-2026.
   - Used for: Python OFX tooling surface.
-- [REL-ofxtools-001] ofxtools PyPI page, https://pypi.org/project/ofxtools/, accessed 2026-07-04.
+- [REL-ofxtools-001] ofxtools PyPI page, https://pypi.org/project/ofxtools/, accessed 07-04-2026.
   - Observed: 1.1.1 package metadata.
-- [REPO-ofxparse-001] ofxparse repository, https://github.com/jseutter/ofxparse, accessed 2026-07-04.
+- [REPO-ofxparse-001] ofxparse repository, https://github.com/jseutter/ofxparse, accessed 07-04-2026.
   - Used for: source location and license.
-- [REL-ofxparse-001] ofxparse PyPI page, https://pypi.org/project/ofxparse/, accessed 2026-07-04.
+- [REL-ofxparse-001] ofxparse PyPI page, https://pypi.org/project/ofxparse/, accessed 07-04-2026.
   - Observed: 0.21 package metadata.
-- [REPO-qif-001] rgoring/qif repository, https://github.com/rgoring/qif, accessed 2026-07-04.
+- [REPO-qif-001] rgoring/qif repository, https://github.com/rgoring/qif, accessed 07-04-2026.
   - Used for: QIF parser identity and license.
-- [REL-qifparse-001] qifparse PyPI page, https://pypi.org/project/qifparse/, accessed 2026-07-04.
+- [REL-qifparse-001] qifparse PyPI page, https://pypi.org/project/qifparse/, accessed 07-04-2026.
   - Observed: 0.5 package metadata.
-- [REPO-ustaxes-001] UsTaxes repository, https://github.com/ustaxes/ustaxes, accessed 2026-07-05.
+- [REPO-ustaxes-001] UsTaxes repository, https://github.com/ustaxes/ustaxes, accessed 07-05-2026.
   - Used for: project identity, AGPL-3.0 license, Federal 1040 scope, supported tax years/forms, client-side data posture, and local run instructions.
-- [DOC-ustaxes-001] UsTaxes website, https://ustaxes.org/, accessed 2026-07-05.
+- [DOC-ustaxes-001] UsTaxes website, https://ustaxes.org/, accessed 07-05-2026.
   - Used for: project website and user-facing identity.
-- [REPO-habutax-001] HabuTax repository, https://github.com/habutax/habutax, accessed 2026-07-05.
+- [REPO-habutax-001] HabuTax repository, https://github.com/habutax/habutax, accessed 07-05-2026.
   - Used for: CLI/Python surface, implemented forms, plain-text input/output model, PDF filling path, and GPL-2.0 license.
-- [REPO-filed-opentax-001] Filed Open Tax Engine repository, https://github.com/filedcom/opentax, accessed 2026-07-05.
+- [REPO-filed-opentax-001] Filed Open Tax Engine repository, https://github.com/filedcom/opentax, accessed 07-05-2026.
   - Used for: source location, CLI/JSON examples, release/license metadata, coverage claims, and agent-oriented project posture.
-- [DOC-filed-opentax-001] Filed Open Tax Engine website, https://opentax.filed.com/, accessed 2026-07-05.
+- [DOC-filed-opentax-001] Filed Open Tax Engine website, https://opentax.filed.com/, accessed 07-05-2026.
   - Used for: public positioning, installation examples, and AI-agent-oriented interface claims.
-- [REPO-tax-calculator-001] PSL Tax-Calculator repository, https://github.com/PSLmodels/Tax-Calculator, accessed 2026-07-05.
+- [REPO-tax-calculator-001] PSL Tax-Calculator repository, https://github.com/PSLmodels/Tax-Calculator, accessed 07-05-2026.
   - Used for: source location, model identity, latest visible GitHub release, and license badge.
-- [DOC-tax-calculator-001] PSL Tax-Calculator documentation, https://taxcalc.pslmodels.org/, accessed 2026-07-05.
+- [DOC-tax-calculator-001] PSL Tax-Calculator documentation, https://taxcalc.pslmodels.org/, accessed 07-05-2026.
   - Used for: Python API, CLI, package installation, custom filing-unit data support, and docs-release metadata.
-- [REPO-policyengine-us-001] PolicyEngine US repository, https://github.com/PolicyEngine/policyengine-us, accessed 2026-07-05.
+- [REPO-policyengine-us-001] PolicyEngine US repository, https://github.com/PolicyEngine/policyengine-us, accessed 07-05-2026.
   - Used for: source location, package identity, AGPL-3.0 license, install notes, and household-level tax-benefit rules scope.
-- [DOC-openfisca-001] OpenFisca website, https://openfisca.org/en/, accessed 2026-07-05.
+- [DOC-openfisca-001] OpenFisca website, https://openfisca.org/en/, accessed 07-05-2026.
   - Used for: JSON web API and vectorial Python API rules-as-code comparison pattern.
-- [REPO-irs-twe-001] IRS Tax Withholding Estimator repository, https://github.com/IRS-Public/tax-withholding-estimator, accessed 2026-07-05.
+- [REPO-irs-twe-001] IRS Tax Withholding Estimator repository, https://github.com/IRS-Public/tax-withholding-estimator, accessed 07-05-2026.
   - Used for: official public codebase, TWE 2.0 status, CC0/public-domain dedication, W-4/W-4P scope, and non-filing disclaimer.
-- [REPO-tenforty-001] tenforty repository, https://github.com/mmacpherson/tenforty, accessed 2026-07-05.
+- [REPO-tenforty-001] tenforty repository, https://github.com/mmacpherson/tenforty, accessed 07-05-2026.
   - Used for: Python library surface, OpenTaxSolver wrapper relationship, supported years/states, structured output fields, and MIT license.
-- [REPO-actual-001] Actual Budget repository, https://github.com/actualbudget/actual, accessed 2026-07-05.
+- [REPO-actual-001] Actual Budget repository, https://github.com/actualbudget/actual, accessed 07-05-2026.
   - Used for: source location, local-first identity, license, setup modes, and latest visible GitHub release.
-- [DOC-actual-api-001] Actual Budget API docs, https://actualbudget.org/docs/api/, accessed 2026-07-05.
+- [DOC-actual-api-001] Actual Budget API docs, https://actualbudget.org/docs/api/, accessed 07-05-2026.
   - Used for: official Node API package and programmatic-access model.
-- [DOC-actual-cli-001] Actual Budget CLI docs, https://actualbudget.org/docs/api/cli/, accessed 2026-07-05.
+- [DOC-actual-cli-001] Actual Budget CLI docs, https://actualbudget.org/docs/api/cli/, accessed 07-05-2026.
   - Used for: official CLI package, configuration, and JSON/table/CSV output options.
-- [REL-actual-001] Actual Budget release notes, https://actualbudget.org/docs/releases/, accessed 2026-07-05.
+- [REL-actual-001] Actual Budget release notes, https://actualbudget.org/docs/releases/, accessed 07-05-2026.
   - Observed: 26.7.0 release date and stable CLI note.
-- [DOC-actual-community-001] Actual Budget community projects, https://actualbudget.org/docs/community-repos/, accessed 2026-07-05.
+- [DOC-actual-community-001] Actual Budget community projects, https://actualbudget.org/docs/community-repos/, accessed 07-05-2026.
   - Used for: third-party importers, local REST bridge, Python API, and helper projects around Actual.
-- [REPO-kmymoney-001] KMyMoney repository, https://github.com/KDE/kmymoney, accessed 2026-07-05.
+- [REPO-kmymoney-001] KMyMoney repository, https://github.com/KDE/kmymoney, accessed 07-05-2026.
   - Used for: project identity, supported platforms, source location, and license-file posture.
-- [DOC-kmymoney-import-001] KMyMoney import/export documentation, https://docs.kde.org/trunk_kf6/en/kmymoney/kmymoney/details.impexp.html, accessed 2026-07-05.
+- [DOC-kmymoney-import-001] KMyMoney import/export documentation, https://docs.kde.org/trunk_kf6/en/kmymoney/kmymoney/details.impexp.html, accessed 07-05-2026.
   - Used for: GnuCash, QIF, OFX, CSV, and Woob import/export surfaces.
-- [REL-kmymoney-001] KMyMoney 5.2.0 release notes, https://kmymoney.org/2025/06/21/kmymoney-5-2-0-released.html, accessed 2026-07-05.
+- [REL-kmymoney-001] KMyMoney 5.2.0 release notes, https://kmymoney.org/2025/06/21/kmymoney-5-2-0-released.html, accessed 07-05-2026.
   - Observed: 5.2.0 release date and import-related bugfix context.
-- [DOC-homebank-001] HomeBank website, https://www.gethomebank.org/, accessed 2026-07-05.
+- [DOC-homebank-001] HomeBank website, https://www.gethomebank.org/, accessed 07-05-2026.
   - Used for: personal-accounting scope, GNU GPL statement, import/export features, assignment rules, and duplicate detection.
-- [PROJ-homebank-001] HomeBank SourceForge project, https://sourceforge.net/projects/homebank/, accessed 2026-07-05.
+- [PROJ-homebank-001] HomeBank SourceForge project, https://sourceforge.net/projects/homebank/, accessed 07-05-2026.
   - Used for: source/download location and format-support signal.
-- [REPO-mmex-001] Money Manager Ex repository, https://github.com/moneymanagerex/moneymanagerex, accessed 2026-07-05.
+- [REPO-mmex-001] Money Manager Ex repository, https://github.com/moneymanagerex/moneymanagerex, accessed 07-05-2026.
   - Used for: source location, GPL-2.0 license, SQLite storage, CSV/QIF import, and desktop/mobile scope.
-- [DOC-mmex-import-001] Money Manager Ex import/export docs, https://moneymanagerex.org/docs/features/importexport/, accessed 2026-07-05.
+- [DOC-mmex-import-001] Money Manager Ex import/export docs, https://moneymanagerex.org/docs/features/importexport/, accessed 07-05-2026.
   - Used for: QIF, CSV, HTML, XML, and flexible CSV importer details.
-- [REPO-fava-001] Fava repository, https://github.com/beancount/fava, accessed 2026-07-05.
+- [REPO-fava-001] Fava repository, https://github.com/beancount/fava, accessed 07-05-2026.
   - Used for: source location, Beancount web-interface identity, license, install/run command, and ecosystem status.
-- [DOC-fava-001] Fava documentation, https://beancount.github.io/fava/, accessed 2026-07-05.
+- [DOC-fava-001] Fava documentation, https://beancount.github.io/fava/, accessed 07-05-2026.
   - Used for: documentation home and API/extension docs presence.
-- [REPO-paisa-001] Paisa repository, https://github.com/ananthakumaran/paisa, accessed 2026-07-05.
+- [REPO-paisa-001] Paisa repository, https://github.com/ananthakumaran/paisa, accessed 07-05-2026.
   - Used for: source location, license, release metadata, Ledger dependency, and personal-finance web UI scope.
-- [DOC-paisa-hledger-001] hledger note on Paisa, https://hledger.org/paisa.html, accessed 2026-07-05.
+- [DOC-paisa-hledger-001] hledger note on Paisa, https://hledger.org/paisa.html, accessed 07-05-2026.
   - Used for: Ledger/hledger/Beancount file support, SQLite workflow, and hledger support caveats.
-- [REPO-ofxstatement-001] ofxstatement repository, https://github.com/kedder/ofxstatement, accessed 2026-07-05.
+- [REPO-ofxstatement-001] ofxstatement repository, https://github.com/kedder/ofxstatement, accessed 07-05-2026.
   - Used for: CLI/plugin conversion model, license, latest visible release, and import-layer workflow.

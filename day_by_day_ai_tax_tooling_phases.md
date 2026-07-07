@@ -2,7 +2,7 @@
 
 ## How To Use This File
 
-This is the working roadmap for the July 1-31, 2026 internship. Each day is treated as its own phase with a specific research objective, concrete tasks, and an exit artifact. The point is to move one day at a time while still steering toward the end goal: a publishable report, a working prototype integration, and a presentation deck.
+This is the working roadmap for the 07-01-2026 through 07-31-2026 internship. Each day is treated as its own phase with a specific research objective, concrete tasks, and an exit artifact. The point is to move one day at a time while still steering toward the end goal: a publishable report, a working prototype integration, and a presentation deck.
 
 Daily rhythm:
 
@@ -14,7 +14,7 @@ Daily rhythm:
 
 ## End Goal
 
-By July 31, deliver:
+By 07-31-2026, deliver:
 
 - A written research report on open-source consumer tax bookkeeping and tax-return tooling.
 - A working prototype integration using synthetic data only.
@@ -22,7 +22,7 @@ By July 31, deliver:
 
 ## Week 1: Landscape, Scope, and Research Infrastructure
 
-### Day 1 - July 1, 2026 - Phase 1: Kickoff and Source Understanding
+### Day 1 - 07-01-2026 - Phase 1: Kickoff and Source Understanding
 
 Objective: understand the internship brief and define the research target.
 
@@ -42,7 +42,7 @@ Done when:
 
 - The end goal, deliverables, and July timeline are clear.
 
-### Day 2 - July 2, 2026 - Phase 2: Workspace and Evidence System
+### Day 2 - 07-02-2026 - Phase 2: Workspace and Evidence System
 
 Objective: create the research workspace so every future finding has a home.
 
@@ -63,7 +63,7 @@ Done when:
 
 - We can add a new tool and know exactly where its notes, evidence, and evaluation record belong.
 
-### Day 3 - July 3, 2026 - Phase 3: Starter Tool Inventory
+### Day 3 - 07-03-2026 - Phase 3: Starter Tool Inventory
 
 Objective: turn the starter list into a structured longlist.
 
@@ -82,7 +82,7 @@ Done when:
 
 - Every starter candidate has a basic entry and a first-pass category.
 
-### Day 4 - July 4, 2026 - Phase 4: Discovery Search
+### Day 4 - 07-04-2026 - Phase 4: Discovery Search
 
 Objective: find credible tools not listed in the original brief.
 
@@ -103,7 +103,7 @@ Done when:
 
 - The longlist reflects both the mentor's starter list and our own discovery.
 
-### Day 5 - July 5, 2026 - Phase 5: Metadata and Health Snapshot
+### Day 5 - 07-05-2026 - Phase 5: Metadata and Health Snapshot
 
 Objective: gather comparable project-health evidence before choosing the shortlist.
 
@@ -122,7 +122,7 @@ Done when:
 
 - Each plausible tool has enough health data to support a shortlist decision.
 
-### Day 6 - July 6, 2026 - Phase 6: Programmatic Surface Survey
+### Day 6 - 07-06-2026 - Phase 6: Programmatic Surface Survey
 
 Objective: compare how each candidate can be driven from code.
 
@@ -135,13 +135,13 @@ Tasks:
 
 Exit artifact:
 
-- `research/programmatic_surfaces.md`
+- `research/programmatic_surface_survey.md`
 
 Done when:
 
 - We can see which tools are realistic integration candidates before installing anything.
 
-### Day 7 - July 7, 2026 - Phase 7: Shortlist Decision
+### Day 7 - 07-07-2026 - Phase 7: Shortlist Decision
 
 Objective: choose 3-5 tools for deep evaluation.
 
@@ -162,7 +162,7 @@ Done when:
 
 ## Week 2: Hands-On Tool Evaluation
 
-### Day 8 - July 8, 2026 - Phase 8: Evaluation Harness and Synthetic Data
+### Day 8 - 07-08-2026 - Phase 8: Evaluation Harness and Synthetic Data
 
 Objective: prepare shared synthetic fixtures and repeatable evaluation scripts.
 
@@ -182,7 +182,7 @@ Done when:
 
 - Every tool can be tested against the same basic scenario.
 
-### Day 9 - July 9, 2026 - Phase 9: Evaluate Tool 1
+### Day 9 - 07-09-2026 - Phase 9: Evaluate Tool 1
 
 Objective: perform the first deep evaluation and refine the method.
 
@@ -203,7 +203,7 @@ Done when:
 
 - The first tool has a complete draft evaluation and the evaluation method has been tested.
 
-### Day 10 - July 10, 2026 - Phase 10: Evaluate Tool 2
+### Day 10 - 07-10-2026 - Phase 10: Evaluate Tool 2
 
 Objective: evaluate the second shortlisted tool using the same rubric.
 
@@ -223,7 +223,7 @@ Done when:
 
 - The second tool can be compared directly against the first.
 
-### Day 11 - July 11, 2026 - Phase 11: Evaluate Tool 3
+### Day 11 - 07-11-2026 - Phase 11: Evaluate Tool 3
 
 Objective: evaluate the third shortlisted tool with special attention to tax-workflow fit.
 
@@ -243,7 +243,7 @@ Done when:
 
 - We have at least three complete evaluations across different tool categories.
 
-### Day 12 - July 12, 2026 - Phase 12: Evaluate Tool 4 or Backup Candidate
+### Day 12 - 07-12-2026 - Phase 12: Evaluate Tool 4 or Backup Candidate
 
 Objective: add breadth or replace a weak candidate.
 
@@ -261,7 +261,7 @@ Done when:
 
 - The comparison has enough variety to support a meaningful recommendation.
 
-### Day 13 - July 13, 2026 - Phase 13: Complete Any Remaining Evaluation
+### Day 13 - 07-13-2026 - Phase 13: Complete Any Remaining Evaluation
 
 Objective: finish the fifth tool or close gaps in existing records.
 
@@ -281,7 +281,7 @@ Done when:
 
 - All chosen tools have enough evidence for a fair comparison.
 
-### Day 14 - July 14, 2026 - Phase 14: Prototype Target Selection
+### Day 14 - 07-14-2026 - Phase 14: Prototype Target Selection
 
 Objective: pick the tool we will integrate in Week 3.
 
@@ -303,7 +303,7 @@ Done when:
 
 ## Week 3: Prototype Integration
 
-### Day 15 - July 15, 2026 - Phase 15: Prototype Design
+### Day 15 - 07-15-2026 - Phase 15: Prototype Design
 
 Objective: design the smallest useful integration.
 
@@ -323,7 +323,7 @@ Done when:
 
 - The prototype has a narrow, buildable scope.
 
-### Day 16 - July 16, 2026 - Phase 16: Adapter Skeleton
+### Day 16 - 07-16-2026 - Phase 16: Adapter Skeleton
 
 Objective: create the first working adapter layer.
 
@@ -342,7 +342,7 @@ Done when:
 
 - The adapter can start and call or simulate the chosen backend in a controlled way.
 
-### Day 17 - July 17, 2026 - Phase 17: Core Operation 1 and 2
+### Day 17 - 07-17-2026 - Phase 17: Core Operation 1 and 2
 
 Objective: implement the first half of the demo workflow.
 
@@ -361,7 +361,7 @@ Done when:
 
 - Synthetic data can enter the integration and produce a clear result.
 
-### Day 18 - July 18, 2026 - Phase 18: Core Operation 3 and 4
+### Day 18 - 07-18-2026 - Phase 18: Core Operation 3 and 4
 
 Objective: implement the second half of the demo workflow.
 
@@ -380,7 +380,7 @@ Done when:
 
 - The prototype can run an end-to-end workflow on synthetic data.
 
-### Day 19 - July 19, 2026 - Phase 19: Safety and Failure Handling
+### Day 19 - 07-19-2026 - Phase 19: Safety and Failure Handling
 
 Objective: make the prototype honest and safe.
 
@@ -400,7 +400,7 @@ Done when:
 
 - The prototype shows both happy-path behavior and safe failure behavior.
 
-### Day 20 - July 20, 2026 - Phase 20: Demo Packaging
+### Day 20 - 07-20-2026 - Phase 20: Demo Packaging
 
 Objective: make the prototype easy to run and explain.
 
@@ -421,7 +421,7 @@ Done when:
 
 - A reviewer can run the prototype without needing private context.
 
-### Day 21 - July 21, 2026 - Phase 21: Prototype Review and Freeze
+### Day 21 - 07-21-2026 - Phase 21: Prototype Review and Freeze
 
 Objective: freeze the prototype feature set and capture lessons.
 
@@ -443,7 +443,7 @@ Done when:
 
 ## Week 4: Report, Deck, and Final Delivery
 
-### Day 22 - July 22, 2026 - Phase 22: Report Structure
+### Day 22 - 07-22-2026 - Phase 22: Report Structure
 
 Objective: outline the final written report.
 
@@ -461,7 +461,7 @@ Done when:
 
 - The report has a complete skeleton and no mystery sections.
 
-### Day 23 - July 23, 2026 - Phase 23: Landscape and Method Draft
+### Day 23 - 07-23-2026 - Phase 23: Landscape and Method Draft
 
 Objective: write the opening half of the report.
 
@@ -480,7 +480,7 @@ Done when:
 
 - A reader understands what was studied and how.
 
-### Day 24 - July 24, 2026 - Phase 24: Tool Evaluation Draft
+### Day 24 - 07-24-2026 - Phase 24: Tool Evaluation Draft
 
 Objective: write the per-tool findings.
 
@@ -498,7 +498,7 @@ Done when:
 
 - Every shortlisted tool has a fair, evidence-backed writeup.
 
-### Day 25 - July 25, 2026 - Phase 25: Comparison and Recommendation Draft
+### Day 25 - 07-25-2026 - Phase 25: Comparison and Recommendation Draft
 
 Objective: turn evaluations into a clear recommendation.
 
@@ -516,7 +516,7 @@ Done when:
 
 - The report has an actual argument, not just notes.
 
-### Day 26 - July 26, 2026 - Phase 26: Prototype Writeup
+### Day 26 - 07-26-2026 - Phase 26: Prototype Writeup
 
 Objective: explain the code artifact clearly.
 
@@ -535,7 +535,7 @@ Done when:
 
 - A reader can understand what the prototype proves without reading every line of code.
 
-### Day 27 - July 27, 2026 - Phase 27: Report Revision
+### Day 27 - 07-27-2026 - Phase 27: Report Revision
 
 Objective: make the report publishable.
 
@@ -556,7 +556,7 @@ Done when:
 
 - The report is ready for mentor feedback or final proofing.
 
-### Day 28 - July 28, 2026 - Phase 28: Deck Outline
+### Day 28 - 07-28-2026 - Phase 28: Deck Outline
 
 Objective: translate the report into a 20-30 minute talk.
 
@@ -575,7 +575,7 @@ Done when:
 
 - The presentation has a coherent story from question to recommendation.
 
-### Day 29 - July 29, 2026 - Phase 29: Deck Build
+### Day 29 - 07-29-2026 - Phase 29: Deck Build
 
 Objective: create the actual presentation deck.
 
@@ -593,7 +593,7 @@ Done when:
 
 - The deck can support a live or recorded walkthrough.
 
-### Day 30 - July 30, 2026 - Phase 30: Final QA and Rehearsal
+### Day 30 - 07-30-2026 - Phase 30: Final QA and Rehearsal
 
 Objective: verify that all deliverables are consistent and runnable.
 
@@ -613,7 +613,7 @@ Done when:
 
 - The report, prototype, and deck all tell the same story and the demo still works.
 
-### Day 31 - July 31, 2026 - Phase 31: Final Delivery
+### Day 31 - 07-31-2026 - Phase 31: Final Delivery
 
 Objective: publish or package the final internship deliverables.
 
@@ -641,7 +641,7 @@ Done when:
 Use this at the end of every day:
 
 ```md
-## YYYY-MM-DD - Phase N: Title
+## MM-DD-YYYY - Phase N: Title
 
 ### Goal
 

@@ -1,6 +1,6 @@
 # Internship Brief Alignment
 
-Date reviewed: 2026-07-03
+Date reviewed: 07-03-2026
 
 Source reviewed: `C:\Users\nagar\Downloads\intern_project_description.pdf`
 
@@ -22,7 +22,7 @@ Search terms included: `Form 1040`, `Schedule`, `credits`, `third-party`, `wrapp
 
 ## Already Covered
 
-- Internship dates: July 1 through July 31, 2026.
+- Internship dates: 07-01-2026 through 07-31-2026.
 - Time commitment: about 20 hours per week and about 80 hours total.
 - Core research question about open-source consumer tax bookkeeping, US tax-return tooling, and available programmatic surfaces.
 - Starter tool families: GnuCash, Beancount, Ledger CLI, HLedger, Firefly III, OpenTaxSolver, IRS Direct File posture, OFX/QIF tooling, CSV-to-ledger pipelines, and selected non-US comparators.

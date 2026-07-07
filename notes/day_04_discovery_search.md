@@ -1,6 +1,6 @@
 # Day 4 Discovery Search
 
-Planned phase date: 2026-07-04. Executed on 2026-07-05.
+Planned phase date: 07-04-2026. Executed on 07-05-2026.
 
 ## Goal
 

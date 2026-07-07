@@ -2,7 +2,7 @@
 
 ## Calendar Assumption
 
-The internship runs July 1-31, 2026. I am treating July 1 as kickoff and source review, and the actionable plan as July 2-31. The target commitment is about 20 hours per week, or about 80 hours total.
+The internship runs 07-01-2026 through 07-31-2026. I am treating 07-01-2026 as kickoff and source review, and the actionable plan as 07-02-2026 through 07-31-2026. The target commitment is about 20 hours per week, or about 80 hours total.
 
 ## Project Aim
 
@@ -14,7 +14,7 @@ The final work should be portfolio-ready, reproducible, synthetic-data-only, and
 
 ## Brief Anchors
 
-The source internship brief frames this as an educational, self-directed, remote/asynchronous research internship with weekly mentor check-ins. The project is unpaid, time-bounded to July 1-31, 2026, and student-owned. There is no promise of employment, no IP assignment, no NDA, and no production work for commercial projects.
+The source internship brief frames this as an educational, self-directed, remote/asynchronous research internship with weekly mentor check-ins. The project is unpaid, time-bounded to 07-01-2026 through 07-31-2026, and student-owned. There is no promise of employment, no IP assignment, no NDA, and no production work for commercial projects.
 
 Educational objectives to preserve:
 
@@ -89,7 +89,7 @@ The deep-evaluation shortlist should include at least:
 
 ## Week 1: Scoping and Landscape Survey
 
-Dates: July 2-7
+Dates: 07-02-2026 through 07-07-2026
 
 Primary goal: produce a defensible shortlist.
 
@@ -113,7 +113,7 @@ Exit criteria:
 
 ## Week 2: Hands-On Evaluation
 
-Dates: July 8-14
+Dates: 07-08-2026 through 07-14-2026
 
 Primary goal: replace documentation impressions with direct evidence.
 
@@ -138,12 +138,12 @@ Exit criteria:
 
 - Complete evaluation record for each shortlisted tool.
 - Comparison matrix across the rubric.
-- Clear prototype target selected by July 14.
+- Clear prototype target selected by 07-14-2026.
 - Backup prototype target selected in case the first choice breaks down.
 
 ## Week 3: Prototype Integration
 
-Dates: July 15-21
+Dates: 07-15-2026 through 07-21-2026
 
 Primary goal: build one small, convincing integration.
 
@@ -179,7 +179,7 @@ Exit criteria:
 
 ## Week 4: Report, Deck, and Publication
 
-Dates: July 22-31
+Dates: 07-22-2026 through 07-31-2026
 
 Primary goal: package the work into a portfolio-ready research project.
 
@@ -214,22 +214,22 @@ Approximate allocation:
 
 ## Decision Gates
 
-Gate 1: July 7
+Gate 1: 07-07-2026
 
 - Is the shortlist balanced across bookkeeping, tax, and integration surfaces?
 - Are there at least three tools with enough public information to evaluate deeply?
 
-Gate 2: July 14
+Gate 2: 07-14-2026
 
 - Which tool has the best combination of usefulness, drivability, safety, and demo value?
 - Is the prototype target technically feasible in one week?
 
-Gate 3: July 21
+Gate 3: 07-21-2026
 
 - Does the prototype demonstrate real integration rather than a mock?
 - Can someone else run it from the README?
 
-Gate 4: July 28
+Gate 4: 07-28-2026
 
 - Do the report, code, and deck tell the same story?
 - Are all claims supported by evidence?
@@ -257,7 +257,7 @@ The final recommendation should not simply pick "the best tax tool." It should s
 
 ## Final Success Criteria
 
-The project is successful if, by July 31, a reviewer can:
+The project is successful if, by 07-31-2026, a reviewer can:
 
 - Read the report and understand the open-source tax-tooling landscape.
 - See exactly how each shortlisted tool was evaluated.

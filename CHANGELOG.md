@@ -11,7 +11,87 @@ Each entry should answer:
 - What evidence or files were added?
 - What is next?
 
-## 2026-07-05 - Phase 5: Metadata and Health Snapshot
+## 07-07-2026 - Phase 8: Evaluation Harness and Synthetic Data
+
+### What Changed
+
+- Created `evidence/synthetic_dataset.md` with a synthetic 2025 freelancer scenario, canonical transactions, mileage metadata, expected totals, tool adaptation notes, and failure-test inputs.
+- Created machine-readable fixtures at `evidence/fixtures/synthetic_freelancer_transactions.csv` and `evidence/fixtures/synthetic_freelancer_tax_profile.json`.
+- Created `research/evaluation_checklist.md` with shared setup, workflow, tax-coverage, failure-testing, evidence, and tool-record checklists.
+- Created the Day 8 exit note at `notes/day_08_evaluation_harness_and_synthetic_data.md`.
+- Updated the rolling research log, fixture README, and README repository status.
+
+### Why
+
+Week 2 needs a shared evaluation harness so hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine are tested against the same synthetic facts instead of ad hoc examples. The dataset also keeps bookkeeping and tax-oriented tools comparable while respecting their different input surfaces.
+
+### Evidence / Files
+
+- `evidence/synthetic_dataset.md`
+- `evidence/fixtures/synthetic_freelancer_transactions.csv`
+- `evidence/fixtures/synthetic_freelancer_tax_profile.json`
+- `research/evaluation_checklist.md`
+- `notes/day_08_evaluation_harness_and_synthetic_data.md`
+- `notes/research_log.md`
+- `evidence/fixtures/README.md`
+- `README.md`
+
+### Next
+
+Execute Day 9 by evaluating hledger against the shared dataset and filling the first tool record.
+
+## 07-07-2026 - Phase 7: Shortlist Decision
+
+### What Changed
+
+- Created `research/shortlist.md` with a score matrix, selection rationale, major exclusions, backups, Week 2 evaluation order, and carry-forward risks.
+- Created the Day 7 exit note at `notes/day_07_shortlist_decision.md`.
+- Updated `notes/research_log.md` and the README repository status for Phase 7 completion.
+- Selected hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine for Week 2 hands-on evaluation.
+
+### Why
+
+The project needed to turn the Week 1 landscape, health, and programmatic-surface evidence into a concrete Week 2 evaluation target list. The selected tools balance plain-text accounting, personal-finance app integration, REST/API coverage, and tax-specific calculation or form-engine workflows.
+
+### Evidence / Files
+
+- `research/shortlist.md`
+- `notes/day_07_shortlist_decision.md`
+- `notes/research_log.md`
+- `README.md`
+
+### Next
+
+Execute Day 8 by creating `evidence/synthetic_dataset.md` and `research/evaluation_checklist.md` for a shared hands-on evaluation harness.
+
+## 07-06-2026 - Phase 6: Programmatic Surface Survey
+
+### What Changed
+
+- Created `research/programmatic_surface_survey.md` with a documented comparison of CLI, library, REST API, plugin, file-format, schema, database, and structured-output surfaces.
+- Created the Day 6 exit note at `notes/day_06_programmatic_surface_survey.md`.
+- Updated `notes/research_log.md` and the README repository status for Phase 6 completion.
+- Aligned the Day 6 roadmap entry to the created `research/programmatic_surface_survey.md` artifact name.
+- Identified hledger, Actual Budget, Firefly III, Beancount, tenforty, and Filed Open Tax Engine as the clearest code-facing candidates going into Day 7.
+
+### Why
+
+The project needed to compare which candidates can be driven from code before spending Week 2 time installing tools. The Day 5 health snapshot showed which projects were alive; Day 6 distinguishes which ones expose realistic automation surfaces.
+
+### Evidence / Files
+
+- `research/programmatic_surface_survey.md`
+- `notes/day_06_programmatic_surface_survey.md`
+- `notes/research_log.md`
+- `research/README.md`
+- `day_by_day_ai_tax_tooling_phases.md`
+- `README.md`
+
+### Next
+
+Execute Day 7 by creating `research/shortlist.md`, scoring plausible candidates, and choosing 3-5 tools for hands-on evaluation.
+
+## 07-05-2026 - Phase 5: Metadata and Health Snapshot
 
 ### What Changed
 
@@ -35,7 +115,7 @@ The project needs comparable health evidence before the Day 6 programmatic-surfa
 
 Execute Day 6 by creating `research/programmatic_surface_survey.md` and comparing documented/inferred automation surfaces across the strongest candidates.
 
-## 2026-07-05 - Phase 4: Discovery Search
+## 07-05-2026 - Phase 4: Discovery Search
 
 ### What Changed
 
@@ -59,7 +139,7 @@ The project needed a broader discovery pass before Day 5 health snapshots and th
 
 Execute Day 5 by creating `research/project_health_snapshot.md` and normalizing release dates, recent commits, licenses, contributor signals, documentation quality, annual tax-year support, and data-format evidence for plausible candidates.
 
-## 2026-07-04 - Phase 3: Starter Tool Inventory
+## 07-04-2026 - Phase 3: Starter Tool Inventory
 
 ### What Changed
 
@@ -82,7 +162,7 @@ The project needed a baseline tool inventory before Day 4 discovery, Day 5 healt
 
 Execute Day 4 discovery search, expand `research/longlist.md` with credible additional tools, and create `research/exclusions.md` for tools that are closed-source, irrelevant, abandoned, or outside the consumer/freelancer scope.
 
-## 2026-07-03 - Project Tracking and Brief Alignment
+## 07-03-2026 - Project Tracking and Brief Alignment
 
 ### What Changed
 
@@ -108,7 +188,7 @@ The project needed one central history file for easier backtracking. The PDF als
 
 Execute Day 3 by creating `research/longlist.md` for the starter candidate tools and capturing first-pass metadata, docs links, releases, licenses, categories, and apparent integration surfaces.
 
-## 2026-07-02 - Phase 2: Workspace and Evidence System
+## 07-02-2026 - Phase 2: Workspace and Evidence System
 
 ### What Changed
 
@@ -138,7 +218,7 @@ Future research needs a consistent home for findings, source links, command outp
 
 Start Phase 3 by building the starter tool inventory in `research/longlist.md`.
 
-## 2026-07-01 - Phase 1: Kickoff and Source Understanding
+## 07-01-2026 - Phase 1: Kickoff and Source Understanding
 
 ### What Changed
 

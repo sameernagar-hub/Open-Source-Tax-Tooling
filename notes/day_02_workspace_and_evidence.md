@@ -1,4 +1,4 @@
-# 2026-07-02 - Phase 2: Workspace and Evidence System
+# 07-02-2026 - Phase 2: Workspace and Evidence System
 
 ## Goal
 

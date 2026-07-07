@@ -1,4 +1,4 @@
-# 2026-07-01 - Phase 1: Kickoff and Source Understanding
+# 07-01-2026 - Phase 1: Kickoff and Source Understanding
 
 ## Goal
 

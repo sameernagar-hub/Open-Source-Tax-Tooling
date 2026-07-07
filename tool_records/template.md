@@ -7,7 +7,7 @@
 | Tool slug | `<tool-slug>` |
 | Category | bookkeeping / tax calculation / tax form generation / tax submission / adjacent infrastructure |
 | Record status | draft / in progress / complete |
-| Last updated | YYYY-MM-DD |
+| Last updated | MM-DD-YYYY |
 | Evaluator | <name or initials> |
 | Evaluation phase | Phase N |
 

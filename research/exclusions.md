@@ -2,7 +2,7 @@
 
 Day 4 artifact for Phase 4: Discovery Search.
 
-Planned phase date: 2026-07-04. Executed on 2026-07-05. An exclusion here does not mean a tool is bad; it means the tool is not a strong fit for the main consumer/freelancer-oriented, open-source tax-tooling shortlist as currently scoped. Some entries remain useful as background or prior art.
+Planned phase date: 07-04-2026. Executed on 07-05-2026. An exclusion here does not mean a tool is bad; it means the tool is not a strong fit for the main consumer/freelancer-oriented, open-source tax-tooling shortlist as currently scoped. Some entries remain useful as background or prior art.
 
 ## Exclusion Matrix
 
@@ -29,25 +29,25 @@ Planned phase date: 2026-07-04. Executed on 2026-07-05. An exclusion here does n
 
 ## Source Index
 
-- [REPO-akaunting-001] Akaunting repository, https://github.com/akaunting/akaunting, accessed 2026-07-05.
+- [REPO-akaunting-001] Akaunting repository, https://github.com/akaunting/akaunting, accessed 07-05-2026.
   - Used for: BSL license statement, small-business/freelancer accounting scope, REST/API and app-store posture.
-- [REPO-erpnext-001] ERPNext repository, https://github.com/frappe/erpnext, accessed 2026-07-05.
+- [REPO-erpnext-001] ERPNext repository, https://github.com/frappe/erpnext, accessed 07-05-2026.
   - Used for: enterprise ERP scope, accounting/API capability, and GPL-3.0 repository posture.
-- [REPO-opentaxforms-001] OpenTaxForms repository, https://github.com/jsaponara/opentaxforms, accessed 2026-07-05.
+- [REPO-opentaxforms-001] OpenTaxForms repository, https://github.com/jsaponara/opentaxforms, accessed 07-05-2026.
   - Used for: IRS PDF/form extraction prior art, API notes, no-e-file warning, and redesign caveat.
-- [REL-python-taxes-001] Python-Taxes PyPI page, https://pypi.org/project/python-taxes/, accessed 2026-07-05.
+- [REL-python-taxes-001] Python-Taxes PyPI page, https://pypi.org/project/python-taxes/, accessed 07-05-2026.
   - Used for: package scope, supported tax years, withholding focus, and MIT license.
-- [REPO-taxstuff-001] TaxStuff repository, https://github.com/AustinWise/TaxStuff, accessed 2026-07-05.
+- [REPO-taxstuff-001] TaxStuff repository, https://github.com/AustinWise/TaxStuff, accessed 07-05-2026.
   - Used for: basic federal tax-return calculator identity and work-in-progress disclaimer.
-- [REPO-maybe-001] Maybe Finance repository, https://github.com/maybe-finance/maybe, accessed 2026-07-05.
+- [REPO-maybe-001] Maybe Finance repository, https://github.com/maybe-finance/maybe, accessed 07-05-2026.
   - Used for: project identity and no-longer-actively-maintained notice.
-- [DOC-kresus-001] Kresus website, https://kresus.org/en/, accessed 2026-07-05.
+- [DOC-kresus-001] Kresus website, https://kresus.org/en/, accessed 07-05-2026.
   - Used for: libre self-hosted personal-finance/bank-aggregation scope.
-- [REPO-ezbookkeeping-001] ezBookkeeping repository, https://github.com/mayswind/ezbookkeeping, accessed 2026-07-05.
+- [REPO-ezbookkeeping-001] ezBookkeeping repository, https://github.com/mayswind/ezbookkeeping, accessed 07-05-2026.
   - Used for: self-hosted personal-finance scope and feature positioning.
-- [DOC-skrooge-001] Skrooge website, https://skrooge.org/, accessed 2026-07-05.
+- [DOC-skrooge-001] Skrooge website, https://skrooge.org/, accessed 07-05-2026.
   - Used for: KDE personal-finance scope and supported-platform signal.
-- [DOC-taxsim-001] NBER TAXSIM, https://taxsim.nber.org/, accessed 2026-07-05.
+- [DOC-taxsim-001] NBER TAXSIM, https://taxsim.nber.org/, accessed 07-05-2026.
   - Used for: external tax-calculation benchmark/service identity.
-- [DOC-free-file-fillable-001] IRS Free File Fillable Forms page, https://www.irs.gov/e-file-providers/free-file-fillable-forms, accessed 2026-07-05.
+- [DOC-free-file-fillable-001] IRS Free File Fillable Forms page, https://www.irs.gov/e-file-providers/free-file-fillable-forms, accessed 07-05-2026.
   - Used for: official hosted filing-context exclusion.

@@ -1,0 +1,62 @@
+{
+  "dataset_id": "synthetic-freelancer-2025-v1",
+  "tax_year": 2025,
+  "privacy": "synthetic-no-pii-no-real-account-data",
+  "currency": "USD",
+  "filer": {
+    "label": "Sample Single Freelancer",
+    "filing_status": "single",
+    "birth_year": 1990,
+    "dependents": 0,
+    "state_scope": "federal-only"
+  },
+  "income": {
+    "w2_wages": 0.00,
+    "schedule_c_gross_receipts": 10250.00,
+    "interest_income": 77.75
+  },
+  "schedule_c_expenses": {
+    "software": 239.00,
+    "office_equipment": 320.00,
+    "office_supplies": 74.23,
+    "local_travel": 38.75,
+    "bank_fees": 12.00,
+    "professional_education_placeholder": 249.00,
+    "coworking": 210.00,
+    "total_cash_expenses_before_mileage": 1142.98,
+    "business_miles": 78.2,
+    "mileage_rate_usd": null,
+    "mileage_deduction_usd": null
+  },
+  "deductions_and_payments": {
+    "cash_charitable_contributions": 370.00,
+    "federal_estimated_tax_payments": 1050.00
+  },
+  "expected_ledger_totals": {
+    "opening_checking_balance": 1200.00,
+    "total_non_opening_inflows": 10327.75,
+    "baseline_non_opening_outflows": 2562.98,
+    "ending_checking_balance": 8964.77,
+    "schedule_c_net_before_mileage": 9107.02
+  },
+  "standard_add_transaction_test": {
+    "transaction_id": "TADD",
+    "date": "12-31-2025",
+    "payee": "CloudCode Tools",
+    "description": "Year-end software add-transaction test",
+    "account": "Assets:Checking",
+    "category": "Expenses:Business:Software",
+    "tax_hint": "Schedule C software",
+    "amount_usd": -24.99,
+    "expected_ending_checking_balance_after_add": 8939.78,
+    "expected_schedule_c_cash_expenses_after_add": 1167.97,
+    "expected_schedule_c_net_before_mileage_after_add": 9082.03
+  },
+  "failure_test_inputs": {
+    "malformed_date": "13-40-2025",
+    "invalid_amount": "not-a-number",
+    "unknown_account_or_category": "Expenses:Business:Imaginary Category",
+    "missing_input_file": "evidence/fixtures/does_not_exist.csv",
+    "duplicate_transaction_id": "T001"
+  }
+}

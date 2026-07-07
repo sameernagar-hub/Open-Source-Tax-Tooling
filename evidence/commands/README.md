@@ -5,5 +5,5 @@ Store terminal transcripts, version checks, install logs, test output, and failu
 Use stable file names such as:
 
 ```text
-YYYY-MM-DD_tool-slug_command-purpose.txt
+MM-DD-YYYY_tool-slug_command-purpose.txt
 ```

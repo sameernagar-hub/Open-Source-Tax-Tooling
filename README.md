@@ -33,7 +33,7 @@ Each tool will be evaluated for:
 ## Current Planning Documents
 
 - [`codex_execution_plan_ai_tax_tooling.md`](codex_execution_plan_ai_tax_tooling.md) defines the month-long execution plan, deliverables, evaluation rubric, risks, and decision gates.
-- [`day_by_day_ai_tax_tooling_phases.md`](day_by_day_ai_tax_tooling_phases.md) breaks the internship into daily phases from July 1 through July 31, 2026.
+- [`day_by_day_ai_tax_tooling_phases.md`](day_by_day_ai_tax_tooling_phases.md) breaks the internship into daily phases from 07-01-2026 through 07-31-2026.
 - [`CHANGELOG.md`](CHANGELOG.md) records what changed, why it changed, supporting files, and the next step after each meaningful work session.
 - [`notes/internship_brief_alignment.md`](notes/internship_brief_alignment.md) tracks alignment between the attached internship brief and the repository plan.
 
@@ -64,4 +64,4 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 5 created `research/project_health_snapshot.md` to normalize release dates, activity, licenses, contributor signals, documentation quality, tax-year support, and data-format evidence before shortlisting. The next phase creates `research/programmatic_surface_survey.md` to compare CLI, library, REST API, plugin, file-format, schema, database, and structured-output surfaces.
+Phase 8 created `evidence/synthetic_dataset.md`, machine-readable synthetic fixtures, and `research/evaluation_checklist.md` for Week 2 hands-on evaluation. The next phase evaluates hledger against the shared dataset and fills the first tool record.

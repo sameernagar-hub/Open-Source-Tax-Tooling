@@ -7,8 +7,9 @@ Expected early files:
 - `longlist.md`
 - `exclusions.md`
 - `project_health_snapshot.md`
-- `programmatic_surfaces.md`
+- `programmatic_surface_survey.md`
 - `shortlist.md`
+- `evaluation_checklist.md`
 - `comparison_matrix.md`
 
 Keep claims tied to the citation and evidence conventions in `notes/source_citation_conventions.md`.
