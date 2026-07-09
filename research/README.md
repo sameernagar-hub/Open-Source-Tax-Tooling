@@ -11,5 +11,6 @@ Expected early files:
 - `shortlist.md`
 - `evaluation_checklist.md`
 - `comparison_matrix.md`
+- `prototype_target_decision.md`
 
 Keep claims tied to the citation and evidence conventions in `notes/source_citation_conventions.md`.

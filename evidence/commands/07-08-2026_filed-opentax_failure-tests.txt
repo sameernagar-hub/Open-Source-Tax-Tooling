@@ -1,0 +1,97 @@
+# Filed OpenTax failure-test evidence
+
+$ opentax form add --returnId 0e436b60-f83c-4f6a-aeb8-d0483afe3ca1 --node_type general "{\"filing_status\":\"Single\"}"
+exit=1
+stderr:
+Error: Validation error: [
+  {
+    "received": "Single",
+    "code": "invalid_enum_value",
+    "options": [
+      "single",
+      "mfs",
+      "mfj",
+      "hoh",
+      "qss"
+    ],
+    "path": [
+      "filing_status"
+    ],
+    "message": "Invalid enum value. Expected 'single' | 'mfs' | 'mfj' | 'hoh' | 'qss', received 'Single'"
+  }
+]
+
+$ opentax form add --returnId 11b197a7-553e-4ff1-ac64-54ebb71ab48e --node_type general "{\"filing_status\":\"single\",\"taxpayer_dob\":\"13-40-2025\"}"
+exit=0
+stdout:
+{
+  "id": "general_01",
+  "nodeType": "general"
+}
+
+$ opentax form add --returnId 1a47ca29-fedd-4d36-9362-90b3b0d62b4f --node_type schedule_c "{\"line_a_principal_business\":\"AI engineering consulting\",\"line_b_business_code\":\"541511\",\"line_c_business_name\":\"Sample Freelancer\",\"line_f_accounting_method\":\"cash\",\"line_g_material_participation\":true,\"line_1_gross_receipts\":\"not-a-number\",\"line_18_office_expense\":320,\"line_20b_rent_other\":210,\"line_22_supplies\":74.23,\"line_24a_travel\":38.75,\"part_v_other_expenses\":[{\"description\":\"Software\",\"amount\":239},{\"description\":\"Bank fees\",\"amount\":12},{\"description\":\"Professional education\",\"amount\":249}]}"
+exit=1
+stderr:
+Error: Validation error: [
+  {
+    "code": "invalid_type",
+    "expected": "number",
+    "received": "string",
+    "path": [
+      "line_1_gross_receipts"
+    ],
+    "message": "Expected number, received string"
+  }
+]
+
+$ opentax form add --returnId 88257d0f-cdfb-4d60-b30e-afe96241df11 --node_type schedule_c "{\"line_a_principal_business\":\"AI engineering consulting\",\"line_b_business_code\":\"541511\",\"line_c_business_name\":\"Sample Freelancer\",\"line_f_accounting_method\":\"cash\",\"line_g_material_participation\":true,\"line_1_gross_receipts\":-100,\"line_18_office_expense\":320,\"line_20b_rent_other\":210,\"line_22_supplies\":74.23,\"line_24a_travel\":38.75,\"part_v_other_expenses\":[{\"description\":\"Software\",\"amount\":239},{\"description\":\"Bank fees\",\"amount\":12},{\"description\":\"Professional education\",\"amount\":249}]}"
+exit=1
+stderr:
+Error: Validation error: [
+  {
+    "code": "too_small",
+    "minimum": 0,
+    "type": "number",
+    "inclusive": true,
+    "exact": false,
+    "message": "Number must be greater than or equal to 0",
+    "path": [
+      "line_1_gross_receipts"
+    ]
+  }
+]
+
+$ opentax form add --returnId 17132b29-14c9-47e8-9df3-cdace8075749 --node_type imaginary_node "{\"value\":1}"
+exit=1
+stderr:
+Error: Unknown node type: imaginary_node
+
+$ opentax return create --year 2024
+exit=0
+stdout:
+{
+  "returnId": "047552ab-2800-42d6-9cd5-c740589f5f06"
+}
+
+$ opentax return get --returnId 047552ab-2800-42d6-9cd5-c740589f5f06
+exit=1
+stderr:
+Error: Unsupported form: f1040:2024
+
+$ opentax form add --returnId f8baa9ca-0ca4-4635-8b39-64b41daf49dd --node_type f1099int "{\"payer_name\":\"Synthetic Bank\",\"box1\":77.75}"
+exit=0
+stdout:
+{
+  "id": "f1099int_02",
+  "nodeType": "f1099int"
+}
+
+$ opentax return get --returnId missing-return-id
+exit=1
+stderr:
+Error: File not found: .state\returns\missing-return-id\return.json
+
+$ opentax form add --returnId 3a74ee67-e364-49a0-a7b1-92dd5d34a2d4 --node_type general "{not-json}"
+exit=1
+stderr:
+Error: Invalid JSON: {not-json}

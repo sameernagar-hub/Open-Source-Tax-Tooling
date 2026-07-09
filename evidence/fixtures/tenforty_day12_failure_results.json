@@ -1,0 +1,54 @@
+[
+  {
+    "name": "invalid_filing_status",
+    "accepted": false,
+    "errorType": "ValidationError",
+    "message": "1 validation error for TaxReturnInput\nfiling_status\n  Input should be 'Single', 'Married/Joint', 'Head_of_House', 'Married/Sep' or 'Widow(er)' [type=enum, input_value='Singlee', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/enum"
+  },
+  {
+    "name": "unsupported_year",
+    "accepted": false,
+    "errorType": "ValidationError",
+    "message": "1 validation error for TaxReturnInput\nyear\n  Input should be 2018, 2019, 2020, 2021, 2022, 2023, 2024 or 2025 [type=enum, input_value=2026, input_type=int]\n    For further information visit https://errors.pydantic.dev/2.13/v/enum"
+  },
+  {
+    "name": "unsupported_state",
+    "accepted": false,
+    "errorType": "ValueError",
+    "message": "OTS does not support 2025/CO_Form104"
+  },
+  {
+    "name": "invalid_amount_type",
+    "accepted": false,
+    "errorType": "ValidationError",
+    "message": "1 validation error for TaxReturnInput\nself_employment_income\n  Input should be a valid number, unable to parse string as a number [type=float_parsing, input_value='not-a-number', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/float_parsing"
+  },
+  {
+    "name": "negative_self_employment_income",
+    "accepted": true,
+    "result": {
+      "total_tax": 0.0,
+      "federal_adjusted_gross_income": -22.25,
+      "federal_effective_tax_rate": 0.0,
+      "federal_tax_bracket": 10.0,
+      "federal_taxable_income": 0.0,
+      "federal_amt": 0.0,
+      "federal_income_tax": 0.0,
+      "federal_se_tax": 0.0,
+      "federal_niit": 0.0,
+      "federal_additional_medicare_tax": 0.0,
+      "federal_total_tax": 0.0,
+      "state_adjusted_gross_income": 0.0,
+      "state_taxable_income": 0.0,
+      "state_total_tax": 0.0,
+      "state_tax_bracket": 0.0,
+      "state_effective_tax_rate": 0.0
+    }
+  },
+  {
+    "name": "missing_profile_file",
+    "accepted": false,
+    "errorType": "FileNotFoundError",
+    "message": "[Errno 2] No such file or directory: 'evidence/fixtures/does_not_exist.csv'"
+  }
+]

@@ -1,0 +1,1732 @@
+# Filed OpenTax synthetic workflow evidence
+
+$ opentax return create --year 2025
+exit=0
+stdout:
+{
+  "returnId": "53704c40-b71e-42ef-bab1-19583e930e84"
+}
+
+$ opentax form add --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --node_type general "{\"filing_status\":\"single\",\"taxpayer_first_name\":\"Sample\",\"taxpayer_last_name\":\"Freelancer\",\"taxpayer_dob\":\"1990-01-01\",\"taxpayer_occupation\":\"Freelancer\",\"digital_assets\":false}"
+exit=0
+stdout:
+{
+  "id": "general_01",
+  "nodeType": "general"
+}
+
+$ opentax form add --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --node_type f1099int "{\"payer_name\":\"Synthetic Bank\",\"box1\":77.75}"
+exit=0
+stdout:
+{
+  "id": "f1099int_01",
+  "nodeType": "f1099int"
+}
+
+$ opentax form add --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --node_type f1040es "{\"payment_q1\":262.5,\"payment_q2\":262.5,\"payment_q3\":262.5,\"payment_q4\":262.5}"
+exit=0
+stdout:
+{
+  "id": "f1040es_01",
+  "nodeType": "f1040es"
+}
+
+$ opentax form add --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --node_type schedule_c "{\"line_a_principal_business\":\"AI engineering consulting\",\"line_b_business_code\":\"541511\",\"line_c_business_name\":\"Sample Freelancer\",\"line_f_accounting_method\":\"cash\",\"line_g_material_participation\":true,\"line_1_gross_receipts\":10250,\"line_18_office_expense\":320,\"line_20b_rent_other\":210,\"line_22_supplies\":74.23,\"line_24a_travel\":38.75,\"part_v_other_expenses\":[{\"description\":\"Software\",\"amount\":239},{\"description\":\"Bank fees\",\"amount\":12},{\"description\":\"Professional education\",\"amount\":249}]}"
+exit=0
+stdout:
+{
+  "id": "schedule_c_01",
+  "nodeType": "schedule_c"
+}
+
+$ opentax form list --returnId 53704c40-b71e-42ef-bab1-19583e930e84
+exit=0
+stdout:
+[
+  {
+    "nodeType": "general",
+    "id": "general_01",
+    "fields": {
+      "filing_status": "single",
+      "taxpayer_first_name": "Sample",
+      "taxpayer_last_name": "Freelancer",
+      "taxpayer_dob": "1990-01-01",
+      "taxpayer_occupation": "Freelancer",
+      "digital_assets": false
+    }
+  },
+  {
+    "nodeType": "f1099int",
+    "id": "f1099int_01",
+    "fields": {
+      "payer_name": "Synthetic Bank",
+      "box1": 77.75
+    }
+  },
+  {
+    "nodeType": "f1040es",
+    "id": "f1040es_01",
+    "fields": {
+      "payment_q1": 262.5,
+      "payment_q2": 262.5,
+      "payment_q3": 262.5,
+      "payment_q4": 262.5
+    }
+  },
+  {
+    "nodeType": "schedule_c",
+    "id": "schedule_c_01",
+    "fields": {
+      "line_a_principal_business": "AI engineering consulting",
+      "line_b_business_code": "541511",
+      "line_c_business_name": "Sample Freelancer",
+      "line_f_accounting_method": "cash",
+      "line_g_material_participation": true,
+      "line_1_gross_receipts": 10250,
+      "line_18_office_expense": 320,
+      "line_20b_rent_other": 210,
+      "line_22_supplies": 74.23,
+      "line_24a_travel": 38.75,
+      "part_v_other_expenses": [
+        {
+          "description": "Software",
+          "amount": 239
+        },
+        {
+          "description": "Bank fees",
+          "amount": 12
+        },
+        {
+          "description": "Professional education",
+          "amount": 249
+        }
+      ]
+    }
+  }
+]
+
+$ opentax return get --returnId 53704c40-b71e-42ef-bab1-19583e930e84
+exit=0
+stdout:
+{
+  "returnId": "53704c40-b71e-42ef-bab1-19583e930e84",
+  "year": 2025,
+  "summary": {
+    "line1z_total_wages": 0,
+    "line9_total_income": 9184.77,
+    "line11_agi": 8541.379527795001,
+    "line15_taxable_income": 0,
+    "line24_total_tax": 1286.78094441,
+    "line33_total_payments": 1699,
+    "line35a_refund": 412.2190555899999
+  },
+  "forms": [
+    "agi_aggregator",
+    "eitc",
+    "f1040",
+    "f1040es",
+    "f1099int",
+    "f2441",
+    "f8812",
+    "form8880",
+    "form8959",
+    "form8960",
+    "form8962",
+    "form8995",
+    "general",
+    "income_tax_calculation",
+    "schedule1",
+    "schedule2",
+    "schedule_a",
+    "schedule_b",
+    "schedule_c",
+    "schedule_se",
+    "standard_deduction"
+  ],
+  "lines": {
+    "filing_status": "single",
+    "dependent_count": 0,
+    "qualifying_child_tax_credit_count": 0,
+    "other_dependent_count": 0,
+    "taxpayer_first_name": "Sample",
+    "taxpayer_last_name": "Freelancer",
+    "taxpayer_dob": "1990-01-01",
+    "taxpayer_occupation": "Freelancer",
+    "digital_assets": false,
+    "line26_estimated_tax": [
+      1050,
+      1050
+    ],
+    "line2b_taxable_interest": [
+      77.75,
+      77.75
+    ],
+    "line11_agi": [
+      8541.379527795001,
+      8541.379527795001
+    ],
+    "line8_additional_income": 9107.02,
+    "line10_adjustments": [
+      643.390472205,
+      643.390472205
+    ],
+    "line12e_itemized_deductions": [
+      0,
+      0
+    ],
+    "line27_eitc": 649,
+    "line12a_standard_deduction": [
+      15750,
+      15750
+    ],
+    "line15_taxable_income": [
+      0,
+      0
+    ],
+    "line17_additional_taxes": [
+      1286.78094441,
+      1286.78094441
+    ],
+    "line1z_total_wages": 0,
+    "line9_total_income": 9184.77,
+    "line18_total_tax_before_credits": 1286.78094441,
+    "line21_credits_total": 0,
+    "line22_tax_after_credits": 1286.78094441,
+    "line24_total_tax": 1286.78094441,
+    "line25d_total_withholding": 0,
+    "line33_total_payments": 1699,
+    "line14_deductions_qbi_total": 15750,
+    "line32_refundable_credits_total": 649,
+    "line34_overpayment": 412.2190555899999,
+    "line35a_refund": 412.2190555899999
+  },
+  "warnings": [
+    "[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  ]
+}
+
+$ opentax return validate --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --format json
+exit=0
+stdout:
+{
+  "entries": [
+    {
+      "ruleNumber": "EXECUTOR_NODE_FAILURE",
+      "severity": "reject",
+      "category": "general",
+      "message": "f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+      "formRef": "f2441"
+    },
+    {
+      "ruleNumber": "F1040-066-09",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 1040, 'TotalPaymentsAmt' must be equal to the sum of the following: 'WithholdingTaxAmt' and 'EstimatedTaxPaymentsAmt' and 'EarnedIncomeCreditAmt' and 'AdditionalChildTaxCreditAmt' and 'RefundableAmerOppCreditAmt' and 'form8689Amt' and Schedule 3 (Form 1040), [ 'ReconciledPremiumTaxCreditAmt' and 'RequestForExtensionAmt' and 'ExcessSocSecAndTier1RRTATaxAmt' and 'TotalFuelTaxCreditAmt' and 'OtherPaymentsAmt' ].",
+      "formRef": "Form 1040"
+    },
+    {
+      "ruleNumber": "F2210-002-02",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "On Form 2210, Part II, one of more of the following checkboxes must be checked: (Line A 'WaiverOfEntirePenaltyInd' or Line B 'WaiverOfPartOfPenaltyInd' or Line C 'AnnualizedIncomeMethodInd' or Line D 'ActuallyWithheldInd' or Line E 'JointReturnInd').",
+      "formRef": "Form 2210"
+    },
+    {
+      "ruleNumber": "F2439-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2439, 'ShareholderSSN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RegInvstCoOrReInvstTrustName' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-005-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RICOrREITEIN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2555-021",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2555, Line 10 'BonaFideResidenceBeginDt' or Line 16 'PhysicalPresenceBeginDt' must have a value.",
+      "formRef": "Form 2555"
+    },
+    {
+      "ruleNumber": "F461-002-05",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 461,'FilingStatusThresholdCd' must have the value [\"626000\" if the filing status of the return is married filing jointly] or \"313000\" for all other filing status.",
+      "formRef": "Form 461"
+    },
+    {
+      "ruleNumber": "F4952-001",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 4952, Line 1 'InvestmentInterestExpenseAmt' or Line 2 'PriorYrDisallowInvsmtIntExpAmt' or Line 8 'InvestmentInterestExpDeductAmt' must have a non-zero value.",
+      "formRef": "Form 4952"
+    },
+    {
+      "ruleNumber": "F4972-006",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 4972: Line 7 'CapitalGainTimesElectionPctAmt' or Line 8 'LumpSumDistriOrdinaryIncmAmt' or Line 29 'LumpSumRsdlAnnuityAvgTaxAmt'.",
+      "formRef": "Form 4972"
+    },
+    {
+      "ruleNumber": "F5471-071-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 5471 'EmployerEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 5471"
+    },
+    {
+      "ruleNumber": "F7204-003",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A Binary attachment with the description \"7204SignaturePage\" must be present in the return.",
+      "formRef": "Form 7204"
+    },
+    {
+      "ruleNumber": "F8082-003-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 3 'PassThroughEntityEIN' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8082-004-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 4 'PassThroughEntityName' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8379-001",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "There must be at least one checkbox 'InjuredSpouseInd' checked on Form 8379, Line 10.",
+      "formRef": "Form 8379"
+    },
+    {
+      "ruleNumber": "F8615-003-07",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8615, 'ChildInvestmentIncomeAmt' must be greater than 2700.",
+      "formRef": "Form 8615"
+    },
+    {
+      "ruleNumber": "F8621-007-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8621 'SSN' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8621-026-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "F8621, 'PFICOrQEFEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8814-003-08",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildInvestmentIncomeAmt' must be greater than 1350 and less than 13500.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8814-004-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildSSN' must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8815-001-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 179,250, then filing status in the return must be Married filing jointly.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8815-002-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 114500, then filing status in the return must be Single or Head of household or Qualifying surviving spouse.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8833-001-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8833 'EIN' or 'SSN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8833"
+    },
+    {
+      "ruleNumber": "F8835-041",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'FacilityRqrNotStsfdInd' is checked: 'ProjectNetOutputUnder1MWInd' or 'FcltyConstrBeganBfrSpcfdDtInd' or 'FcltyStsfyWgAprntcshpRqrInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8835-043",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'ACNameplateCapNAInd' is checked: 'ACNameplateCapSolarEgyPropInd', or 'ACNameplateCapWindEgyPropInd', or 'ACNameplateCapOthEgyPropInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8838P-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8838P 'GainDeferralContributionGrp' or 'ContriNotSubjGainDeferralGrp' must have a value.",
+      "formRef": "Form 8838P"
+    },
+    {
+      "ruleNumber": "F8839-009-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Each 'ChildSSN' on Form 8839 must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8839"
+    },
+    {
+      "ruleNumber": "F8853-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853 'LTCInsurancePolicyHolderSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8853-006-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853, 'LTCInsuredSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8858-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8858, Line 1b(1), 'EIN' in 'FDEOrFBUSIdNumberDetail' or Line 1b(2) 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8858"
+    },
+    {
+      "ruleNumber": "F8865-232-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8865 'ForeignPartnershipEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8865"
+    },
+    {
+      "ruleNumber": "F8881-002-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8881, 'PensionPlanStartupCostsCrAmt' must have a non-zero value if an amount is entered.",
+      "formRef": "Form 8881"
+    },
+    {
+      "ruleNumber": "F8888-016",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'DepositorAccountNum' on Form 8888 must not be all zeros.",
+      "formRef": "Form 8888"
+    },
+    {
+      "ruleNumber": "F8959-013",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 8959, Line 12 'SEIncomeSubjToAddSETaxAmt' must be equal to Line 8 'TotalSelfEmploymentIncomeAmt' minus (-) Line 11 'MedcrWagesTipsBelowThrshldAmt'.",
+      "formRef": "Form 8959"
+    },
+    {
+      "ruleNumber": "F8962-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 8962: 'AnnualPremiumAmt' or 'AnnualPremiumSLCSPAmt' or 'AnnualAdvancedPTCAmt' or 'MonthlyPremiumAmt' or 'MonthlyPremiumSLCSPAmt' or 'MonthlyAdvancedPTCAmt'.",
+      "formRef": "Form 8962"
+    },
+    {
+      "ruleNumber": "F8992-006",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A return containing Form 8992 must include a Schedule A (Form 8992) or Schedule B (Form 8992).",
+      "formRef": "Form 8992"
+    },
+    {
+      "ruleNumber": "F926-001-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 926, 'TransfereeEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 926"
+    },
+    {
+      "ruleNumber": "F9465-018-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "In Form 9465, one of the following must have a value: Line 3 Home 'PhoneNum' or Line 4 Work 'PhoneNum' or Line 3 Home 'ForeignPhoneNum' or Line 4 Work 'ForeignPhoneNum'.",
+      "formRef": "Form 9465"
+    },
+    {
+      "ruleNumber": "FW2-002-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form W-2, 'WagesAmt' must have a value greater than zero unless Combat Pay and/or Third-Party Sick Pay has been excluded from income.",
+      "formRef": "Form W-2"
+    },
+    {
+      "ruleNumber": "IND-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'PreparerSSN' in the Return Header must not be all zeros or all nines.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-062",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "IP Address of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Timestamp of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-074",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If 'TotalPaymentsAmt' in the return is not equal to 'TotalTaxAmt', then one of the following must have a non-zero value: 'OverpaidAmt' or 'RefundAmt' or 'AppliedToEsTaxAmt' or 'OwedAmt'.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-189",
+      "severity": "reject_and_stop",
+      "category": "missing_data",
+      "message": "'DeviceId' in 'AtSubmissionCreationGrp' in 'FilingSecurityInformation' in the Return Header must have a value.",
+      "formRef": "Return"
+    }
+  ],
+  "summary": {
+    "total": 1917,
+    "passed": 1278,
+    "rejected": 44,
+    "alerts": 0,
+    "skipped": 595
+  },
+  "canFile": false
+}
+
+$ opentax return create --year 2025
+exit=0
+stdout:
+{
+  "returnId": "cb02c609-83d1-4273-945e-da115e102f11"
+}
+
+$ opentax form add --returnId cb02c609-83d1-4273-945e-da115e102f11 --node_type general "{\"filing_status\":\"single\",\"taxpayer_first_name\":\"Sample\",\"taxpayer_last_name\":\"Freelancer\",\"taxpayer_dob\":\"1990-01-01\",\"taxpayer_occupation\":\"Freelancer\",\"digital_assets\":false}"
+exit=0
+stdout:
+{
+  "id": "general_01",
+  "nodeType": "general"
+}
+
+$ opentax form add --returnId cb02c609-83d1-4273-945e-da115e102f11 --node_type f1099int "{\"payer_name\":\"Synthetic Bank\",\"box1\":77.75}"
+exit=0
+stdout:
+{
+  "id": "f1099int_01",
+  "nodeType": "f1099int"
+}
+
+$ opentax form add --returnId cb02c609-83d1-4273-945e-da115e102f11 --node_type f1040es "{\"payment_q1\":262.5,\"payment_q2\":262.5,\"payment_q3\":262.5,\"payment_q4\":262.5}"
+exit=0
+stdout:
+{
+  "id": "f1040es_01",
+  "nodeType": "f1040es"
+}
+
+$ opentax form add --returnId cb02c609-83d1-4273-945e-da115e102f11 --node_type schedule_c "{\"line_a_principal_business\":\"AI engineering consulting\",\"line_b_business_code\":\"541511\",\"line_c_business_name\":\"Sample Freelancer\",\"line_f_accounting_method\":\"cash\",\"line_g_material_participation\":true,\"line_1_gross_receipts\":10250,\"line_18_office_expense\":320,\"line_20b_rent_other\":210,\"line_22_supplies\":74.23,\"line_24a_travel\":38.75,\"part_v_other_expenses\":[{\"description\":\"Software\",\"amount\":239},{\"description\":\"Bank fees\",\"amount\":12},{\"description\":\"Professional education\",\"amount\":249},{\"description\":\"Year-end software add-transaction test\",\"amount\":24.99}]}"
+exit=0
+stdout:
+{
+  "id": "schedule_c_01",
+  "nodeType": "schedule_c"
+}
+
+$ opentax form list --returnId cb02c609-83d1-4273-945e-da115e102f11
+exit=0
+stdout:
+[
+  {
+    "nodeType": "general",
+    "id": "general_01",
+    "fields": {
+      "filing_status": "single",
+      "taxpayer_first_name": "Sample",
+      "taxpayer_last_name": "Freelancer",
+      "taxpayer_dob": "1990-01-01",
+      "taxpayer_occupation": "Freelancer",
+      "digital_assets": false
+    }
+  },
+  {
+    "nodeType": "f1099int",
+    "id": "f1099int_01",
+    "fields": {
+      "payer_name": "Synthetic Bank",
+      "box1": 77.75
+    }
+  },
+  {
+    "nodeType": "f1040es",
+    "id": "f1040es_01",
+    "fields": {
+      "payment_q1": 262.5,
+      "payment_q2": 262.5,
+      "payment_q3": 262.5,
+      "payment_q4": 262.5
+    }
+  },
+  {
+    "nodeType": "schedule_c",
+    "id": "schedule_c_01",
+    "fields": {
+      "line_a_principal_business": "AI engineering consulting",
+      "line_b_business_code": "541511",
+      "line_c_business_name": "Sample Freelancer",
+      "line_f_accounting_method": "cash",
+      "line_g_material_participation": true,
+      "line_1_gross_receipts": 10250,
+      "line_18_office_expense": 320,
+      "line_20b_rent_other": 210,
+      "line_22_supplies": 74.23,
+      "line_24a_travel": 38.75,
+      "part_v_other_expenses": [
+        {
+          "description": "Software",
+          "amount": 239
+        },
+        {
+          "description": "Bank fees",
+          "amount": 12
+        },
+        {
+          "description": "Professional education",
+          "amount": 249
+        },
+        {
+          "description": "Year-end software add-transaction test",
+          "amount": 24.99
+        }
+      ]
+    }
+  }
+]
+
+$ opentax return get --returnId cb02c609-83d1-4273-945e-da115e102f11
+exit=0
+stdout:
+{
+  "returnId": "cb02c609-83d1-4273-945e-da115e102f11",
+  "year": 2025,
+  "summary": {
+    "line1z_total_wages": 0,
+    "line9_total_income": 9159.78,
+    "line11_agi": 8518.155015067501,
+    "line15_taxable_income": 0,
+    "line24_total_tax": 1283.2499698650001,
+    "line33_total_payments": 1699,
+    "line35a_refund": 415.75003013499986
+  },
+  "forms": [
+    "agi_aggregator",
+    "eitc",
+    "f1040",
+    "f1040es",
+    "f1099int",
+    "f2441",
+    "f8812",
+    "form8880",
+    "form8959",
+    "form8960",
+    "form8962",
+    "form8995",
+    "general",
+    "income_tax_calculation",
+    "schedule1",
+    "schedule2",
+    "schedule_a",
+    "schedule_b",
+    "schedule_c",
+    "schedule_se",
+    "standard_deduction"
+  ],
+  "lines": {
+    "filing_status": "single",
+    "dependent_count": 0,
+    "qualifying_child_tax_credit_count": 0,
+    "other_dependent_count": 0,
+    "taxpayer_first_name": "Sample",
+    "taxpayer_last_name": "Freelancer",
+    "taxpayer_dob": "1990-01-01",
+    "taxpayer_occupation": "Freelancer",
+    "digital_assets": false,
+    "line26_estimated_tax": [
+      1050,
+      1050
+    ],
+    "line2b_taxable_interest": [
+      77.75,
+      77.75
+    ],
+    "line11_agi": [
+      8518.155015067501,
+      8518.155015067501
+    ],
+    "line8_additional_income": 9082.03,
+    "line10_adjustments": [
+      641.6249849325001,
+      641.6249849325001
+    ],
+    "line12e_itemized_deductions": [
+      0,
+      0
+    ],
+    "line27_eitc": 649,
+    "line12a_standard_deduction": [
+      15750,
+      15750
+    ],
+    "line15_taxable_income": [
+      0,
+      0
+    ],
+    "line17_additional_taxes": [
+      1283.2499698650001,
+      1283.2499698650001
+    ],
+    "line1z_total_wages": 0,
+    "line9_total_income": 9159.78,
+    "line18_total_tax_before_credits": 1283.2499698650001,
+    "line21_credits_total": 0,
+    "line22_tax_after_credits": 1283.2499698650001,
+    "line24_total_tax": 1283.2499698650001,
+    "line25d_total_withholding": 0,
+    "line33_total_payments": 1699,
+    "line14_deductions_qbi_total": 15750,
+    "line32_refundable_credits_total": 649,
+    "line34_overpayment": 415.75003013499986,
+    "line35a_refund": 415.75003013499986
+  },
+  "warnings": [
+    "[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  ]
+}
+
+$ opentax return validate --returnId cb02c609-83d1-4273-945e-da115e102f11 --format json
+exit=0
+stdout:
+{
+  "entries": [
+    {
+      "ruleNumber": "EXECUTOR_NODE_FAILURE",
+      "severity": "reject",
+      "category": "general",
+      "message": "f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+      "formRef": "f2441"
+    },
+    {
+      "ruleNumber": "F1040-066-09",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 1040, 'TotalPaymentsAmt' must be equal to the sum of the following: 'WithholdingTaxAmt' and 'EstimatedTaxPaymentsAmt' and 'EarnedIncomeCreditAmt' and 'AdditionalChildTaxCreditAmt' and 'RefundableAmerOppCreditAmt' and 'form8689Amt' and Schedule 3 (Form 1040), [ 'ReconciledPremiumTaxCreditAmt' and 'RequestForExtensionAmt' and 'ExcessSocSecAndTier1RRTATaxAmt' and 'TotalFuelTaxCreditAmt' and 'OtherPaymentsAmt' ].",
+      "formRef": "Form 1040"
+    },
+    {
+      "ruleNumber": "F2210-002-02",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "On Form 2210, Part II, one of more of the following checkboxes must be checked: (Line A 'WaiverOfEntirePenaltyInd' or Line B 'WaiverOfPartOfPenaltyInd' or Line C 'AnnualizedIncomeMethodInd' or Line D 'ActuallyWithheldInd' or Line E 'JointReturnInd').",
+      "formRef": "Form 2210"
+    },
+    {
+      "ruleNumber": "F2439-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2439, 'ShareholderSSN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RegInvstCoOrReInvstTrustName' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-005-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RICOrREITEIN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2555-021",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2555, Line 10 'BonaFideResidenceBeginDt' or Line 16 'PhysicalPresenceBeginDt' must have a value.",
+      "formRef": "Form 2555"
+    },
+    {
+      "ruleNumber": "F461-002-05",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 461,'FilingStatusThresholdCd' must have the value [\"626000\" if the filing status of the return is married filing jointly] or \"313000\" for all other filing status.",
+      "formRef": "Form 461"
+    },
+    {
+      "ruleNumber": "F4952-001",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 4952, Line 1 'InvestmentInterestExpenseAmt' or Line 2 'PriorYrDisallowInvsmtIntExpAmt' or Line 8 'InvestmentInterestExpDeductAmt' must have a non-zero value.",
+      "formRef": "Form 4952"
+    },
+    {
+      "ruleNumber": "F4972-006",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 4972: Line 7 'CapitalGainTimesElectionPctAmt' or Line 8 'LumpSumDistriOrdinaryIncmAmt' or Line 29 'LumpSumRsdlAnnuityAvgTaxAmt'.",
+      "formRef": "Form 4972"
+    },
+    {
+      "ruleNumber": "F5471-071-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 5471 'EmployerEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 5471"
+    },
+    {
+      "ruleNumber": "F7204-003",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A Binary attachment with the description \"7204SignaturePage\" must be present in the return.",
+      "formRef": "Form 7204"
+    },
+    {
+      "ruleNumber": "F8082-003-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 3 'PassThroughEntityEIN' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8082-004-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 4 'PassThroughEntityName' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8379-001",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "There must be at least one checkbox 'InjuredSpouseInd' checked on Form 8379, Line 10.",
+      "formRef": "Form 8379"
+    },
+    {
+      "ruleNumber": "F8615-003-07",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8615, 'ChildInvestmentIncomeAmt' must be greater than 2700.",
+      "formRef": "Form 8615"
+    },
+    {
+      "ruleNumber": "F8621-007-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8621 'SSN' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8621-026-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "F8621, 'PFICOrQEFEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8814-003-08",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildInvestmentIncomeAmt' must be greater than 1350 and less than 13500.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8814-004-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildSSN' must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8815-001-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 179,250, then filing status in the return must be Married filing jointly.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8815-002-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 114500, then filing status in the return must be Single or Head of household or Qualifying surviving spouse.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8833-001-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8833 'EIN' or 'SSN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8833"
+    },
+    {
+      "ruleNumber": "F8835-041",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'FacilityRqrNotStsfdInd' is checked: 'ProjectNetOutputUnder1MWInd' or 'FcltyConstrBeganBfrSpcfdDtInd' or 'FcltyStsfyWgAprntcshpRqrInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8835-043",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'ACNameplateCapNAInd' is checked: 'ACNameplateCapSolarEgyPropInd', or 'ACNameplateCapWindEgyPropInd', or 'ACNameplateCapOthEgyPropInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8838P-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8838P 'GainDeferralContributionGrp' or 'ContriNotSubjGainDeferralGrp' must have a value.",
+      "formRef": "Form 8838P"
+    },
+    {
+      "ruleNumber": "F8839-009-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Each 'ChildSSN' on Form 8839 must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8839"
+    },
+    {
+      "ruleNumber": "F8853-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853 'LTCInsurancePolicyHolderSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8853-006-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853, 'LTCInsuredSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8858-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8858, Line 1b(1), 'EIN' in 'FDEOrFBUSIdNumberDetail' or Line 1b(2) 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8858"
+    },
+    {
+      "ruleNumber": "F8865-232-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8865 'ForeignPartnershipEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8865"
+    },
+    {
+      "ruleNumber": "F8881-002-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8881, 'PensionPlanStartupCostsCrAmt' must have a non-zero value if an amount is entered.",
+      "formRef": "Form 8881"
+    },
+    {
+      "ruleNumber": "F8888-016",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'DepositorAccountNum' on Form 8888 must not be all zeros.",
+      "formRef": "Form 8888"
+    },
+    {
+      "ruleNumber": "F8959-013",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 8959, Line 12 'SEIncomeSubjToAddSETaxAmt' must be equal to Line 8 'TotalSelfEmploymentIncomeAmt' minus (-) Line 11 'MedcrWagesTipsBelowThrshldAmt'.",
+      "formRef": "Form 8959"
+    },
+    {
+      "ruleNumber": "F8962-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 8962: 'AnnualPremiumAmt' or 'AnnualPremiumSLCSPAmt' or 'AnnualAdvancedPTCAmt' or 'MonthlyPremiumAmt' or 'MonthlyPremiumSLCSPAmt' or 'MonthlyAdvancedPTCAmt'.",
+      "formRef": "Form 8962"
+    },
+    {
+      "ruleNumber": "F8992-006",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A return containing Form 8992 must include a Schedule A (Form 8992) or Schedule B (Form 8992).",
+      "formRef": "Form 8992"
+    },
+    {
+      "ruleNumber": "F926-001-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 926, 'TransfereeEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 926"
+    },
+    {
+      "ruleNumber": "F9465-018-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "In Form 9465, one of the following must have a value: Line 3 Home 'PhoneNum' or Line 4 Work 'PhoneNum' or Line 3 Home 'ForeignPhoneNum' or Line 4 Work 'ForeignPhoneNum'.",
+      "formRef": "Form 9465"
+    },
+    {
+      "ruleNumber": "FW2-002-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form W-2, 'WagesAmt' must have a value greater than zero unless Combat Pay and/or Third-Party Sick Pay has been excluded from income.",
+      "formRef": "Form W-2"
+    },
+    {
+      "ruleNumber": "IND-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'PreparerSSN' in the Return Header must not be all zeros or all nines.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-062",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "IP Address of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Timestamp of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-074",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If 'TotalPaymentsAmt' in the return is not equal to 'TotalTaxAmt', then one of the following must have a non-zero value: 'OverpaidAmt' or 'RefundAmt' or 'AppliedToEsTaxAmt' or 'OwedAmt'.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-189",
+      "severity": "reject_and_stop",
+      "category": "missing_data",
+      "message": "'DeviceId' in 'AtSubmissionCreationGrp' in 'FilingSecurityInformation' in the Return Header must have a value.",
+      "formRef": "Return"
+    }
+  ],
+  "summary": {
+    "total": 1917,
+    "passed": 1278,
+    "rejected": 44,
+    "alerts": 0,
+    "skipped": 595
+  },
+  "canFile": false
+}
+
+$ opentax return create --year 2025
+exit=0
+stdout:
+{
+  "returnId": "c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf"
+}
+
+$ opentax form add --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --node_type general "{\"filing_status\":\"single\",\"taxpayer_first_name\":\"Sample\",\"taxpayer_last_name\":\"Freelancer\",\"taxpayer_dob\":\"1990-01-01\",\"taxpayer_occupation\":\"Freelancer\",\"digital_assets\":false}"
+exit=0
+stdout:
+{
+  "id": "general_01",
+  "nodeType": "general"
+}
+
+$ opentax form add --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --node_type f1099int "{\"payer_name\":\"Synthetic Bank\",\"box1\":77.75}"
+exit=0
+stdout:
+{
+  "id": "f1099int_01",
+  "nodeType": "f1099int"
+}
+
+$ opentax form add --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --node_type f1040es "{\"payment_q1\":262.5,\"payment_q2\":262.5,\"payment_q3\":262.5,\"payment_q4\":262.5}"
+exit=0
+stdout:
+{
+  "id": "f1040es_01",
+  "nodeType": "f1040es"
+}
+
+$ opentax form add --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --node_type schedule_c "{\"line_a_principal_business\":\"AI engineering consulting\",\"line_b_business_code\":\"541511\",\"line_c_business_name\":\"Sample Freelancer\",\"line_f_accounting_method\":\"cash\",\"line_g_material_participation\":true,\"line_1_gross_receipts\":10250,\"line_18_office_expense\":320,\"line_20b_rent_other\":210,\"line_22_supplies\":74.23,\"line_24a_travel\":38.75,\"part_v_other_expenses\":[{\"description\":\"Software\",\"amount\":239},{\"description\":\"Bank fees\",\"amount\":12},{\"description\":\"Professional education\",\"amount\":249}]}"
+exit=0
+stdout:
+{
+  "id": "schedule_c_01",
+  "nodeType": "schedule_c"
+}
+
+$ opentax form add --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --node_type schedule_a "{\"force_itemized\":true,\"line_11_cash_contributions\":370}"
+exit=0
+stdout:
+{
+  "id": "schedule_a_01",
+  "nodeType": "schedule_a"
+}
+
+$ opentax form list --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf
+exit=0
+stdout:
+[
+  {
+    "nodeType": "general",
+    "id": "general_01",
+    "fields": {
+      "filing_status": "single",
+      "taxpayer_first_name": "Sample",
+      "taxpayer_last_name": "Freelancer",
+      "taxpayer_dob": "1990-01-01",
+      "taxpayer_occupation": "Freelancer",
+      "digital_assets": false
+    }
+  },
+  {
+    "nodeType": "f1099int",
+    "id": "f1099int_01",
+    "fields": {
+      "payer_name": "Synthetic Bank",
+      "box1": 77.75
+    }
+  },
+  {
+    "nodeType": "f1040es",
+    "id": "f1040es_01",
+    "fields": {
+      "payment_q1": 262.5,
+      "payment_q2": 262.5,
+      "payment_q3": 262.5,
+      "payment_q4": 262.5
+    }
+  },
+  {
+    "nodeType": "schedule_c",
+    "id": "schedule_c_01",
+    "fields": {
+      "line_a_principal_business": "AI engineering consulting",
+      "line_b_business_code": "541511",
+      "line_c_business_name": "Sample Freelancer",
+      "line_f_accounting_method": "cash",
+      "line_g_material_participation": true,
+      "line_1_gross_receipts": 10250,
+      "line_18_office_expense": 320,
+      "line_20b_rent_other": 210,
+      "line_22_supplies": 74.23,
+      "line_24a_travel": 38.75,
+      "part_v_other_expenses": [
+        {
+          "description": "Software",
+          "amount": 239
+        },
+        {
+          "description": "Bank fees",
+          "amount": 12
+        },
+        {
+          "description": "Professional education",
+          "amount": 249
+        }
+      ]
+    }
+  },
+  {
+    "nodeType": "schedule_a",
+    "id": "schedule_a_01",
+    "fields": {
+      "force_itemized": true,
+      "line_11_cash_contributions": 370
+    }
+  }
+]
+
+$ opentax return get --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf
+exit=0
+stdout:
+{
+  "returnId": "c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf",
+  "year": 2025,
+  "summary": {
+    "line1z_total_wages": 0,
+    "line9_total_income": 9184.77,
+    "line11_agi": 8541.379527795001,
+    "line15_taxable_income": 0,
+    "line24_total_tax": 1286.78094441,
+    "line33_total_payments": 1699,
+    "line35a_refund": 412.2190555899999
+  },
+  "forms": [
+    "agi_aggregator",
+    "eitc",
+    "f1040",
+    "f1040es",
+    "f1099int",
+    "f2441",
+    "f8812",
+    "form8880",
+    "form8959",
+    "form8960",
+    "form8962",
+    "form8995",
+    "general",
+    "income_tax_calculation",
+    "schedule1",
+    "schedule2",
+    "schedule_a",
+    "schedule_b",
+    "schedule_c",
+    "schedule_se",
+    "standard_deduction"
+  ],
+  "lines": {
+    "filing_status": "single",
+    "dependent_count": 0,
+    "qualifying_child_tax_credit_count": 0,
+    "other_dependent_count": 0,
+    "taxpayer_first_name": "Sample",
+    "taxpayer_last_name": "Freelancer",
+    "taxpayer_dob": "1990-01-01",
+    "taxpayer_occupation": "Freelancer",
+    "digital_assets": false,
+    "line26_estimated_tax": [
+      1050,
+      1050
+    ],
+    "line2b_taxable_interest": [
+      77.75,
+      77.75
+    ],
+    "line11_agi": [
+      8541.379527795001,
+      8541.379527795001
+    ],
+    "line8_additional_income": 9107.02,
+    "line10_adjustments": [
+      643.390472205,
+      643.390472205
+    ],
+    "line12e_itemized_deductions": [
+      370,
+      370
+    ],
+    "line27_eitc": 649,
+    "line12a_standard_deduction": [
+      15750,
+      15750
+    ],
+    "line15_taxable_income": [
+      0,
+      0
+    ],
+    "line17_additional_taxes": [
+      1286.78094441,
+      1286.78094441
+    ],
+    "line1z_total_wages": 0,
+    "line9_total_income": 9184.77,
+    "line18_total_tax_before_credits": 1286.78094441,
+    "line21_credits_total": 0,
+    "line22_tax_after_credits": 1286.78094441,
+    "line24_total_tax": 1286.78094441,
+    "line25d_total_withholding": 0,
+    "line33_total_payments": 1699,
+    "line14_deductions_qbi_total": 370,
+    "line32_refundable_credits_total": 649,
+    "line34_overpayment": 412.2190555899999,
+    "line35a_refund": 412.2190555899999
+  },
+  "warnings": [
+    "[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+  ]
+}
+
+$ opentax return validate --returnId c70f4b3f-a3d9-443e-8789-ad49dc4c4eaf --format json
+exit=0
+stdout:
+{
+  "entries": [
+    {
+      "ruleNumber": "EXECUTOR_NODE_FAILURE",
+      "severity": "reject",
+      "category": "general",
+      "message": "f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]",
+      "formRef": "f2441"
+    },
+    {
+      "ruleNumber": "F1040-066-09",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 1040, 'TotalPaymentsAmt' must be equal to the sum of the following: 'WithholdingTaxAmt' and 'EstimatedTaxPaymentsAmt' and 'EarnedIncomeCreditAmt' and 'AdditionalChildTaxCreditAmt' and 'RefundableAmerOppCreditAmt' and 'form8689Amt' and Schedule 3 (Form 1040), [ 'ReconciledPremiumTaxCreditAmt' and 'RequestForExtensionAmt' and 'ExcessSocSecAndTier1RRTATaxAmt' and 'TotalFuelTaxCreditAmt' and 'OtherPaymentsAmt' ].",
+      "formRef": "Form 1040"
+    },
+    {
+      "ruleNumber": "F2210-002-02",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "On Form 2210, Part II, one of more of the following checkboxes must be checked: (Line A 'WaiverOfEntirePenaltyInd' or Line B 'WaiverOfPartOfPenaltyInd' or Line C 'AnnualizedIncomeMethodInd' or Line D 'ActuallyWithheldInd' or Line E 'JointReturnInd').",
+      "formRef": "Form 2210"
+    },
+    {
+      "ruleNumber": "F2439-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2439, 'ShareholderSSN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RegInvstCoOrReInvstTrustName' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2439-005-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If Form 2439 is present in the return, then 'RICOrREITEIN' must have a value.",
+      "formRef": "Form 2439"
+    },
+    {
+      "ruleNumber": "F2555-021",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 2555, Line 10 'BonaFideResidenceBeginDt' or Line 16 'PhysicalPresenceBeginDt' must have a value.",
+      "formRef": "Form 2555"
+    },
+    {
+      "ruleNumber": "F461-002-05",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 461,'FilingStatusThresholdCd' must have the value [\"626000\" if the filing status of the return is married filing jointly] or \"313000\" for all other filing status.",
+      "formRef": "Form 461"
+    },
+    {
+      "ruleNumber": "F4952-001",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 4952, Line 1 'InvestmentInterestExpenseAmt' or Line 2 'PriorYrDisallowInvsmtIntExpAmt' or Line 8 'InvestmentInterestExpDeductAmt' must have a non-zero value.",
+      "formRef": "Form 4952"
+    },
+    {
+      "ruleNumber": "F4972-006",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 4972: Line 7 'CapitalGainTimesElectionPctAmt' or Line 8 'LumpSumDistriOrdinaryIncmAmt' or Line 29 'LumpSumRsdlAnnuityAvgTaxAmt'.",
+      "formRef": "Form 4972"
+    },
+    {
+      "ruleNumber": "F5471-071-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 5471 'EmployerEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 5471"
+    },
+    {
+      "ruleNumber": "F7204-003",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A Binary attachment with the description \"7204SignaturePage\" must be present in the return.",
+      "formRef": "Form 7204"
+    },
+    {
+      "ruleNumber": "F8082-003-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 3 'PassThroughEntityEIN' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8082-004-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8082, Line 4 'PassThroughEntityName' must have a value.",
+      "formRef": "Form 8082"
+    },
+    {
+      "ruleNumber": "F8379-001",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "There must be at least one checkbox 'InjuredSpouseInd' checked on Form 8379, Line 10.",
+      "formRef": "Form 8379"
+    },
+    {
+      "ruleNumber": "F8615-003-07",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8615, 'ChildInvestmentIncomeAmt' must be greater than 2700.",
+      "formRef": "Form 8615"
+    },
+    {
+      "ruleNumber": "F8621-007-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8621 'SSN' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8621-026-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "F8621, 'PFICOrQEFEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8621"
+    },
+    {
+      "ruleNumber": "F8814-003-08",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildInvestmentIncomeAmt' must be greater than 1350 and less than 13500.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8814-004-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8814, 'ChildSSN' must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8814"
+    },
+    {
+      "ruleNumber": "F8815-001-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 179,250, then filing status in the return must be Married filing jointly.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8815-002-14",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 114500, then filing status in the return must be Single or Head of household or Qualifying surviving spouse.",
+      "formRef": "Form 8815"
+    },
+    {
+      "ruleNumber": "F8833-001-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8833 'EIN' or 'SSN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8833"
+    },
+    {
+      "ruleNumber": "F8835-041",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'FacilityRqrNotStsfdInd' is checked: 'ProjectNetOutputUnder1MWInd' or 'FcltyConstrBeganBfrSpcfdDtInd' or 'FcltyStsfyWgAprntcshpRqrInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8835-043",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "At least one of the following must be checked on Form 8835 unless 'ACNameplateCapNAInd' is checked: 'ACNameplateCapSolarEgyPropInd', or 'ACNameplateCapWindEgyPropInd', or 'ACNameplateCapOthEgyPropInd'.",
+      "formRef": "Form 8835"
+    },
+    {
+      "ruleNumber": "F8838P-004",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8838P 'GainDeferralContributionGrp' or 'ContriNotSubjGainDeferralGrp' must have a value.",
+      "formRef": "Form 8838P"
+    },
+    {
+      "ruleNumber": "F8839-009-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Each 'ChildSSN' on Form 8839 must be within the valid range of SSN/ITIN/ATIN.",
+      "formRef": "Form 8839"
+    },
+    {
+      "ruleNumber": "F8853-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853 'LTCInsurancePolicyHolderSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8853-006-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form 8853, 'LTCInsuredSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.",
+      "formRef": "Form 8853"
+    },
+    {
+      "ruleNumber": "F8858-003-02",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8858, Line 1b(1), 'EIN' in 'FDEOrFBUSIdNumberDetail' or Line 1b(2) 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8858"
+    },
+    {
+      "ruleNumber": "F8865-232-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8865 'ForeignPartnershipEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 8865"
+    },
+    {
+      "ruleNumber": "F8881-002-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 8881, 'PensionPlanStartupCostsCrAmt' must have a non-zero value if an amount is entered.",
+      "formRef": "Form 8881"
+    },
+    {
+      "ruleNumber": "F8888-016",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'DepositorAccountNum' on Form 8888 must not be all zeros.",
+      "formRef": "Form 8888"
+    },
+    {
+      "ruleNumber": "F8959-013",
+      "severity": "reject",
+      "category": "math_error",
+      "message": "Form 8959, Line 12 'SEIncomeSubjToAddSETaxAmt' must be equal to Line 8 'TotalSelfEmploymentIncomeAmt' minus (-) Line 11 'MedcrWagesTipsBelowThrshldAmt'.",
+      "formRef": "Form 8959"
+    },
+    {
+      "ruleNumber": "F8962-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "At least one of the following must have a non-zero value on Form 8962: 'AnnualPremiumAmt' or 'AnnualPremiumSLCSPAmt' or 'AnnualAdvancedPTCAmt' or 'MonthlyPremiumAmt' or 'MonthlyPremiumSLCSPAmt' or 'MonthlyAdvancedPTCAmt'.",
+      "formRef": "Form 8962"
+    },
+    {
+      "ruleNumber": "F8992-006",
+      "severity": "reject",
+      "category": "missing_document",
+      "message": "A return containing Form 8992 must include a Schedule A (Form 8992) or Schedule B (Form 8992).",
+      "formRef": "Form 8992"
+    },
+    {
+      "ruleNumber": "F926-001-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Form 926, 'TransfereeEIN' or 'ForeignEntityReferenceIdNum' must have a value.",
+      "formRef": "Form 926"
+    },
+    {
+      "ruleNumber": "F9465-018-01",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "In Form 9465, one of the following must have a value: Line 3 Home 'PhoneNum' or Line 4 Work 'PhoneNum' or Line 3 Home 'ForeignPhoneNum' or Line 4 Work 'ForeignPhoneNum'.",
+      "formRef": "Form 9465"
+    },
+    {
+      "ruleNumber": "FW2-002-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "Form W-2, 'WagesAmt' must have a value greater than zero unless Combat Pay and/or Third-Party Sick Pay has been excluded from income.",
+      "formRef": "Form W-2"
+    },
+    {
+      "ruleNumber": "IND-001-01",
+      "severity": "reject",
+      "category": "incorrect_data",
+      "message": "'PreparerSSN' in the Return Header must not be all zeros or all nines.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-062",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "IP Address of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-063",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "Timestamp of the Transmitter must have a value.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-074",
+      "severity": "reject",
+      "category": "missing_data",
+      "message": "If 'TotalPaymentsAmt' in the return is not equal to 'TotalTaxAmt', then one of the following must have a non-zero value: 'OverpaidAmt' or 'RefundAmt' or 'AppliedToEsTaxAmt' or 'OwedAmt'.",
+      "formRef": "Return"
+    },
+    {
+      "ruleNumber": "IND-189",
+      "severity": "reject_and_stop",
+      "category": "missing_data",
+      "message": "'DeviceId' in 'AtSubmissionCreationGrp' in 'FilingSecurityInformation' in the Return Header must have a value.",
+      "formRef": "Return"
+    }
+  ],
+  "summary": {
+    "total": 1917,
+    "passed": 1278,
+    "rejected": 44,
+    "alerts": 0,
+    "skipped": 595
+  },
+  "canFile": false
+}
+
+$ opentax return export --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --type mef
+exit=1
+stderr:
+[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node "f2441": [
+  {
+    "code": "invalid_type",
+    "expected": "array",
+    "received": "undefined",
+    "path": [
+      "f2441s"
+    ],
+    "message": "Required"
+  }
+]
+[WARNING] 1 node(s) failed during execution — exported output may be incomplete.
+Error: Export blocked by 43 reject-level rule(s):
+  [F1040-066-09] Form 1040, 'TotalPaymentsAmt' must be equal to the sum of the following: 'WithholdingTaxAmt' and 'EstimatedTaxPaymentsAmt' and 'EarnedIncomeCreditAmt' and 'AdditionalChildTaxCreditAmt' and 'RefundableAmerOppCreditAmt' and 'form8689Amt' and Schedule 3 (Form 1040), [ 'ReconciledPremiumTaxCreditAmt' and 'RequestForExtensionAmt' and 'ExcessSocSecAndTier1RRTATaxAmt' and 'TotalFuelTaxCreditAmt' and 'OtherPaymentsAmt' ].
+  [F2210-002-02] On Form 2210, Part II, one of more of the following checkboxes must be checked: (Line A 'WaiverOfEntirePenaltyInd' or Line B 'WaiverOfPartOfPenaltyInd' or Line C 'AnnualizedIncomeMethodInd' or Line D 'ActuallyWithheldInd' or Line E 'JointReturnInd').
+  [F2439-003-02] Form 2439, 'ShareholderSSN' must have a value.
+  [F2439-004] If Form 2439 is present in the return, then 'RegInvstCoOrReInvstTrustName' must have a value.
+  [F2439-005-01] If Form 2439 is present in the return, then 'RICOrREITEIN' must have a value.
+  [F2555-021] Form 2555, Line 10 'BonaFideResidenceBeginDt' or Line 16 'PhysicalPresenceBeginDt' must have a value.
+  [F461-002-05] Form 461,'FilingStatusThresholdCd' must have the value ["626000" if the filing status of the return is married filing jointly] or "313000" for all other filing status.
+  [F4952-001] Form 4952, Line 1 'InvestmentInterestExpenseAmt' or Line 2 'PriorYrDisallowInvsmtIntExpAmt' or Line 8 'InvestmentInterestExpDeductAmt' must have a non-zero value.
+  [F4972-006] At least one of the following must have a non-zero value on Form 4972: Line 7 'CapitalGainTimesElectionPctAmt' or Line 8 'LumpSumDistriOrdinaryIncmAmt' or Line 29 'LumpSumRsdlAnnuityAvgTaxAmt'.
+  [F5471-071-01] Form 5471 'EmployerEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F7204-003] A Binary attachment with the description "7204SignaturePage" must be present in the return.
+  [F8082-003-01] Form 8082, Line 3 'PassThroughEntityEIN' must have a value.
+  [F8082-004-02] Form 8082, Line 4 'PassThroughEntityName' must have a value.
+  [F8379-001] There must be at least one checkbox 'InjuredSpouseInd' checked on Form 8379, Line 10.
+  [F8615-003-07] Form 8615, 'ChildInvestmentIncomeAmt' must be greater than 2700.
+  [F8621-007-01] Form 8621 'SSN' must have a value.
+  [F8621-026-02] F8621, 'PFICOrQEFEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8814-003-08] Form 8814, 'ChildInvestmentIncomeAmt' must be greater than 1350 and less than 13500.
+  [F8814-004-01] Form 8814, 'ChildSSN' must be within the valid range of SSN/ITIN/ATIN.
+  [F8815-001-14] If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 179,250, then filing status in the return must be Married filing jointly.
+  [F8815-002-14] If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 114500, then filing status in the return must be Single or Head of household or Qualifying surviving spouse.
+  [F8833-001-02] Form 8833 'EIN' or 'SSN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8835-041] At least one of the following must be checked on Form 8835 unless 'FacilityRqrNotStsfdInd' is checked: 'ProjectNetOutputUnder1MWInd' or 'FcltyConstrBeganBfrSpcfdDtInd' or 'FcltyStsfyWgAprntcshpRqrInd'.
+  [F8835-043] At least one of the following must be checked on Form 8835 unless 'ACNameplateCapNAInd' is checked: 'ACNameplateCapSolarEgyPropInd', or 'ACNameplateCapWindEgyPropInd', or 'ACNameplateCapOthEgyPropInd'.
+  [F8838P-004] Form 8838P 'GainDeferralContributionGrp' or 'ContriNotSubjGainDeferralGrp' must have a value.
+  [F8839-009-01] Each 'ChildSSN' on Form 8839 must be within the valid range of SSN/ITIN/ATIN.
+  [F8853-001-01] Form 8853 'LTCInsurancePolicyHolderSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.
+  [F8853-006-01] Form 8853, 'LTCInsuredSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.
+  [F8858-003-02] Form 8858, Line 1b(1), 'EIN' in 'FDEOrFBUSIdNumberDetail' or Line 1b(2) 'ForeignEntityReferenceIdNum' must have a value.
+  [F8865-232-01] Form 8865 'ForeignPartnershipEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8881-002-01] Form 8881, 'PensionPlanStartupCostsCrAmt' must have a non-zero value if an amount is entered.
+  [F8888-016] 'DepositorAccountNum' on Form 8888 must not be all zeros.
+  [F8959-013] Form 8959, Line 12 'SEIncomeSubjToAddSETaxAmt' must be equal to Line 8 'TotalSelfEmploymentIncomeAmt' minus (-) Line 11 'MedcrWagesTipsBelowThrshldAmt'.
+  [F8962-063] At least one of the following must have a non-zero value on Form 8962: 'AnnualPremiumAmt' or 'AnnualPremiumSLCSPAmt' or 'AnnualAdvancedPTCAmt' or 'MonthlyPremiumAmt' or 'MonthlyPremiumSLCSPAmt' or 'MonthlyAdvancedPTCAmt'.
+  [F8992-006] A return containing Form 8992 must include a Schedule A (Form 8992) or Schedule B (Form 8992).
+  [F926-001-01] Form 926, 'TransfereeEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F9465-018-01] In Form 9465, one of the following must have a value: Line 3 Home 'PhoneNum' or Line 4 Work 'PhoneNum' or Line 3 Home 'ForeignPhoneNum' or Line 4 Work 'ForeignPhoneNum'.
+  [FW2-002-01] Form W-2, 'WagesAmt' must have a value greater than zero unless Combat Pay and/or Third-Party Sick Pay has been excluded from income.
+  [IND-001-01] 'PreparerSSN' in the Return Header must not be all zeros or all nines.
+  [IND-062] IP Address of the Transmitter must have a value.
+  [IND-063] Timestamp of the Transmitter must have a value.
+  [IND-074] If 'TotalPaymentsAmt' in the return is not equal to 'TotalTaxAmt', then one of the following must have a non-zero value: 'OverpaidAmt' or 'RefundAmt' or 'AppliedToEsTaxAmt' or 'OwedAmt'.
+  [IND-189] 'DeviceId' in 'AtSubmissionCreationGrp' in 'FilingSecurityInformation' in the Return Header must have a value.
+
+Re-run with --force to override.
+
+$ opentax return export --returnId 53704c40-b71e-42ef-bab1-19583e930e84 --type mef --force
+exit=0
+stdout:
+<Return returnVersion="2025v3.0" xmlns="http://www.irs.gov/efile" xmlns:efile="http://www.irs.gov/efile"><ReturnHeader binaryAttachmentCnt="0"><ReturnTs>2026-07-09T04:45:50-05:00</ReturnTs><TaxYr>2025</TaxYr><TaxPeriodBeginDt>2025-01-01</TaxPeriodBeginDt><TaxPeriodEndDt>2025-12-31</TaxPeriodEndDt><SoftwareId>00000001</SoftwareId><OriginatorGrp><EFIN>000000</EFIN><OriginatorTypeCd>ERO</OriginatorTypeCd></OriginatorGrp><PINTypeCd>Self-Select On-Line</PINTypeCd><JuratDisclosureCd>Online Self Select PIN</JuratDisclosureCd><ReturnTypeCd>1040</ReturnTypeCd><Filer><PrimarySSN>000000000</PrimarySSN><NameLine1Txt>UNKNOWN FILER</NameLine1Txt><PrimaryNameControlTxt>UNKN</PrimaryNameControlTxt><USAddress><AddressLine1Txt>123 Main St</AddressLine1Txt><CityNm>Anytown</CityNm><StateAbbreviationCd>CA</StateAbbreviationCd><ZIPCd>00000</ZIPCd></USAddress></Filer></ReturnHeader><ReturnData documentCnt="9"><IRS1040 documentId="IRS10400"><IndividualReturnFilingStatusCd>1</IndividualReturnFilingStatusCd><VirtualCurAcquiredDurTYInd>false</VirtualCurAcquiredDurTYInd><TaxableInterestAmt>78</TaxableInterestAmt><AdditionalTaxAmt>1287</AdditionalTaxAmt><TotalPaymentsAmt>1699</TotalPaymentsAmt><RefundProductCd>NO FINANCIAL PRODUCT</RefundProductCd></IRS1040><IRS1040Schedule1 documentId="IRS1040Schedule11"><BusinessIncomeLossAmt>9107</BusinessIncomeLossAmt><DeductibleSelfEmploymentTaxAmt>643</DeductibleSelfEmploymentTaxAmt></IRS1040Schedule1><IRS1040Schedule2 documentId="IRS1040Schedule22"><SelfEmploymentTaxAmt>1287</SelfEmploymentTaxAmt></IRS1040Schedule2><IRS1040ScheduleA documentId="IRS1040ScheduleA4"><TaxReturnAGIAmt>8541</TaxReturnAGIAmt></IRS1040ScheduleA><IRS1040ScheduleB documentId="IRS1040ScheduleB5"><TaxableInterestSubtotalAmt>78</TaxableInterestSubtotalAmt></IRS1040ScheduleB><IRS1040ScheduleSE documentId="IRS1040ScheduleSE10"><SSN>000000000</SSN><NetNonFarmProfitLossAmt>9107</NetNonFarmProfitLossAmt></IRS1040ScheduleSE><IRS8880 documentId="IRS888038"><TaxReturnAGIAmt>8541</TaxReturnAGIAmt></IRS8880><IRS8959 documentId="IRS895942"><AdditionalTaxGrp><FilingStatusThresholdCd>200000</FilingStatusThresholdCd><AddnlSelfEmploymentTaxGrp><TotalSelfEmploymentIncomeAmt>9107</TotalSelfEmploymentIncomeAmt></AddnlSelfEmploymentTaxGrp><TotalAMRRTTaxAmt>0</TotalAMRRTTaxAmt></AdditionalTaxGrp></IRS8959><IRS8960 documentId="IRS896043"><TaxableInterestAmt>78</TaxableInterestAmt></IRS8960></ReturnData></Return>
+stderr:
+[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node "f2441": [
+  {
+    "code": "invalid_type",
+    "expected": "array",
+    "received": "undefined",
+    "path": [
+      "f2441s"
+    ],
+    "message": "Required"
+  }
+]
+[WARNING] 1 node(s) failed during execution — exported output may be incomplete.
+[WARNING] Exporting with 43 reject-level rule failure(s) (--force override active).
+  [F1040-066-09] Form 1040, 'TotalPaymentsAmt' must be equal to the sum of the following: 'WithholdingTaxAmt' and 'EstimatedTaxPaymentsAmt' and 'EarnedIncomeCreditAmt' and 'AdditionalChildTaxCreditAmt' and 'RefundableAmerOppCreditAmt' and 'form8689Amt' and Schedule 3 (Form 1040), [ 'ReconciledPremiumTaxCreditAmt' and 'RequestForExtensionAmt' and 'ExcessSocSecAndTier1RRTATaxAmt' and 'TotalFuelTaxCreditAmt' and 'OtherPaymentsAmt' ].
+  [F2210-002-02] On Form 2210, Part II, one of more of the following checkboxes must be checked: (Line A 'WaiverOfEntirePenaltyInd' or Line B 'WaiverOfPartOfPenaltyInd' or Line C 'AnnualizedIncomeMethodInd' or Line D 'ActuallyWithheldInd' or Line E 'JointReturnInd').
+  [F2439-003-02] Form 2439, 'ShareholderSSN' must have a value.
+  [F2439-004] If Form 2439 is present in the return, then 'RegInvstCoOrReInvstTrustName' must have a value.
+  [F2439-005-01] If Form 2439 is present in the return, then 'RICOrREITEIN' must have a value.
+  [F2555-021] Form 2555, Line 10 'BonaFideResidenceBeginDt' or Line 16 'PhysicalPresenceBeginDt' must have a value.
+  [F461-002-05] Form 461,'FilingStatusThresholdCd' must have the value ["626000" if the filing status of the return is married filing jointly] or "313000" for all other filing status.
+  [F4952-001] Form 4952, Line 1 'InvestmentInterestExpenseAmt' or Line 2 'PriorYrDisallowInvsmtIntExpAmt' or Line 8 'InvestmentInterestExpDeductAmt' must have a non-zero value.
+  [F4972-006] At least one of the following must have a non-zero value on Form 4972: Line 7 'CapitalGainTimesElectionPctAmt' or Line 8 'LumpSumDistriOrdinaryIncmAmt' or Line 29 'LumpSumRsdlAnnuityAvgTaxAmt'.
+  [F5471-071-01] Form 5471 'EmployerEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F7204-003] A Binary attachment with the description "7204SignaturePage" must be present in the return.
+  [F8082-003-01] Form 8082, Line 3 'PassThroughEntityEIN' must have a value.
+  [F8082-004-02] Form 8082, Line 4 'PassThroughEntityName' must have a value.
+  [F8379-001] There must be at least one checkbox 'InjuredSpouseInd' checked on Form 8379, Line 10.
+  [F8615-003-07] Form 8615, 'ChildInvestmentIncomeAmt' must be greater than 2700.
+  [F8621-007-01] Form 8621 'SSN' must have a value.
+  [F8621-026-02] F8621, 'PFICOrQEFEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8814-003-08] Form 8814, 'ChildInvestmentIncomeAmt' must be greater than 1350 and less than 13500.
+  [F8814-004-01] Form 8814, 'ChildSSN' must be within the valid range of SSN/ITIN/ATIN.
+  [F8815-001-14] If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 179,250, then filing status in the return must be Married filing jointly.
+  [F8815-002-14] If Form 8815, 'ExclBondIntModifiedAGIAmt' is less than 114500, then filing status in the return must be Single or Head of household or Qualifying surviving spouse.
+  [F8833-001-02] Form 8833 'EIN' or 'SSN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8835-041] At least one of the following must be checked on Form 8835 unless 'FacilityRqrNotStsfdInd' is checked: 'ProjectNetOutputUnder1MWInd' or 'FcltyConstrBeganBfrSpcfdDtInd' or 'FcltyStsfyWgAprntcshpRqrInd'.
+  [F8835-043] At least one of the following must be checked on Form 8835 unless 'ACNameplateCapNAInd' is checked: 'ACNameplateCapSolarEgyPropInd', or 'ACNameplateCapWindEgyPropInd', or 'ACNameplateCapOthEgyPropInd'.
+  [F8838P-004] Form 8838P 'GainDeferralContributionGrp' or 'ContriNotSubjGainDeferralGrp' must have a value.
+  [F8839-009-01] Each 'ChildSSN' on Form 8839 must be within the valid range of SSN/ITIN/ATIN.
+  [F8853-001-01] Form 8853 'LTCInsurancePolicyHolderSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.
+  [F8853-006-01] Form 8853, 'LTCInsuredSSN' must be within the valid range of SSN/ITIN and must not be an ATIN.
+  [F8858-003-02] Form 8858, Line 1b(1), 'EIN' in 'FDEOrFBUSIdNumberDetail' or Line 1b(2) 'ForeignEntityReferenceIdNum' must have a value.
+  [F8865-232-01] Form 8865 'ForeignPartnershipEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F8881-002-01] Form 8881, 'PensionPlanStartupCostsCrAmt' must have a non-zero value if an amount is entered.
+  [F8888-016] 'DepositorAccountNum' on Form 8888 must not be all zeros.
+  [F8959-013] Form 8959, Line 12 'SEIncomeSubjToAddSETaxAmt' must be equal to Line 8 'TotalSelfEmploymentIncomeAmt' minus (-) Line 11 'MedcrWagesTipsBelowThrshldAmt'.
+  [F8962-063] At least one of the following must have a non-zero value on Form 8962: 'AnnualPremiumAmt' or 'AnnualPremiumSLCSPAmt' or 'AnnualAdvancedPTCAmt' or 'MonthlyPremiumAmt' or 'MonthlyPremiumSLCSPAmt' or 'MonthlyAdvancedPTCAmt'.
+  [F8992-006] A return containing Form 8992 must include a Schedule A (Form 8992) or Schedule B (Form 8992).
+  [F926-001-01] Form 926, 'TransfereeEIN' or 'ForeignEntityReferenceIdNum' must have a value.
+  [F9465-018-01] In Form 9465, one of the following must have a value: Line 3 Home 'PhoneNum' or Line 4 Work 'PhoneNum' or Line 3 Home 'ForeignPhoneNum' or Line 4 Work 'ForeignPhoneNum'.
+  [FW2-002-01] Form W-2, 'WagesAmt' must have a value greater than zero unless Combat Pay and/or Third-Party Sick Pay has been excluded from income.
+  [IND-001-01] 'PreparerSSN' in the Return Header must not be all zeros or all nines.
+  [IND-062] IP Address of the Transmitter must have a value.
+  [IND-063] Timestamp of the Transmitter must have a value.
+  [IND-074] If 'TotalPaymentsAmt' in the return is not equal to 'TotalTaxAmt', then one of the following must have a non-zero value: 'OverpaidAmt' or 'RefundAmt' or 'AppliedToEsTaxAmt' or 'OwedAmt'.
+  [IND-189] 'DeviceId' in 'AtSubmissionCreationGrp' in 'FilingSecurityInformation' in the Return Header must have a value.

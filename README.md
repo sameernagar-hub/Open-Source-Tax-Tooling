@@ -64,4 +64,4 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 11 evaluated Firefly III against the shared synthetic dataset, captured Docker/API setup plus workflow/failure evidence, and completed `tool_records/tool_3.md`. The next phase evaluates a fourth shortlisted tool or backup candidate, likely a tax-specific surface such as `tenforty`.
+Phase 14 completed Week 2 synthesis, added `research/comparison_matrix.md` and `research/prototype_target_decision.md`, and selected hledger as the primary Week 3 prototype target with Actual Budget as backup. The next phase is Day 15 prototype design for a small hledger CLI/JSON adapter.

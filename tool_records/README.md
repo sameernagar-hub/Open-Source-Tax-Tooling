@@ -11,3 +11,5 @@ Current records:
 - `tool_1.md`: hledger Day 9 evaluation.
 - `tool_2.md`: Actual Budget Day 10 evaluation.
 - `tool_3.md`: Firefly III Day 11 evaluation.
+- `tool_4.md`: tenforty Day 12 evaluation.
+- `tool_5.md`: Filed Open Tax Engine Day 13 evaluation.

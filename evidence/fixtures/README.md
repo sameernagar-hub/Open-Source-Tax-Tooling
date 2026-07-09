@@ -19,3 +19,11 @@ Current fixtures:
 - `firefly_day11_summary.json`: Firefly III Day 11 normalized workflow, totals, insight, and mapping evidence.
 - `firefly_day11_transactions_after_add.json`: Firefly III Day 11 normalized transaction export after the standard `TADD` add-transaction test.
 - `firefly_day11_failure_results.json`: Firefly III Day 11 failure-test results.
+- `tenforty_day12_evaluate.py`: tenforty Day 12 Python evaluation helper.
+- `tenforty_day12_summary.json`: tenforty Day 12 normalized tax-calculation, mapping, sanity-check, and failure-test evidence.
+- `tenforty_day12_scenario_grid.json`: tenforty Day 12 Polars scenario sweep exported as JSON.
+- `tenforty_day12_failure_results.json`: tenforty Day 12 failure-test results.
+- `filed_opentax_day13_evaluate.mjs`: Filed Open Tax Engine Day 13 CLI evaluation helper.
+- `filed_opentax_day13_summary.json`: Filed Open Tax Engine Day 13 normalized workflow, tax-line, validation, export, mapping, and comparison evidence.
+- `filed_opentax_day13_failure_results.json`: Filed Open Tax Engine Day 13 failure-test results.
+- `filed_opentax_day13_baseline_mef.xml`: Forced MeF XML export from the Day 13 synthetic baseline return, retained as export evidence only.

@@ -463,3 +463,140 @@ Evaluate Firefly III as the third Week 2 hands-on tool and the REST/API-backed p
 ### Tomorrow's Starting Point
 
 Execute Day 12 by evaluating a fourth shortlisted tool or backup candidate, preferably a tax-specific candidate such as `tenforty` to balance the three bookkeeping/API evaluations.
+
+## 07-08-2026 - Phase 12: Evaluate Tool 4
+
+### Goal
+
+Evaluate tenforty as the fourth Week 2 hands-on tool and the first direct tax-calculation library candidate.
+
+### What I Did
+
+- Verified current tenforty source/package docs and installed `tenforty==2025.10`.
+- Attempted native Windows setup in an isolated Python `3.14.5` venv; install failed while building the native extension and reported missing Microsoft C++ Build Tools.
+- Started Docker Desktop and completed the evaluation in a disposable `python:3.12-slim` Linux container.
+- Added `evidence/fixtures/tenforty_day12_evaluate.py` to map the shared synthetic tax profile into tenforty calls.
+- Mapped Schedule C net before mileage to the runtime `self_employment_income` argument, and mapped interest income to `taxable_interest`.
+- Re-ran the profile after the standard `TADD` software expense by reducing Schedule C net income from `9107.02` to `9082.03`.
+- Exported normalized JSON summaries, a scenario grid, and failure-test results.
+- Created `tool_records/tool_4.md` and the Day 12 exit note.
+
+### Evidence Captured
+
+- `tool_records/tool_4.md`
+- `notes/day_12_evaluate_tenforty.md`
+- `evidence/commands/07-08-2026_tenforty_setup.txt`
+- `evidence/commands/07-08-2026_tenforty_version.txt`
+- `evidence/commands/07-08-2026_tenforty_workflow.txt`
+- `evidence/commands/07-08-2026_tenforty_failure-tests.txt`
+- `evidence/fixtures/tenforty_day12_evaluate.py`
+- `evidence/fixtures/tenforty_day12_summary.json`
+- `evidence/fixtures/tenforty_day12_scenario_grid.json`
+- `evidence/fixtures/tenforty_day12_failure_results.json`
+
+### Decisions Made
+
+- Keep tenforty as the leading tax-calculation component candidate, not a standalone bookkeeping or filing target.
+- Treat the best prototype idea as a two-stage flow: controlled bookkeeping summaries from hledger/Actual/Firefly, then tenforty tax calculations.
+- Keep estimated payments, mileage, and charity-under-standard-deduction as explicit unmapped facts unless a later wrapper defines policy.
+- Require wrapper-side domain validation and output sanity checks before exposing tenforty results to users.
+
+### Problems / Open Questions
+
+- Native Windows remains a blocker unless using WSL/Docker/Colab or resolving build/runtime issues.
+- The visible README argument table omits the runtime `self_employment_income` argument that best matches the synthetic Schedule C net input.
+- `federal_effective_tax_rate` appeared inconsistent in SE-tax-only cases; the wrapper recomputation from federal total tax over AGI was about `15.0652%`, while tenforty returned `128678000000000.0`.
+- Negative self-employment income was accepted and produced negative AGI, so wrapper validation is needed.
+- tenforty does not model transaction import, estimated payments/refunds, PDF forms, or e-file submission.
+
+### Tomorrow's Starting Point
+
+Execute Day 13 by evaluating Filed Open Tax Engine as the fifth tax-specific CLI/JSON candidate, or by closing gaps across the four complete records if the comparison already has enough variety.
+
+## 07-08-2026 - Phase 13: Evaluate Tool 5
+
+### Goal
+
+Evaluate Filed Open Tax Engine as the fifth shortlisted tool and the form-level CLI/JSON tax-engine candidate.
+
+### What I Did
+
+- Downloaded the official `v2.0.2` Windows x64 binary into `%TEMP%` and verified its SHA-256 hash.
+- Captured CLI help, version, node list, node schema inspection, and Schedule C dependency graph evidence.
+- Added `evidence/fixtures/filed_opentax_day13_evaluate.mjs` to run the CLI from an isolated temp working directory.
+- Mapped the synthetic freelancer profile to `general`, `f1099int`, `f1040es`, and `schedule_c` form entries.
+- Modeled `TADD` as an added Schedule C Part V software expense in a second return.
+- Captured baseline, after-add, forced Schedule A charity, validation, MeF export, and failure-test outputs.
+- Created `tool_records/tool_5.md` and the Day 13 exit note.
+
+### Evidence Captured
+
+- `tool_records/tool_5.md`
+- `notes/day_13_evaluate_filed_opentax.md`
+- `evidence/commands/07-08-2026_filed-opentax_setup.txt`
+- `evidence/commands/07-08-2026_filed-opentax_version.txt`
+- `evidence/commands/07-08-2026_filed-opentax_workflow.txt`
+- `evidence/commands/07-08-2026_filed-opentax_failure-tests.txt`
+- `evidence/fixtures/filed_opentax_day13_evaluate.mjs`
+- `evidence/fixtures/filed_opentax_day13_summary.json`
+- `evidence/fixtures/filed_opentax_day13_failure_results.json`
+- `evidence/fixtures/filed_opentax_day13_baseline_mef.xml`
+
+### Decisions Made
+
+- Keep Filed Open Tax Engine as the strongest form-level tax-engine candidate but preserve a maturity warning.
+- Treat successful `return get` calculation separately from validation-clean or file-ready status.
+- Require wrapper-side checks for supported years, date formats, duplicate source forms, local state directory isolation, and validation/export gating.
+- Carry AGPL/commercial license implications into prototype target selection.
+
+### Problems / Open Questions
+
+- Validation/export reported many reject-level rules that looked unrelated to the synthetic return.
+- A malformed date string was accepted for `taxpayer_dob`.
+- Duplicate 1099-INT entries were accepted and double-counted.
+- The baseline emitted an `f2441` executor warning even without dependent-care inputs.
+- CLI JSON arguments need shell-safe invocation; PowerShell inline JSON was fragile.
+
+### Tomorrow's Starting Point
+
+Execute Day 14 by building a comparison matrix across all five evaluated tools and choosing the Week 3 prototype target plus backup.
+
+## 07-08-2026 - Phase 14: Prototype Target Selection
+
+### Goal
+
+Build the Week 2 comparison matrix and choose the Week 3 prototype target and backup target.
+
+### What I Did
+
+- Reviewed all five completed tool records.
+- Compared hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine across prototype value, feasibility, safety, and demo clarity.
+- Created `research/comparison_matrix.md`.
+- Created `research/prototype_target_decision.md`.
+- Created `notes/day_14_prototype_target_selection.md`.
+- Updated the README repository status.
+
+### Evidence Captured
+
+- `research/comparison_matrix.md`
+- `research/prototype_target_decision.md`
+- `notes/day_14_prototype_target_selection.md`
+- Week 2 tool records under `tool_records/`
+
+### Decisions Made
+
+- Select hledger as the primary Week 3 prototype target.
+- Select Actual Budget as the backup target.
+- Frame the prototype as a safe bookkeeping-to-tax-summary adapter, not a tax-preparation or filing product.
+- Defer tenforty to a possible future tax-calculation component and Filed Open Tax Engine to form-level research/future extension status.
+- Keep Firefly III as the report's strongest REST-first comparator rather than the prototype target.
+
+### Problems / Open Questions
+
+- Day 15 needs to decide whether hledger rules are static fixtures, generated from mapping config, or both.
+- The prototype needs a clean hledger binary discovery/setup story.
+- GPL obligations should be described before distributing or packaging the adapter.
+
+### Tomorrow's Starting Point
+
+Execute Day 15 by creating `prototype/design.md`, defining the hledger adapter schema and guardrails, and updating the prototype README outline.

@@ -1,0 +1,566 @@
+Recorded: 2026-07-08T21:19:39.8378115-07:00
+Host OS: Microsoft Windows NT 10.0.26200.0
+Temp root: C:\Users\nagar\AppData\Local\Temp\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d
+
+Command: python --version
+Python 3.14.5
+
+Command: python -m venv <temp>\.venv
+
+Command: <venv>\python -m pip install tenforty==2025.10
+python.exe : WARNING: Cache entry deserialization failed, entry ignored
+At line:17 char:1
++ & $VenvPython -m pip install tenforty==2025.10 2>&1 | Tee-Object -Fil ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: Cache ..., entry ignored:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting tenforty==2025.10
+  Downloading tenforty-2025.10.tar.gz (1.7 MB)
+     ---------------------------------------- 1.7/1.7 MB 10.7 MB/s  0:00:00
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting polars>=1.0 (from tenforty==2025.10)
+  Downloading polars-1.42.1-py3-none-any.whl.metadata (10 kB)
+Collecting pydantic>=2 (from tenforty==2025.10)
+  Using cached pydantic-2.13.4-py3-none-any.whl.metadata (109 kB)
+Collecting python-dotenv (from tenforty==2025.10)
+  Using cached python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+Collecting polars-runtime-32==1.42.1 (from polars>=1.0->tenforty==2025.10)
+  Downloading polars_runtime_32-1.42.1-cp310-abi3-win_amd64.whl.metadata (1.5 kB)
+Collecting annotated-types>=0.6.0 (from pydantic>=2->tenforty==2025.10)
+  Using cached annotated_types-0.7.0-py3-none-any.whl.metadata (15 kB)
+Collecting pydantic-core==2.46.4 (from pydantic>=2->tenforty==2025.10)
+  Using cached pydantic_core-2.46.4-cp314-cp314-win_amd64.whl.metadata (6.7 kB)
+Collecting typing-extensions>=4.14.1 (from pydantic>=2->tenforty==2025.10)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl.metadata (3.3 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic>=2->tenforty==2025.10)
+  Using cached typing_inspection-0.4.2-py3-none-any.whl.metadata (2.6 kB)
+Downloading polars-1.42.1-py3-none-any.whl (837 kB)
+   ---------------------------------------- 837.6/837.6 kB 42.0 MB/s  0:00:00
+Downloading polars_runtime_32-1.42.1-cp310-abi3-win_amd64.whl (52.7 MB)
+   ---------------------------------------- 52.7/52.7 MB 55.1 MB/s  0:00:00
+Using cached pydantic-2.13.4-py3-none-any.whl (472 kB)
+Using cached pydantic_core-2.46.4-cp314-cp314-win_amd64.whl (2.1 MB)
+Using cached annotated_types-0.7.0-py3-none-any.whl (13 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Using cached typing_inspection-0.4.2-py3-none-any.whl (14 kB)
+Using cached python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Building wheels for collected packages: tenforty
+  Building wheel for tenforty (pyproject.toml): started
+  Building wheel for tenforty (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+
+  Building wheel for tenforty (pyproject.toml) did not run successfully.
+  exit code: 1
+
+  [462 lines of output]
+  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\pyprojecttoml.py
+:72: _ExperimentalConfiguration: `[tool.setuptools.ext-modules]` in `pyproject.toml` is still *experimental* and
+likely to change in future releases.
+    config = read_configuration(filepath, True, ignore_option_errors, dist)
+  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
+toml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is deprecated
+  !!
+
+          ********************************************************************************
+          Please use a simple string containing a SPDX expression for `project.license`. You can also use
+`project.license-files`. (Both options available on setuptools>=77.0.0).
+
+          By 2027-Feb-18, you need to update your project and remove deprecated calls
+          or your builds will no longer be supported.
+
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+
+  !!
+    corresp(dist, value, root_dir)
+  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
+toml.py:61: SetuptoolsDeprecationWarning: License classifiers are deprecated.
+  !!
+
+          ********************************************************************************
+          Please consider removing the following classifiers in favor of a SPDX license expression:
+
+          License :: OSI Approved :: MIT License
+
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+
+  !!
+    dist._finalize_license_expression()
+  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\dist.py:765:
+SetuptoolsDeprecationWarning: License classifiers are deprecated.
+  !!
+
+          ********************************************************************************
+          Please consider removing the following classifiers in favor of a SPDX license expression:
+
+          License :: OSI Approved :: MIT License
+
+          See https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#license for details.
+          ********************************************************************************
+
+  !!
+    self._finalize_license_expression()
+  running bdist_wheel
+  running build
+  running build_py
+  creating build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\core.py -> build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\form_resolution.py -> build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\mappings.py -> build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\models.py -> build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\_ots_form_models.py -> build\lib.win-amd64-cpython-314\tenforty
+  copying src\tenforty\__init__.py -> build\lib.win-amd64-cpython-314\tenforty
+  creating build\lib.win-amd64-cpython-314\tenforty\backends
+  copying src\tenforty\backends\graph.py -> build\lib.win-amd64-cpython-314\tenforty\backends
+  copying src\tenforty\backends\ots.py -> build\lib.win-amd64-cpython-314\tenforty\backends
+  copying src\tenforty\backends\protocol.py -> build\lib.win-amd64-cpython-314\tenforty\backends
+  copying src\tenforty\backends\__init__.py -> build\lib.win-amd64-cpython-314\tenforty\backends
+  creating build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\__init__.py -> build\lib.win-amd64-cpython-314\tenforty\forms
+  creating build\lib.win-amd64-cpython-314\tenforty\graphlib
+  copying src\tenforty\graphlib\__init__.py -> build\lib.win-amd64-cpython-314\tenforty\graphlib
+  creating build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots.pyx -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_CA_5805.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f2210.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8959.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8960.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040_Sched_SE.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_CA_5805.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f2210.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8829.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8959.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8960.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8995.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040_Sched_SE.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_AZ_140.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_CA_5805.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f2210.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8812.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8829.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8959.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8960.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8995.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_E_brokerage_royalties.pxd ->
+build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_SE.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_AZ_140.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_CA_5805.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f2210.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8812.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8829.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8959.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8960.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8995.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_MI_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_OR_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_E_brokerage_royalties.pxd ->
+build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_SE.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_AZ_140.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_CA_540.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_CA_5805.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f2210.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f2441.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f6781.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8606.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8812.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8829.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8959.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8960.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_f8995.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_HSA_f8889.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_MA_1.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_MI_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_NC_D400.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_NJ_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_NY_IT201.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_OH_IT1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_OR_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_PA_40.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_US_1040.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_US_1040_Sched_1_A.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_US_1040_Sched_C.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_US_1040_Sched_E_brokerage_royalties.pxd ->
+build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_US_1040_Sched_SE.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2025_VA_760.pxd -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2018_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2019_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_f8606.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_HSA_f8889.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2020_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_CA_5805.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f2210.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8606.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8959.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_f8960.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_HSA_f8889.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_US_1040_Sched_SE.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2021_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_CA_5805.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f2210.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8606.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8829.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8959.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8960.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_f8995.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_HSA_f8889.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_US_1040_Sched_SE.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2022_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_CA_5805.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f2210.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8606.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8812.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8829.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8959.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8960.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_f8995.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_HSA_f8889.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_E_brokerage_royalties.cpp ->
+build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_US_1040_Sched_SE.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2023_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_CA_540.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_CA_5805.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f2210.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8606.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8812.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8829.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8959.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8960.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_f8995.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_HSA_f8889.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_MA_1.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_MI_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NC_D400.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NJ_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_NY_IT201.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_OH_IT1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_OR_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_PA_40.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_C.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_E_brokerage_royalties.cpp ->
+build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_US_1040_Sched_SE.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_2024_VA_760.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\otslib\ots_amalgamation.cpp -> build\lib.win-amd64-cpython-314\tenforty\otslib
+  copying src\tenforty\forms\ak_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ak_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\al_40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\al_40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ar_ar1000f_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ar_ar1000f_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\az_140_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\az_140_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_540_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_540_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_ftb_3506_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_ftb_3506_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_ftb_3514_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_ftb_3514_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_schedule_ca_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ca_schedule_ca_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\co_form104_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\co_form104_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ct_1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ct_1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\dc_d40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\dc_d40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\de_pit_res_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\de_pit_res_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\fl_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\fl_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ga_500_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ga_500_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\hi_n11_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\hi_n11_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ia_ia1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ia_ia1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\id_form40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\id_form40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\il_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\il_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\in_it40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\in_it40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ks_k40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ks_k40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ky_740_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ky_740_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\la_it540_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\la_it540_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ma_1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ma_1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\md_502_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\md_502_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\me_1040me_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\me_1040me_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mi_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mi_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mn_m1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mn_m1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mo_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mo_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ms_80105_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ms_80105_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mt_form2_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\mt_form2_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nc_d400_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nc_d400_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nd_1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nd_1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ne_1040n_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ne_1040n_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nh_dp10_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nh_dp10_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nj_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nj_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nm_pit1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nm_pit1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nv_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\nv_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ny_it201_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ny_it201_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\oh_it1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\oh_it1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ok_511_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ok_511_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\or_40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\or_40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\pa_40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\pa_40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ri_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ri_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\sc_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\sc_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\sd_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\sd_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\tn_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\tn_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\tx_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\tx_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_1040_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_1040_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_2441_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_2441_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_6251_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_6251_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8812_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+Failed to build tenforty
+  copying src\tenforty\forms\us_form_8812_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8863_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8863_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8959_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8959_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8960_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8960_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8995_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_form_8995_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_2_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_2_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_3_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_3_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_a_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_a_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_b_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_b_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_d_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_d_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_eic_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_eic_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_se_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\us_schedule_se_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ut_tc40_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\ut_tc40_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\va_760_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\va_760_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\vt_in111_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\vt_in111_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wa_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wa_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wi_form1_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wi_form1_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wv_it140_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wv_it140_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wy_notax_2024.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\wy_notax_2025.json -> build\lib.win-amd64-cpython-314\tenforty\forms
+  copying src\tenforty\forms\README.md -> build\lib.win-amd64-cpython-314\tenforty\forms
+  running build_ext
+  building 'tenforty.otslib' extension
+  error: Microsoft Visual C++ 14.0 or greater is required. Get it with "Microsoft C++ Build Tools":
+https://visualstudio.microsoft.com/visual-cpp-build-tools/
+  [end of output]
+
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for tenforty
+
+[notice] A new release of pip is available: 26.1.1 -> 26.1.2
+[notice] To update, run:
+C:\Users\nagar\AppData\Local\Temp\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d\.venv\Scripts\python.exe -m
+pip install --upgrade pip
+error: failed-wheel-build-for-install
+
+Failed to build installable wheels for some pyproject.toml based projects
+
+tenforty
+pip install exit code: 1
+
+Command: <venv>\python -c "import tenforty; print('imported', tenforty)"
+python.exe : Traceback (most recent call last):
+At line:21 char:1
++ & $VenvPython -c "import tenforty; print('imported', tenforty)" 2>&1  ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Traceback (most recent call last)::String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+
+  File "<string>", line 1, in <module>
+    import tenforty; print('imported', tenforty)
+    ^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'tenforty'
+import exit code: 1

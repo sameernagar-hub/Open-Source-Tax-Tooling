@@ -11,6 +11,111 @@ Each entry should answer:
 - What evidence or files were added?
 - What is next?
 
+## 07-08-2026 - Phase 14: Prototype Target Selection
+
+### What Changed
+
+- Built the Week 2 comparison matrix across hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine.
+- Scored candidates for prototype value, feasibility, safety, and demo clarity.
+- Selected hledger as the primary Week 3 prototype target.
+- Selected Actual Budget as the backup target.
+- Created the Day 14 exit note and updated repository status.
+
+### Why
+
+Week 2 needed to turn five hands-on tool records into a concrete Week 3 build direction. hledger offers the clearest one-week prototype path because it completed the full synthetic transaction workflow with low setup friction, local file safety, and JSON output. Actual Budget is the closest backup because it preserves the same transaction-to-summary workflow through an official Node API.
+
+### Evidence / Files
+
+- `research/comparison_matrix.md`
+- `research/prototype_target_decision.md`
+- `notes/day_14_prototype_target_selection.md`
+- `tool_records/tool_1.md`
+- `tool_records/tool_2.md`
+- `tool_records/tool_3.md`
+- `tool_records/tool_4.md`
+- `tool_records/tool_5.md`
+- `notes/research_log.md`
+- `README.md`
+
+### Next
+
+Execute Day 15 by creating `prototype/design.md`, defining the hledger adapter input/output schemas, documenting guardrails, and updating the prototype README outline.
+
+## 07-08-2026 - Phase 13: Evaluate Tool 5
+
+### What Changed
+
+- Evaluated Filed Open Tax Engine `v2.0.2` against the shared synthetic freelancer tax profile.
+- Downloaded the official Windows x64 binary into `%TEMP%` and verified the release SHA-256 hash before use.
+- Added a Filed/OpenTax-specific Node evaluation helper and normalized JSON/XML artifacts under `evidence/fixtures/`.
+- Captured setup, version/schema, workflow, validation/export, and failure behavior transcripts under `evidence/commands/`.
+- Created the completed fifth tool record at `tool_records/tool_5.md`.
+- Created the Day 13 exit note at `notes/day_13_evaluate_filed_opentax.md`.
+- Updated the rolling research log, fixture index, tool-record index, and README repository status.
+
+### Why
+
+Week 2 needed to finish the fifth shortlisted tool or close evaluation gaps before prototype target selection. Filed Open Tax Engine was evaluated because it is the shortlist's high-upside tax-specific CLI/JSON candidate, with form-entry schemas, 1040 line outputs, validation, dependency graph inspection, and MeF export.
+
+### Evidence / Files
+
+- `tool_records/tool_5.md`
+- `notes/day_13_evaluate_filed_opentax.md`
+- `evidence/commands/07-08-2026_filed-opentax_setup.txt`
+- `evidence/commands/07-08-2026_filed-opentax_version.txt`
+- `evidence/commands/07-08-2026_filed-opentax_workflow.txt`
+- `evidence/commands/07-08-2026_filed-opentax_failure-tests.txt`
+- `evidence/fixtures/filed_opentax_day13_evaluate.mjs`
+- `evidence/fixtures/filed_opentax_day13_summary.json`
+- `evidence/fixtures/filed_opentax_day13_failure_results.json`
+- `evidence/fixtures/filed_opentax_day13_baseline_mef.xml`
+- `notes/research_log.md`
+- `evidence/fixtures/README.md`
+- `tool_records/README.md`
+- `README.md`
+
+### Next
+
+Execute Day 14 by building the comparison matrix across hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine, then choose the primary Week 3 prototype target and backup target.
+
+## 07-08-2026 - Phase 12: Evaluate Tool 4
+
+### What Changed
+
+- Evaluated `tenforty==2025.10` against the shared synthetic freelancer tax profile.
+- Captured native Windows setup failure and successful Docker/Linux evaluation evidence.
+- Added a tenforty-specific Python evaluation helper and normalized JSON output artifacts under `evidence/fixtures/`.
+- Captured setup, version, workflow, and failure behavior transcripts under `evidence/commands/`.
+- Created the completed fourth tool record at `tool_records/tool_4.md`.
+- Created the Day 12 exit note at `notes/day_12_evaluate_tenforty.md`.
+- Updated the rolling research log, fixture index, tool-record index, and README repository status.
+
+### Why
+
+Week 2 needed a direct tax-calculation surface after three bookkeeping or personal-finance integration evaluations. tenforty was evaluated fourth because it wraps Open Tax Solver behind Python functions and provides structured tax-liability outputs from summarized tax inputs.
+
+### Evidence / Files
+
+- `tool_records/tool_4.md`
+- `notes/day_12_evaluate_tenforty.md`
+- `evidence/commands/07-08-2026_tenforty_setup.txt`
+- `evidence/commands/07-08-2026_tenforty_version.txt`
+- `evidence/commands/07-08-2026_tenforty_workflow.txt`
+- `evidence/commands/07-08-2026_tenforty_failure-tests.txt`
+- `evidence/fixtures/tenforty_day12_evaluate.py`
+- `evidence/fixtures/tenforty_day12_summary.json`
+- `evidence/fixtures/tenforty_day12_scenario_grid.json`
+- `evidence/fixtures/tenforty_day12_failure_results.json`
+- `notes/research_log.md`
+- `evidence/fixtures/README.md`
+- `tool_records/README.md`
+- `README.md`
+
+### Next
+
+Execute Day 13 by evaluating Filed Open Tax Engine as the fifth candidate, or by closing gaps across the four completed records before Day 14 prototype target selection.
+
 ## 07-08-2026 - Phase 11: Evaluate Tool 3
 
 ### What Changed

@@ -1,0 +1,244 @@
+[
+  {
+    "name": "invalid_filing_status_case",
+    "accepted": false,
+    "record": {
+      "command": "opentax form add --returnId 0e436b60-f83c-4f6a-aeb8-d0483afe3ca1 --node_type general \"{\\\"filing_status\\\":\\\"Single\\\"}\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Validation error: [\n  {\n    \"received\": \"Single\",\n    \"code\": \"invalid_enum_value\",\n    \"options\": [\n      \"single\",\n      \"mfs\",\n      \"mfj\",\n      \"hoh\",\n      \"qss\"\n    ],\n    \"path\": [\n      \"filing_status\"\n    ],\n    \"message\": \"Invalid enum value. Expected 'single' | 'mfs' | 'mfj' | 'hoh' | 'qss', received 'Single'\"\n  }\n]"
+    }
+  },
+  {
+    "name": "malformed_date_string",
+    "accepted": true,
+    "record": {
+      "command": "opentax form add --returnId 11b197a7-553e-4ff1-ac64-54ebb71ab48e --node_type general \"{\\\"filing_status\\\":\\\"single\\\",\\\"taxpayer_dob\\\":\\\"13-40-2025\\\"}\"",
+      "exitCode": 0,
+      "stdout": "{\n  \"id\": \"general_01\",\n  \"nodeType\": \"general\"\n}",
+      "stderr": ""
+    },
+    "returnGet": {
+      "returnId": "11b197a7-553e-4ff1-ac64-54ebb71ab48e",
+      "year": 2025,
+      "summary": {
+        "line1z_total_wages": 0,
+        "line9_total_income": 0,
+        "line11_agi": 0,
+        "line15_taxable_income": 0,
+        "line24_total_tax": 0,
+        "line33_total_payments": 0
+      },
+      "forms": [
+        "agi_aggregator",
+        "eitc",
+        "f1040",
+        "f2441",
+        "f8812",
+        "form8880",
+        "form8959",
+        "form8960",
+        "form8962",
+        "form8995",
+        "general",
+        "income_tax_calculation",
+        "schedule1",
+        "schedule_a",
+        "standard_deduction"
+      ],
+      "lines": {
+        "filing_status": "single",
+        "dependent_count": 0,
+        "qualifying_child_tax_credit_count": 0,
+        "other_dependent_count": 0,
+        "taxpayer_dob": "13-40-2025",
+        "line11_agi": [
+          0,
+          0
+        ],
+        "line12e_itemized_deductions": [
+          0,
+          0
+        ],
+        "line12a_standard_deduction": [
+          15750,
+          15750
+        ],
+        "line15_taxable_income": [
+          0,
+          0
+        ],
+        "line1z_total_wages": 0,
+        "line9_total_income": 0,
+        "line18_total_tax_before_credits": 0,
+        "line21_credits_total": 0,
+        "line22_tax_after_credits": 0,
+        "line24_total_tax": 0,
+        "line25d_total_withholding": 0,
+        "line33_total_payments": 0,
+        "line10_adjustments": 0,
+        "line14_deductions_qbi_total": 15750,
+        "line32_refundable_credits_total": 0,
+        "line34_overpayment": 0,
+        "line35a_refund": 0
+      },
+      "warnings": [
+        "[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+      ]
+    }
+  },
+  {
+    "name": "invalid_amount_type",
+    "accepted": false,
+    "record": {
+      "command": "opentax form add --returnId 1a47ca29-fedd-4d36-9362-90b3b0d62b4f --node_type schedule_c \"{\\\"line_a_principal_business\\\":\\\"AI engineering consulting\\\",\\\"line_b_business_code\\\":\\\"541511\\\",\\\"line_c_business_name\\\":\\\"Sample Freelancer\\\",\\\"line_f_accounting_method\\\":\\\"cash\\\",\\\"line_g_material_participation\\\":true,\\\"line_1_gross_receipts\\\":\\\"not-a-number\\\",\\\"line_18_office_expense\\\":320,\\\"line_20b_rent_other\\\":210,\\\"line_22_supplies\\\":74.23,\\\"line_24a_travel\\\":38.75,\\\"part_v_other_expenses\\\":[{\\\"description\\\":\\\"Software\\\",\\\"amount\\\":239},{\\\"description\\\":\\\"Bank fees\\\",\\\"amount\\\":12},{\\\"description\\\":\\\"Professional education\\\",\\\"amount\\\":249}]}\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Validation error: [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"number\",\n    \"received\": \"string\",\n    \"path\": [\n      \"line_1_gross_receipts\"\n    ],\n    \"message\": \"Expected number, received string\"\n  }\n]"
+    }
+  },
+  {
+    "name": "negative_gross_receipts",
+    "accepted": false,
+    "record": {
+      "command": "opentax form add --returnId 88257d0f-cdfb-4d60-b30e-afe96241df11 --node_type schedule_c \"{\\\"line_a_principal_business\\\":\\\"AI engineering consulting\\\",\\\"line_b_business_code\\\":\\\"541511\\\",\\\"line_c_business_name\\\":\\\"Sample Freelancer\\\",\\\"line_f_accounting_method\\\":\\\"cash\\\",\\\"line_g_material_participation\\\":true,\\\"line_1_gross_receipts\\\":-100,\\\"line_18_office_expense\\\":320,\\\"line_20b_rent_other\\\":210,\\\"line_22_supplies\\\":74.23,\\\"line_24a_travel\\\":38.75,\\\"part_v_other_expenses\\\":[{\\\"description\\\":\\\"Software\\\",\\\"amount\\\":239},{\\\"description\\\":\\\"Bank fees\\\",\\\"amount\\\":12},{\\\"description\\\":\\\"Professional education\\\",\\\"amount\\\":249}]}\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Validation error: [\n  {\n    \"code\": \"too_small\",\n    \"minimum\": 0,\n    \"type\": \"number\",\n    \"inclusive\": true,\n    \"exact\": false,\n    \"message\": \"Number must be greater than or equal to 0\",\n    \"path\": [\n      \"line_1_gross_receipts\"\n    ]\n  }\n]"
+    }
+  },
+  {
+    "name": "unknown_node_type",
+    "accepted": false,
+    "record": {
+      "command": "opentax form add --returnId 17132b29-14c9-47e8-9df3-cdace8075749 --node_type imaginary_node \"{\\\"value\\\":1}\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Unknown node type: imaginary_node"
+    }
+  },
+  {
+    "name": "unsupported_year_get",
+    "accepted": false,
+    "createRecord": {
+      "command": "opentax return create --year 2024",
+      "exitCode": 0,
+      "stdout": "{\n  \"returnId\": \"047552ab-2800-42d6-9cd5-c740589f5f06\"\n}",
+      "stderr": ""
+    },
+    "record": {
+      "command": "opentax return get --returnId 047552ab-2800-42d6-9cd5-c740589f5f06",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Unsupported form: f1040:2024"
+    }
+  },
+  {
+    "name": "duplicate_interest_entry",
+    "accepted": true,
+    "record": {
+      "command": "opentax form add --returnId f8baa9ca-0ca4-4635-8b39-64b41daf49dd --node_type f1099int \"{\\\"payer_name\\\":\\\"Synthetic Bank\\\",\\\"box1\\\":77.75}\"",
+      "exitCode": 0,
+      "stdout": "{\n  \"id\": \"f1099int_02\",\n  \"nodeType\": \"f1099int\"\n}",
+      "stderr": ""
+    },
+    "returnGet": {
+      "returnId": "f8baa9ca-0ca4-4635-8b39-64b41daf49dd",
+      "year": 2025,
+      "summary": {
+        "line1z_total_wages": 0,
+        "line9_total_income": 155.5,
+        "line11_agi": 155.5,
+        "line15_taxable_income": 0,
+        "line24_total_tax": 0,
+        "line33_total_payments": 0
+      },
+      "forms": [
+        "agi_aggregator",
+        "eitc",
+        "f1040",
+        "f1099int",
+        "f2441",
+        "f8812",
+        "form8880",
+        "form8959",
+        "form8960",
+        "form8962",
+        "form8995",
+        "general",
+        "income_tax_calculation",
+        "schedule1",
+        "schedule_a",
+        "schedule_b",
+        "standard_deduction"
+      ],
+      "lines": {
+        "filing_status": "single",
+        "dependent_count": 0,
+        "qualifying_child_tax_credit_count": 0,
+        "other_dependent_count": 0,
+        "taxpayer_first_name": "Sample",
+        "taxpayer_last_name": "Freelancer",
+        "taxpayer_dob": "1990-01-01",
+        "taxpayer_occupation": "Freelancer",
+        "digital_assets": false,
+        "line2b_taxable_interest": [
+          155.5,
+          155.5
+        ],
+        "line11_agi": [
+          155.5,
+          155.5
+        ],
+        "line12e_itemized_deductions": [
+          0,
+          0
+        ],
+        "line12a_standard_deduction": [
+          15750,
+          15750
+        ],
+        "line15_taxable_income": [
+          0,
+          0
+        ],
+        "line1z_total_wages": 0,
+        "line9_total_income": 155.5,
+        "line18_total_tax_before_credits": 0,
+        "line21_credits_total": 0,
+        "line22_tax_after_credits": 0,
+        "line24_total_tax": 0,
+        "line25d_total_withholding": 0,
+        "line33_total_payments": 0,
+        "line10_adjustments": 0,
+        "line14_deductions_qbi_total": 15750,
+        "line32_refundable_credits_total": 0,
+        "line34_overpayment": 0,
+        "line35a_refund": 0
+      },
+      "warnings": [
+        "[EXECUTOR_NODE_FAILURE] f2441: Zod validation failed for node \"f2441\": [\n  {\n    \"code\": \"invalid_type\",\n    \"expected\": \"array\",\n    \"received\": \"undefined\",\n    \"path\": [\n      \"f2441s\"\n    ],\n    \"message\": \"Required\"\n  }\n]"
+      ]
+    }
+  },
+  {
+    "name": "missing_return_id",
+    "accepted": false,
+    "record": {
+      "command": "opentax return get --returnId missing-return-id",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: File not found: .state\\returns\\missing-return-id\\return.json"
+    }
+  },
+  {
+    "name": "invalid_json_argument",
+    "accepted": false,
+    "record": {
+      "command": "opentax form add --returnId 3a74ee67-e364-49a0-a7b1-92dd5d34a2d4 --node_type general \"{not-json}\"",
+      "exitCode": 1,
+      "stdout": "",
+      "stderr": "Error: Invalid JSON: {not-json}"
+    }
+  }
+]

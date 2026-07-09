@@ -1,0 +1,606 @@
+# Filed OpenTax version and schema evidence
+
+$ opentax version
+exit=0
+stdout:
+opentax 2.0.2
+
+$ opentax --help
+exit=0
+stdout:
+Filed OpenTax CLI
+
+Usage: opentax <command> <subcommand> [options]
+
+Commands:
+  opentax node list                                                                   List all registered nodes
+  opentax node inspect --node_type <type>                                             Inspect a node's input schema and output nodes
+  opentax return create --year <year>                                                 Create a new tax return
+  opentax return get --returnId <id>                                                  Get a return's computed line items
+  opentax return export --returnId <id> --type mef|pdf [--force] [--output <path>]    Export a return as MEF XML or filled IRS PDF
+  opentax form add --returnId <id> --node_type <type> '{...}'                         Add a form entry to a return
+  opentax form list --returnId <id> [--node_type <type>]                              List all form entries in a return
+  opentax form get --returnId <id> --entryId <id>                                     Get a specific form entry by ID
+  opentax form update --returnId <id> --entryId <id> '{...}'                          Update a form entry's data
+  opentax form delete --returnId <id> --entryId <id>                                  Delete a form entry
+  opentax return validate --returnId <id> [--format text|json]                        Validate a return against MeF business rules
+  opentax node graph --node_type start [--depth <n>] [--json]                         View node dependency graph (Mermaid or JSON)
+
+Utility commands:
+  opentax version    Show the current version
+  opentax update     Download and install the latest release
+
+Global flags:
+  --help, -h    Show help
+  --json        Output as JSON
+
+Run 'opentax <command> --help' for command-group help.
+
+$ opentax node list
+exit=0
+stdout:
+Registered Nodes (186)
+
+  agi_aggregator              alimony_received            auto_expense                clergy
+  depletion                   educator_expenses           eitc                        ext
+  f1040                       f1040es                     f1095a                      f1098
+  f1098e                      f1099b                      f1099c                      f1099div
+  f1099g                      f1099int                    f1099k                      f1099m
+  f1099nec                    f1099oid                    f1099patr                   f1099r
+  f114                        f1310                       f14039                      f2106
+  f2210                       f2439                       f2441                       f3115
+  f3468                       f3800                       f3903                       f4136
+  f4255                       f4835                       f4852                       f4970
+  f5405                       f5471                       f56                         f5695
+  f5884                       f59e                        f6478                       f6765
+  f7207                       f8082                       f8283                       f8288
+  f8332                       f8379                       f843                        f8594
+  f8609                       f8611                       f8621                       f8697
+  f8801                       f8805                       f8812                       f8814
+  f8820                       f8822                       f8826                       f8828
+  f8833                       f8834                       f8835                       f8840
+  f8843                       f8844                       f8854                       f8859
+  f8862                       f8863                       f8864                       f8866
+  f8867                       f8873                       f8874                       f8881
+  f8882                       f8888                       f8896                       f8903
+  f8908                       f8911                       f8912                       f8915d
+  f8915f                      f8917                       f8936                       f8938
+  f8941                       f8949                       f8958                       f8965
+  f8978                       f8994                       f8997                       f911
+  f9465                       f965                        f970                        fec
+  form2441                    form2555                    form4137                    form4562
+  form461                     form4684                    form4797                    form4952
+  form4972                    form5329                    form5695                    form6198
+  form6251                    form6252                    form6781                    form7203
+  form7206                    form8396                    form8582                    form8582cr
+  form8606                    form8615                    form8815                    form8824
+  form8839                    form8853                    form8880                    form8889
+  form8919                    form8949                    form8959                    form8960
+  form8962                    form8990                    form8995                    form8995a
+  form982                     form_1116                   form_8829                   general
+  household_wages             income_tax_calculation      ira_deduction_worksheet     k1_partnership
+  k1_s_corp                   k1_trust                    ltc_premium                 lump_sum_ss
+  nol_carryforward            ppp_forgiveness             preparer                    qbi_aggregation
+  qdcgtw                      qsehra                      rate_28_gain_worksheet      rrb1099r
+  sales_tax_deduction         schedule1                   schedule2                   schedule3
+  schedule_a                  schedule_b                  schedule_c                  schedule_d
+  schedule_e                  schedule_f                  schedule_h                  schedule_j
+  schedule_r                  schedule_se                 self_employed_health_insurancesep_retirement
+  ssa1099                     standard_deduction          start                       unrecaptured_1250_worksheet
+  w2                          w2g
+
+$ opentax node inspect --node_type general --json
+exit=0
+stdout:
+{
+  "nodeType": "general",
+  "implemented": true,
+  "schema": [
+    "filing_status  enum  single | mfs | mfj | hoh | qss",
+    "taxpayer_first_name  string  (optional)",
+    "taxpayer_last_name  string  (optional)",
+    "taxpayer_middle_initial  string  (optional)",
+    "taxpayer_suffix  string  (optional)",
+    "taxpayer_ssn  string  (optional)",
+    "taxpayer_dob  string  (optional)",
+    "taxpayer_blind  boolean  (optional)",
+    "taxpayer_age_65_or_older  boolean  (optional)",
+    "taxpayer_occupation  string  (optional)",
+    "taxpayer_daytime_phone  string  (optional)",
+    "taxpayer_email  string  (optional)",
+    "taxpayer_deceased  boolean  (optional)",
+    "taxpayer_death_date  string  (optional)",
+    "taxpayer_ip_pin  string  (optional)",
+    "taxpayer_prior_year_agi  number  (optional)",
+    "spouse_first_name  string  (optional)",
+    "spouse_last_name  string  (optional)",
+    "spouse_middle_initial  string  (optional)",
+    "spouse_suffix  string  (optional)",
+    "spouse_ssn  string  (optional)",
+    "spouse_dob  string  (optional)",
+    "spouse_blind  boolean  (optional)",
+    "spouse_age_65_or_older  boolean  (optional)",
+    "spouse_occupation  string  (optional)",
+    "spouse_daytime_phone  string  (optional)",
+    "spouse_email  string  (optional)",
+    "spouse_deceased  boolean  (optional)",
+    "spouse_death_date  string  (optional)",
+    "spouse_ip_pin  string  (optional)",
+    "spouse_prior_year_agi  number  (optional)",
+    "address_line1  string  (optional)",
+    "address_line2  string  (optional)",
+    "address_in_care_of  string  (optional)",
+    "address_city  string  (optional)",
+    "address_state  string  (optional)",
+    "address_zip  string  (optional)",
+    "address_foreign_country  string  (optional)",
+    "address_foreign_province_state  string  (optional)",
+    "address_foreign_postal_code  string  (optional)",
+    "digital_assets  boolean  (optional)",
+    "presidential_campaign_fund_taxpayer  boolean  (optional)",
+    "presidential_campaign_fund_spouse  boolean  (optional)",
+    "extension_filed  boolean  (optional)",
+    "taxpayer_signature_pin  string  (optional)",
+    "spouse_signature_pin  string  (optional)",
+    "mfs_spouse_itemizing  boolean  (optional)",
+    "mfs_spouse_lived_with_taxpayer  boolean  (optional)",
+    "hoh_qualifying_person_name  string  (optional)",
+    "hoh_qualifying_person_relationship  string  (optional)",
+    "hoh_paid_more_than_half_home_costs  boolean  (optional)",
+    "qss_spouse_death_year  number  (optional)",
+    "qss_qualifying_child_ssn  string  (optional)",
+    "bank_routing_number  string  (optional)",
+    "bank_account_number  string  (optional)",
+    "bank_account_type  enum  checking | savings  (optional)",
+    "dependents  array  (optional)",
+    "  items:",
+    "    first_name  string",
+    "    last_name  string",
+    "    middle_initial  string  (optional)",
+    "    ssn  string  (optional)",
+    "    itin  string  (optional)",
+    "    atin  string  (optional)",
+    "    dob  string",
+    "    relationship  enum  son | daughter | stepchild | foster | sibling | stepsibling | halfsibling | grandchild | ...",
+    "    months_in_home  number  ≥0  ≤12",
+    "    qualifying_child_for_ctc  boolean  (optional)",
+    "    disabled  boolean  (optional)",
+    "    full_time_student  boolean  (optional)",
+    "    gross_income  number  ≥0  (optional)",
+    "    taxpayer_provided_over_half_support  boolean  (optional)",
+    "    dependent_on_another_return  boolean  (optional)",
+    "    child_care_months  number  ≥0  ≤12  (optional)",
+    "    education_credit_eligible  boolean  (optional)",
+    "    ip_pin  string  (optional)"
+  ],
+  "outputNodes": [
+    "f1040",
+    "standard_deduction",
+    "eitc",
+    "f8812",
+    "agi_aggregator",
+    "form8959",
+    "form8960",
+    "form8995",
+    "schedule_a"
+  ]
+}
+
+$ opentax node inspect --node_type f1099int --json
+exit=0
+stdout:
+{
+  "nodeType": "f1099int",
+  "implemented": true,
+  "schema": [
+    "f1099ints  array (min 1)",
+    "  items:",
+    "    payer_name  string",
+    "    payer_tin  string  (optional)",
+    "    seller_financed  boolean  (optional)",
+    "    payer_ssn  string  (optional)",
+    "    payer_address  string  (optional)",
+    "    payer_city_state_zip  string  (optional)",
+    "    box1  number  ≥0  (optional)",
+    "    box2  number  ≥0  (optional)",
+    "    box3  number  ≥0  (optional)",
+    "    box4  number  ≥0  (optional)",
+    "    box5  number  ≥0  (optional)",
+    "    box6  number  ≥0  (optional)",
+    "    box7  string  (optional)",
+    "    box8  number  ≥0  (optional)",
+    "    box9  number  ≥0  (optional)",
+    "    box10  number  ≥0  (optional)",
+    "    box11  number  ≥0  (optional)",
+    "    elect_bond_premium_amortization  boolean  (optional)",
+    "    box12  number  ≥0  (optional)",
+    "    box13  number  ≥0  (optional)",
+    "    box14  string  (optional)",
+    "    box15  string  (optional)",
+    "    box16  string  (optional)",
+    "    box17  number  ≥0  (optional)",
+    "    nominee_interest  number  ≥0  (optional)",
+    "    accrued_interest_paid  number  ≥0  (optional)",
+    "    non_taxable_oid_adjustment  number  ≥0  (optional)",
+    "filing_status  string  (optional)"
+  ],
+  "outputNodes": [
+    "schedule_b",
+    "schedule1",
+    "f1040",
+    "form6251",
+    "form_1116",
+    "schedule3"
+  ]
+}
+
+$ opentax node inspect --node_type f1040es --json
+exit=0
+stdout:
+{
+  "nodeType": "f1040es",
+  "implemented": true,
+  "schema": [
+    "payment_q1  number  ≥0  (optional)",
+    "payment_q2  number  ≥0  (optional)",
+    "payment_q3  number  ≥0  (optional)",
+    "payment_q4  number  ≥0  (optional)",
+    "payment_q1_date  string  — Date Q1 estimated payment was made (ISO 8601, e.g. '2025-04-15')  (optional)",
+    "payment_q2_date  string  — Date Q2 estimated payment was made (ISO 8601, e.g. '2025-06-16')  (optional)",
+    "payment_q3_date  string  — Date Q3 estimated payment was made (ISO 8601, e.g. '2025-09-15')  (optional)",
+    "payment_q4_date  string  — Date Q4 estimated payment was made (ISO 8601, e.g. '2026-01-15')  (optional)",
+    "applied_from_prior_year  number  ≥0  — Overpayment from prior year applied to current year estimated tax (Form 1040 line 26)  (optional)"
+  ],
+  "outputNodes": [
+    "f1040"
+  ]
+}
+
+$ opentax node inspect --node_type schedule_c --json
+exit=0
+stdout:
+{
+  "nodeType": "schedule_c",
+  "implemented": true,
+  "schema": [
+    "schedule_cs  array",
+    "  items:",
+    "    line_a_principal_business  string",
+    "    line_b_business_code  string",
+    "    line_c_business_name  string  (optional)",
+    "    line_d_ein  string  (optional)",
+    "    line_e_business_address  string  (optional)",
+    "    line_f_accounting_method  enum  cash | accrual | other",
+    "    line_g_material_participation  boolean",
+    "    line_h_new_business  boolean  (optional)",
+    "    line_i_made_1099_payments  boolean  (optional)",
+    "    line_j_filed_1099s  boolean  (optional)",
+    "    statutory_employee  boolean  (optional)",
+    "    exempt_notary  boolean  (optional)",
+    "    paper_route  boolean  (optional)",
+    "    professional_gambler  boolean  (optional)",
+    "    clergy_schedule_c  boolean  (optional)",
+    "    disposed_of_business  boolean  (optional)",
+    "    multi_form_code  string  (optional)",
+    "    llc_number  number  ≥1  ≤999  (optional)",
+    "    subject_to_163j  boolean  (optional)",
+    "    line_1_gross_receipts  number  ≥0",
+    "    line_2_returns_allowances  number  ≥0  (optional)",
+    "    line_6_other_income  number  (optional)",
+    "    line_8_advertising  number  ≥0  (optional)",
+    "    line_9_car_truck_expenses  number  ≥0  (optional)",
+    "    line_10_commissions_fees  number  ≥0  (optional)",
+    "    line_11_contract_labor  number  ≥0  (optional)",
+    "    line_12_depletion  number  ≥0  (optional)",
+    "    line_13_depreciation  number  ≥0  (optional)",
+    "    line_14_employee_benefits  number  ≥0  (optional)",
+    "    line_15_insurance  number  ≥0  (optional)",
+    "    line_16a_interest_mortgage  number  ≥0  (optional)",
+    "    line_16b_interest_other  number  ≥0  (optional)",
+    "    line_17_professional_services  number  ≥0  (optional)",
+    "    line_18_office_expense  number  ≥0  (optional)",
+    "    line_19_pension_plans  number  ≥0  (optional)",
+    "    line_20a_rent_vehicles  number  ≥0  (optional)",
+    "    line_20b_rent_other  number  ≥0  (optional)",
+    "    line_21_repairs  number  ≥0  (optional)",
+    "    line_22_supplies  number  ≥0  (optional)",
+    "    line_23_taxes_licenses  number  ≥0  (optional)",
+    "    line_24a_travel  number  ≥0  (optional)",
+    "    line_24b_meals  number  ≥0  (optional)",
+    "    meals_dot_worker  boolean  (optional)",
+    "    meals_as_wages  boolean  (optional)",
+    "    line_25_utilities  number  ≥0  (optional)",
+    "    line_26_wages  number  ≥0  (optional)",
+    "    line_27a_energy_efficient  number  ≥0  (optional)",
+    "    line_27b_other_expenses  number  ≥0  (optional)",
+    "    line_30_home_office  number  ≥0  (optional)",
+    "    home_office_sq_ft  number  ≥0  (optional)",
+    "    home_office_method  enum  simplified | actual  (optional)",
+    "    line_32_at_risk  enum  a | b  (optional)",
+    "    line_33_inventory_method  enum  cost | lcm | other  (optional)",
+    "    line_34_inventory_change  boolean  (optional)",
+    "    line_35_cogs_beginning_inventory  number  ≥0  (optional)",
+    "    line_36_purchases  number  ≥0  (optional)",
+    "    line_37_cost_of_labor  number  ≥0  (optional)",
+    "    line_38_materials_supplies_cogs  number  ≥0  (optional)",
+    "    line_39_other_cogs  number  ≥0  (optional)",
+    "    line_41_cogs_ending_inventory  number  ≥0  (optional)",
+    "    line_43_date_in_service  string  (optional)",
+    "    line_44a_total_miles  number  ≥0  (optional)",
+    "    line_44b_business_miles  number  ≥0  (optional)",
+    "    line_44c_commuting_miles  number  ≥0  (optional)",
+    "    line_44d_other_miles  number  ≥0  (optional)",
+    "    line_45_personal_use  boolean  (optional)",
+    "    line_46_another_vehicle  boolean  (optional)",
+    "    line_47a_evidence  boolean  (optional)",
+    "    line_47b_written_evidence  boolean  (optional)",
+    "    part_v_other_expenses  array  (optional)",
+    "      items:",
+    "        description  string",
+    "        amount  number  ≥0",
+    "filing_status  string  (optional)",
+    "line_30_home_office  number  ≥0  (optional)",
+    "line1_gross_receipts  number  ≥0  (optional)",
+    "statutory_wages  number  ≥0  (optional)",
+    "withholding  number  ≥0  (optional)",
+    "line16a_interest_mortgage  number  ≥0  (optional)",
+    "line_9_car_truck_expenses  number  ≥0  (optional)",
+    "line_12_depletion  number  ≥0  (optional)"
+  ],
+  "outputNodes": [
+    "schedule1",
+    "agi_aggregator",
+    "schedule_se",
+    "form8995",
+    "form8582",
+    "form6198",
+    "form6251",
+    "form8990",
+    "form461",
+    "eitc",
+    "f8812"
+  ]
+}
+
+$ opentax node graph --node_type schedule_c --depth 2 --json
+exit=0
+stdout:
+{
+  "nodeType": "schedule_c",
+  "depth": 0,
+  "registered": true,
+  "children": [
+    {
+      "nodeType": "schedule1",
+      "depth": 1,
+      "registered": true,
+      "children": []
+    },
+    {
+      "nodeType": "agi_aggregator",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "f1040",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "standard_deduction",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "schedule_a",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "eitc",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "f8812",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "f2441",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "form8995",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "form8960",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "form8962",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "form8880",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "schedule_se",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule2",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "schedule1",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "agi_aggregator",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "form8959",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form8995",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "f1040",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "standard_deduction",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form8582",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule1",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form6198",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule1",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "agi_aggregator",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form6251",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule2",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form8990",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule1",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "agi_aggregator",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "form461",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule1",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "eitc",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "f1040",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    },
+    {
+      "nodeType": "f8812",
+      "depth": 1,
+      "registered": true,
+      "children": [
+        {
+          "nodeType": "schedule3",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        },
+        {
+          "nodeType": "f1040",
+          "depth": 2,
+          "registered": true,
+          "children": []
+        }
+      ]
+    }
+  ]
+}
