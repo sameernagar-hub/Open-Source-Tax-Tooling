@@ -64,4 +64,4 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 14 completed Week 2 synthesis, added `research/comparison_matrix.md` and `research/prototype_target_decision.md`, and selected hledger as the primary Week 3 prototype target with Actual Budget as backup. The next phase is Day 15 prototype design for a small hledger CLI/JSON adapter.
+Phase 19 completed safety and failure handling for the hledger adapter. The prototype now has a stable failure matrix for validation, context, dry-run, and hledger discovery failures, while retaining the Day 18 end-to-end summary over `print`, `balance`, and `incomestatement` JSON. Phase 20 is now scoped to demo packaging plus a Vercel-ready project dashboard UI for notes, evidence, prototype output, research, tool records, report/deck state, and the changelog.

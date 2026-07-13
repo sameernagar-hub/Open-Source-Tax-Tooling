@@ -1,0 +1,38 @@
+# hledger adapter Day 19 failure matrix transcript
+# Executed: 2026-07-13 PDT
+# Workspace: AI Engineering Internship
+
+PS prototype> python tests/run_failure_matrix.py
+Exit code: 0
+Observed status: passed
+Observed case count: 15
+Observed passed count: 15
+Observed failed count: 0
+Observed scratch unchanged: true
+
+Observed cases:
+
+- valid_input_validate_ok: exit 0, no error code
+- missing_synthetic_ack: exit 2, SYNTHETIC_CONFIRMATION_REQUIRED
+- malformed_date: exit 2, INPUT_DATE_INVALID
+- invalid_amount: exit 2, INPUT_AMOUNT_INVALID
+- unknown_category: exit 2, INPUT_CATEGORY_UNKNOWN
+- unknown_source_account: exit 2, INPUT_ACCOUNT_UNKNOWN
+- duplicate_transaction_id: exit 2, INPUT_ID_DUPLICATE
+- missing_transaction_file: exit 2, INPUT_NOT_FOUND
+- tax_hint_mismatch: exit 2, INPUT_TAX_HINT_MISMATCH
+- wrong_amount_sign: exit 2, INPUT_SIGN_INVALID
+- context_dataset_mismatch: exit 2, CONTEXT_INVALID
+- context_negative_mileage: exit 2, CONTEXT_INVALID
+- dry_run_keep_scratch_conflict: exit 2, DRY_RUN_OPTION_CONFLICT
+- hledger_not_found: exit 3, HLEDGER_NOT_FOUND
+- hledger_unusable_candidate: exit 3, HLEDGER_UNUSABLE
+
+PS prototype> python -m compileall hledger_adapter tests
+Exit code: 0
+
+Notes:
+
+- Preflight failure cases use `summarize --dry-run` where possible, proving invalid input stops before hledger report execution.
+- The matrix clears `HLEDGER_BIN` and narrows `PATH` for the missing-hledger case so it remains deterministic even if hledger is installed globally later.
+- Generated bad fixtures live only in a temporary directory.

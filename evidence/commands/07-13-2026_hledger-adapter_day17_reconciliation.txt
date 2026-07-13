@@ -1,0 +1,58 @@
+# hledger adapter Day 17 reconciliation transcript
+# Executed: 2026-07-13 PDT
+# Workspace: AI Engineering Internship
+# hledger binary: explicit --hledger-bin value pointing to retained Day 9 hledger 1.52.1 executable
+
+PS prototype> python -m compileall hledger_adapter
+Exit code: 0
+
+PS prototype> python -m hledger_adapter --help
+Exit code: 0
+Observed commands: validate, smoke, demo, summarize
+Observed smoke help: read-only hledger transaction/account reconciliation call
+
+PS prototype> python -m hledger_adapter demo --hledger-bin <explicit hledger 1.52.1 path>
+Exit code: 0
+Observed status: ok
+Observed mode: executed
+Observed hledger version: hledger 1.52.1-g3834a163b-20260428, windows-x86_64
+Observed operations: print_json, account_balances_json
+Observed input files: 1
+Observed transactions: 19
+Observed postings: 38
+Observed accounts: 14
+Observed checking balance: 8964.77
+Observed reconciliation status: passed
+Observed scratch kept: false
+Observed warnings: []
+
+PS prototype> python -m hledger_adapter smoke --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --transactions ../evidence/fixtures/hledger_synthetic_freelancer_tadd.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --confirm-synthetic
+Exit code: 0
+Observed status: ok
+Observed mode: executed
+Observed input files: 2
+Observed transactions: 20
+Observed postings: 40
+Observed accounts: 14
+Observed checking balance: 8939.78
+Observed Expenses:Business:Software balance: 263.99
+Observed reconciliation status: passed
+Observed warning: CUSTOM_SYNTHETIC_INPUTS_ACKNOWLEDGED
+
+PS prototype> python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --dry-run --confirm-synthetic
+Exit code: 0
+Observed status: ok
+Observed mode: dry_run
+Observed planned operations: version probe, scratch copy, print JSON, balance JSON, income-statement JSON
+
+PS prototype> python -m hledger_adapter demo
+Exit code: 3
+Observed error code: HLEDGER_NOT_FOUND
+
+PS prototype> python -m hledger_adapter validate --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --transactions ../evidence/fixtures/hledger_duplicate_t001.csv --confirm-synthetic
+Exit code: 2
+Observed error code: INPUT_ID_DUPLICATE
+Observed duplicate transaction_id: T001
+
+PS prototype> Test-Path .scratch
+Observed result: False

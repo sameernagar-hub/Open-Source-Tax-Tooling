@@ -600,3 +600,269 @@ Build the Week 2 comparison matrix and choose the Week 3 prototype target and ba
 ### Tomorrow's Starting Point
 
 Execute Day 15 by creating `prototype/design.md`, defining the hledger adapter schema and guardrails, and updating the prototype README outline.
+
+## 07-11-2026 - Phase 15: Prototype Design
+
+### Goal
+
+Design the smallest useful hledger integration, freeze its input/output and safety contracts, and make the Week 3 build scope concrete.
+
+### What I Did
+
+- Reviewed the Day 14 decision and Day 9 hledger workflow, JSON, and failure evidence.
+- Created `prototype/design.md` with the architecture, CLI, schemas, validation, hledger boundary, normalized output, error taxonomy, safety defaults, tests, and phase handoff.
+- Replaced the prototype placeholder README with a design-stage README draft.
+- Selected a Python 3.11+ standard-library CLI and a stateless, read-only subprocess model.
+- Chose one committed static hledger rules file plus a separate versioned JSON category map.
+- Defined optional synthetic context ingestion for mileage without using profile totals or calculating a deduction.
+- Defined exact reconciliation and acceptance totals for the baseline and `TADD` scenarios.
+
+### Evidence Captured
+
+- `prototype/design.md`
+- `prototype/README.md`
+- `notes/day_15_prototype_design.md`
+- `research/prototype_target_decision.md`
+- `tool_records/tool_1.md`
+- Day 9 hledger command and JSON evidence under `evidence/`
+
+### Decisions Made
+
+- Keep the selected local hledger CLI/JSON shape; do not add REST, hledger-web, or a generic multi-backend abstraction.
+- Use strict wrapper preflight because hledger accepted unknown categories and duplicate IDs.
+- Use the category map, not free-text tax hints, to select controlled bookkeeping buckets.
+- Use reconciled hledger JSON as the financial source; never copy expected totals from the profile into results.
+- Keep exact money as decimal strings and decode hledger mantissa/scale rather than binary floats.
+- Preserve mileage only as an unmapped, unpriced fact.
+- Use fresh scratch copies, argument-array subprocesses, path redaction, atomic new-file output, and no input mutation.
+- Discover hledger by explicit flag, `HLEDGER_BIN`, then `PATH`; do not download or bundle it.
+- Keep the prototype explicitly outside tax calculation, advice, forms, refunds, validation, and filing.
+
+### Problems / Open Questions
+
+- The workspace does not currently expose hledger on `PATH`, so Day 16 must establish an explicit safe run path for the smoke call.
+- Only hledger 1.52.1 has been tested.
+- The tested rules do not map the source `cleared` field into hledger.
+- Synthetic-only use cannot be proven automatically; the design uses documented fixtures and a required custom-run acknowledgement.
+- GPL implications need review before any future binary bundling or combined distribution.
+
+### Tomorrow's Starting Point
+
+Execute Day 16 by scaffolding the Python adapter, committing the category map and static rules, implementing configuration/fixture loading and hledger discovery/version capture, and adding a fixed-fixture read-only smoke call. The polished demo remains a later Week 3 slice.
+
+## 07-13-2026 - Phase 16: Adapter Skeleton
+
+### Goal
+
+Create the first working adapter layer around the selected hledger target, with committed configuration, CLI help, fixture loading, binary discovery/version capture, and a real read-only smoke call.
+
+### What I Did
+
+- Added a Python 3.11+ standard-library package under `prototype/hledger_adapter/`.
+- Added `prototype/pyproject.toml`, `prototype/.gitignore`, `prototype/config/category_map.json`, and `prototype/config/hledger.csv.rules`.
+- Implemented structured errors and exit paths for validation, hledger discovery, hledger execution, and internal failures.
+- Implemented `validate`, `smoke`, `demo`, and `summarize --dry-run`.
+- Loaded and validated the committed category map, canonical 19-row transaction CSV, and optional synthetic tax-profile context.
+- Implemented hledger discovery by explicit `--hledger-bin`, `HLEDGER_BIN`, then `PATH`.
+- Probed hledger with `--version` using the same isolation flags planned for report commands.
+- Ran a read-only hledger `print -O json` smoke call through scratch copies of the CSV and rules file.
+
+### Evidence Captured
+
+- `prototype/hledger_adapter/`
+- `prototype/config/category_map.json`
+- `prototype/config/hledger.csv.rules`
+- `prototype/pyproject.toml`
+- `prototype/.gitignore`
+- `notes/day_16_adapter_skeleton.md`
+- `evidence/commands/07-13-2026_hledger-adapter_day16_smoke.txt`
+
+### Verification
+
+- `python -m hledger_adapter --help`
+- `python -m compileall hledger_adapter`
+- `python -m hledger_adapter validate --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --confirm-synthetic`
+- `python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --dry-run --confirm-synthetic`
+- `python -m hledger_adapter demo --hledger-bin <explicit hledger 1.52.1 path>`
+
+The smoke call detected `hledger 1.52.1-g3834a163b-20260428, windows-x86_64`, matched the tested `1.52.1` baseline, and returned 19 transactions with 38 postings.
+
+### Decisions Made
+
+- Keep `smoke` as an explicit Day 16 backend-proof command while full `summarize` remains a later normalized-output command.
+- Keep the demo pinned to repository synthetic fixtures so it does not require `--confirm-synthetic`.
+- Require `--confirm-synthetic` for custom validate/smoke/summarize inputs.
+- Do not scan temporary directories for hledger; the Day 9 executable was used only as an explicit `--hledger-bin` value for verification.
+- Keep default scratch ephemeral and ignore only `prototype/.scratch/` for explicit kept runs.
+
+### Problems / Open Questions
+
+- hledger is still not generally available on `PATH`; the smoke proof used the retained Day 9 executable path explicitly.
+- The Day 16 smoke verifies hledger invocation and JSON shape only. It does not yet normalize postings, check every amount invariant, or calculate summary totals.
+- Only hledger 1.52.1 has been verified hands-on.
+
+### Tomorrow's Starting Point
+
+Execute Day 17 by converting hledger `print -O json` into normalized transaction/account structures, reconciling every source row to balanced USD postings, and proving the initial account-loading/checking-balance invariants.
+
+## 07-13-2026 - Phase 17: Transaction and Account Reconciliation
+
+### Goal
+
+Implement the first half of the demo workflow above backend invocation: account loading, transaction normalization, multi-file transaction import, input preflight, and structured output.
+
+### What I Did
+
+- Extended the validated CSV model to retain structured source transaction records after preflight.
+- Added a hledger report runner that executes `print -O json` and `balance --flat -O json` through copied scratch inputs and committed rules.
+- Added `prototype/hledger_adapter/normalize.py` to decode hledger decimal mantissa/scale amounts, normalize transactions/accounts, and enforce reconciliation invariants.
+- Updated `demo` and `smoke` to emit normalized transactions, account balances, counts, engine report metadata, and reconciliation status.
+- Verified the baseline fixture and the baseline plus `TADD` multi-file scenario.
+
+### Evidence Captured
+
+- `prototype/hledger_adapter/models.py`
+- `prototype/hledger_adapter/validation.py`
+- `prototype/hledger_adapter/hledger.py`
+- `prototype/hledger_adapter/normalize.py`
+- `prototype/hledger_adapter/cli.py`
+- `notes/day_17_transaction_account_reconciliation.md`
+- `evidence/commands/07-13-2026_hledger-adapter_day17_reconciliation.txt`
+
+### Verification
+
+- `python -m compileall hledger_adapter`
+- `python -m hledger_adapter --help`
+- `python -m hledger_adapter demo --hledger-bin <explicit hledger 1.52.1 path>`
+- `python -m hledger_adapter smoke --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --transactions ../evidence/fixtures/hledger_synthetic_freelancer_tadd.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --confirm-synthetic`
+- `python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --dry-run --confirm-synthetic`
+
+The baseline run returned 19 transactions, 38 postings, 14 accounts, checking balance `8964.77`, and passed reconciliation. The `TADD` run returned 20 transactions, 40 postings, 14 accounts, checking balance `8939.78`, software balance `263.99`, and passed reconciliation.
+
+### Decisions Made
+
+- Keep Day 17 output focused on normalized transactions and accounts; summary totals remain Day 18.
+- Use hledger amount `decimalMantissa` and `decimalPlaces`, not `floatingPoint`, for every decoded amount.
+- Validate hledger output shape and accounting invariants before emitting normalized transaction/account data.
+- Treat hledger `balance --flat -O json` as the account-loading source for this phase.
+- Keep raw hledger JSON out of canonical output and only retain it when `--keep-scratch` is explicit.
+
+### Problems / Open Questions
+
+- hledger is still not installed on `PATH`; verification still uses the explicit retained Day 9 executable.
+- The income-statement report and Schedule C-style/tax-adjacent summaries are not implemented yet.
+- More failure fixtures should be automated during Day 19 rather than kept as manual checks.
+
+### Tomorrow's Starting Point
+
+Execute Day 18 by deriving balances and report summaries from reconciled postings, adding the income-statement cross-check, and emitting the controlled Schedule C-style and tax-adjacent sections.
+
+## 07-13-2026 - Phase 18: Balance and Report Summary
+
+### Goal
+
+Implement the second half of the prototype workflow: balance/report summaries, hledger income-statement cross-checks, Schedule C-style bookkeeping buckets, and tax-adjacent facts.
+
+### What I Did
+
+- Extended the hledger runner to execute `incomestatement --depth 3 -O json` in the same scratch directory as `print -O json` and `balance --flat -O json`.
+- Added `prototype/hledger_adapter/summary.py` for controlled bucket aggregation over reconciled normalized output.
+- Cross-checked mapped revenue and expense buckets against hledger's income-statement JSON.
+- Implemented executed `summarize` output and upgraded `demo` to the canonical fixed-fixture end-to-end summary.
+- Preserved `smoke` as transaction/account reconciliation without the summary section.
+- Added summary warnings, unsupported capability labels, unmapped mileage/charity/payment facts, and provenance.
+- Updated README status, the prototype README, the changelog, the Day 18 note, and command evidence.
+
+### Evidence Captured
+
+- `prototype/hledger_adapter/models.py`
+- `prototype/hledger_adapter/hledger.py`
+- `prototype/hledger_adapter/summary.py`
+- `prototype/hledger_adapter/cli.py`
+- `prototype/README.md`
+- `notes/day_18_balance_report_summary.md`
+- `evidence/commands/07-13-2026_hledger-adapter_day18_summary.txt`
+
+### Verification
+
+- `python -m compileall hledger_adapter`
+- `python -m hledger_adapter demo --hledger-bin <explicit hledger 1.52.1 path>`
+- `python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --transactions ../evidence/fixtures/hledger_synthetic_freelancer_tadd.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --confirm-synthetic`
+- `python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --hledger-bin <explicit hledger 1.52.1 path> --dry-run --confirm-synthetic`
+- `python -m hledger_adapter smoke --hledger-bin <explicit hledger 1.52.1 path>`
+- `python -m hledger_adapter summarize --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --hledger-bin <explicit hledger 1.52.1 path> --confirm-synthetic`
+- `python -m hledger_adapter --help`
+- `Test-Path .scratch`
+
+Baseline result: 19 transactions, 38 postings, 14 accounts, opening balance `1200.00`, checking balance `8964.77`, bookkeeping revenue `10327.75`, bookkeeping expenses `1512.98`, bookkeeping net `8814.77`, Schedule C-style gross receipts `10250.00`, Schedule C-style cash expenses `1142.98`, Schedule C-style net before mileage `9107.02`, interest `77.75`, charity `370.00`, estimated payments `1050.00`, and mileage `78.2`.
+
+Baseline plus `TADD`: 20 transactions, 40 postings, checking balance `8939.78`, software cash expenses `263.99`, Schedule C-style cash expenses `1167.97`, and Schedule C-style net before mileage `9082.03`.
+
+### Decisions Made
+
+- Use hledger's income statement only as a bookkeeping cross-check; do not substitute it for the Schedule C-style result.
+- Summarize only controlled category-map buckets and keep labels non-authoritative.
+- Preserve mileage quantity without choosing a rate or calculating a deduction.
+- Leave Markdown/file-output behavior for later phases.
+
+### Problems / Open Questions
+
+- hledger is still not installed on `PATH`; verification still uses the explicit retained Day 9 executable.
+- Day 19 should turn manual failure checks into stable failure behavior and scripted/tested cases.
+- The summary layer did not need to parse human-formatted hledger text because the needed report is available as JSON.
+
+### Tomorrow's Starting Point
+
+Execute Day 19 by adding stable failure checks for malformed dates, invalid amounts, unknown categories/accounts, duplicate IDs, missing files, context failures, missing hledger, and dry-run option conflicts.
+
+## 07-13-2026 - Phase 19: Safety and Failure Handling
+
+### Goal
+
+Make the prototype honest and safe by proving clear structured failure behavior for expected bad inputs, policy failures, dry-run conflicts, context failures, and hledger discovery failures.
+
+### What I Did
+
+- Added `prototype/tests/run_failure_matrix.py`, a standard-library subprocess matrix that runs from `prototype/`.
+- Reused existing committed bad CSV fixtures for malformed date, invalid amount, unknown category, and duplicate transaction ID checks.
+- Generated temporary fixtures for unknown source account, tax-hint mismatch, wrong sign, context dataset mismatch, and negative mileage.
+- Added cases for missing synthetic acknowledgement, missing transaction file, dry-run plus kept scratch, missing hledger, and unusable explicit hledger candidate.
+- Confirmed preflight failures use `summarize --dry-run` where possible and stop before hledger report execution.
+- Confirmed the failure matrix leaves scratch state unchanged.
+- Updated `prototype/README.md`, `prototype/design.md`, the day-by-day plan, root README, changelog, Day 19 note, and command evidence.
+- Updated Day 20 scope to include a Vercel-ready project dashboard UI with a generated read-only artifact manifest covering changelog, notes, evidence, prototype, report/deck state, research, tool records, and README files.
+
+### Evidence Captured
+
+- `prototype/tests/run_failure_matrix.py`
+- `prototype/README.md`
+- `prototype/design.md`
+- `day_by_day_ai_tax_tooling_phases.md`
+- `notes/day_19_safety_failure_handling.md`
+- `evidence/commands/07-13-2026_hledger-adapter_day19_failures.txt`
+
+### Verification
+
+- `python tests/run_failure_matrix.py`
+- `python -m compileall hledger_adapter tests`
+
+The matrix reported 15 cases, 15 passed, 0 failed, and `scratch_unchanged: true`.
+
+Verified error codes: `SYNTHETIC_CONFIRMATION_REQUIRED`, `INPUT_DATE_INVALID`, `INPUT_AMOUNT_INVALID`, `INPUT_CATEGORY_UNKNOWN`, `INPUT_ACCOUNT_UNKNOWN`, `INPUT_ID_DUPLICATE`, `INPUT_NOT_FOUND`, `INPUT_TAX_HINT_MISMATCH`, `INPUT_SIGN_INVALID`, `CONTEXT_INVALID`, `DRY_RUN_OPTION_CONFLICT`, `HLEDGER_NOT_FOUND`, and `HLEDGER_UNUSABLE`.
+
+### Decisions Made
+
+- Keep Day 19 focused on stable safety/failure behavior rather than UI implementation.
+- Move the requested live project dashboard into Day 20 demo packaging, where it naturally belongs.
+- Plan the dashboard as a Vercel-ready read-only app backed by a generated project manifest, so it can show repository artifacts without leaking host paths or secrets.
+- Leave hledger timeout and corrupted-engine-output simulation for later hardening if time remains.
+
+### Problems / Open Questions
+
+- The failure matrix does not yet simulate backend timeouts, malformed hledger JSON, or reconciliation mutations.
+- Day 20 needs to choose the lightest frontend stack that fits the repository and Vercel target.
+- The dashboard should display live/local workflow status during development while staying static or serverless-friendly for Vercel.
+
+### Tomorrow's Starting Point
+
+Execute Day 20 by adding demo packaging and a Vercel-ready dashboard UI scaffold for the full project trail.

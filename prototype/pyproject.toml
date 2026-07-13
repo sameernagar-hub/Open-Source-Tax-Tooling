@@ -1,0 +1,8 @@
+[project]
+name = "synthetic-freelancer-hledger-adapter"
+version = "0.1.0"
+description = "Synthetic-only Python adapter skeleton for hledger CLI/JSON smoke runs."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+

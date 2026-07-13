@@ -400,9 +400,9 @@ Done when:
 
 - The prototype shows both happy-path behavior and safe failure behavior.
 
-### Day 20 - 07-20-2026 - Phase 20: Demo Packaging
+### Day 20 - 07-20-2026 - Phase 20: Demo Packaging and Project Dashboard UI
 
-Objective: make the prototype easy to run and explain.
+Objective: make the prototype easy to run and explain, and create a Vercel-ready read-only dashboard for the project.
 
 Tasks:
 
@@ -411,15 +411,20 @@ Tasks:
 - Add expected output.
 - Clean up fixture names and comments.
 - Confirm no real data or secrets are present.
+- Create a lightweight web application under the prototype workspace that can be deployed later on Vercel.
+- Surface the project process in one place: changelog, notes, evidence, prototype status/output, research, tool records, report/deck placeholders, and README files.
+- Generate or load a project-manifest JSON from repository files so the UI can show current artifacts during local development and future deployments without exposing private paths or secrets.
+- Include a live/demo status view for the adapter workflow, recent verification results, and failure-matrix outcomes.
 
 Exit artifact:
 
 - Runnable demo command.
 - Updated README.
+- Vercel-ready project dashboard UI scaffold and data-manifest contract.
 
 Done when:
 
-- A reviewer can run the prototype without needing private context.
+- A reviewer can run the prototype and open the dashboard locally without needing private context, and the dashboard structure is ready for a future Vercel deployment.
 
 ### Day 21 - 07-21-2026 - Phase 21: Prototype Review and Freeze
 

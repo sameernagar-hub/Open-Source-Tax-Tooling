@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "dataset": {
+    "id": "synthetic-freelancer-2025-v1",
+    "tax_year": 2025,
+    "currency": "USD",
+    "synthetic_only": true
+  },
+  "primary_account": "Assets:Checking",
+  "engine": {
+    "tested_version": "1.52.1"
+  },
+  "limits": {
+    "max_input_rows": 5000,
+    "max_input_bytes": 1048576,
+    "max_abs_amount_usd": "999999999.99",
+    "subprocess_timeout_seconds": 30,
+    "max_subprocess_output_bytes": 10485760
+  },
+  "categories": {
+    "Equity:Opening Balances": {
+      "summary_bucket": "ledger.opening_balance",
+      "summary_key": "opening_balance",
+      "expected_source_sign": "positive",
+      "allowed_tax_hints": ["None"]
+    },
+    "Income:Freelance:Design": {
+      "summary_bucket": "schedule_c_style.gross_receipts",
+      "summary_key": "design",
+      "expected_source_sign": "positive",
+      "allowed_tax_hints": ["Schedule C gross receipts"]
+    },
+    "Income:Freelance:Consulting": {
+      "summary_bucket": "schedule_c_style.gross_receipts",
+      "summary_key": "consulting",
+      "expected_source_sign": "positive",
+      "allowed_tax_hints": ["Schedule C gross receipts"]
+    },
+    "Income:Interest": {
+      "summary_bucket": "tax_adjacent.interest_income",
+      "summary_key": "interest",
+      "expected_source_sign": "positive",
+      "allowed_tax_hints": ["Schedule B interest"]
+    },
+    "Expenses:Business:Software": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "software",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C software"]
+    },
+    "Expenses:Business:Office Equipment": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "office_equipment",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C office equipment"]
+    },
+    "Expenses:Business:Office Supplies": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "office_supplies",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C office supplies"]
+    },
+    "Expenses:Business:Travel": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "local_travel",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C local travel"]
+    },
+    "Expenses:Business:Bank Fees": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "bank_fees",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C bank fees"]
+    },
+    "Expenses:Business:Professional Education": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "professional_education_placeholder",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C education placeholder"]
+    },
+    "Expenses:Business:Coworking": {
+      "summary_bucket": "schedule_c_style.cash_expenses",
+      "summary_key": "coworking",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule C workspace"]
+    },
+    "Expenses:Charity": {
+      "summary_bucket": "tax_adjacent.cash_charitable_contributions",
+      "summary_key": "cash_charity",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Schedule A cash charity"]
+    },
+    "Liabilities:Federal Tax:Estimated Payments": {
+      "summary_bucket": "tax_adjacent.federal_estimated_payments",
+      "summary_key": "federal_estimated_payments",
+      "expected_source_sign": "negative",
+      "allowed_tax_hints": ["Form 1040 estimated payments"]
+    }
+  }
+}
+
