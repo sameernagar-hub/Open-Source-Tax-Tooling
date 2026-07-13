@@ -541,6 +541,22 @@ JSON is canonical. The optional Markdown report is rendered only from an already
 
 Markdown rendering may be completed during Day 20 after the JSON contract is stable.
 
+## Day 20 Project Execution Lab UI
+
+Day 20 adds a Vercel-ready web application, but the target is not a conventional dashboard. It should behave like a responsive project execution lab for the internship work.
+
+Core requirements:
+
+- Show the synthetic prototype workflow as the first screen: validation, hledger discovery, version probe, scratch setup, report execution, reconciliation, summary aggregation, failure matrix, cleanup, and output excerpts.
+- Include an `about` and `why` layer that explains the research question, hledger target choice, synthetic-data boundary, adapter architecture, safety matrix, and the role of each major artifact.
+- Generate or load a read-only project manifest that groups changelog, notes, evidence, prototype files/output, research, tool records, report/deck state, and README files without host-absolute paths.
+- Support local live mode, where a developer can run the pinned synthetic demo and failure matrix from the UI.
+- Support Vercel replay mode, where committed command evidence is animated as a verified run when hledger cannot execute in the deployed environment.
+- Show Git contribution flow as part of the app: branch, run checks, commit, push, and review.
+- Use project-specific engineering copy and real artifact names. Avoid generic filler, prompt-related wording, and unrelated marketing content.
+
+The detailed UI brief is `prototype/day20_project_lab_ui_brief.md`.
+
 ## Safety Defaults
 
 - Custom commands require an explicit synthetic-data acknowledgement; the demo is pinned to documented synthetic fixtures.
@@ -633,7 +649,7 @@ This prototype invokes an unmodified executable as a separate process. That fact
 | Day 17 | Implement strict CSV validation, multi-file loading, transaction normalization, account listing, and reconciliation. |
 | Day 18 | Implement controlled bucket aggregation and the canonical JSON summary. |
 | Day 19 | Implement stable failures and the shared plus adapter-specific test matrix. |
-| Day 20 | Finish one-command demo, setup instructions, sample output, and a Vercel-ready project dashboard UI with a generated read-only artifact manifest. |
+| Day 20 | Finish one-command demo, setup instructions, sample output, and a Vercel-ready project execution lab UI with live local execution, verified replay, generated artifact/why manifests, and Git contribution guidance. |
 | Day 21 | Run from a clean checkout, fix blocking issues, freeze features, and record the retrospective. |
 
 Actual Budget remains a contingency, not a second implementation. Switch only if the real hledger version/smoke call remains blocked after Day 16's safe setup attempts. If a switch is required, preserve this normalized output contract and document the reason before writing backup code.

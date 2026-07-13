@@ -11,6 +11,30 @@ Each entry should answer:
 - What evidence or files were added?
 - What is next?
 
+## 07-13-2026 - Phase 20 UI Scope Refinement
+
+### What Changed
+
+- Added `prototype/day20_project_lab_ui_brief.md` as the detailed target for the Day 20 web application.
+- Reframed Day 20 from a dashboard to a responsive project execution lab with local live execution, Vercel verified replay, artifact manifests, `about`/`why` rationale entries, evidence traceability, and Git contribution guidance.
+- Updated the day-by-day roadmap, prototype design, prototype README, and root README to require command-to-result progression and project-specific content.
+
+### Why
+
+The prototype needs to visibly function for reviewers and justify the AI engineering internship context. Day 20 should show the synthetic adapter run, the failure matrix, and the evidence trail in motion, not just list repository files.
+
+### Evidence / Files
+
+- `prototype/day20_project_lab_ui_brief.md`
+- `day_by_day_ai_tax_tooling_phases.md`
+- `prototype/design.md`
+- `prototype/README.md`
+- `README.md`
+
+### Next
+
+Execute Day 20 by building the execution lab UI, manifest generation, local live-run path, Vercel replay path, and contribution workflow panel.
+
 ## 07-13-2026 - Phase 19: Safety and Failure Handling
 
 ### What Changed
@@ -19,7 +43,7 @@ Each entry should answer:
 - Verified 15 cases covering malformed dates, invalid amounts, unknown categories/accounts, duplicate IDs, missing files, tax-hint mismatch, wrong signs, context failures, missing acknowledgement, dry-run kept-scratch conflict, missing hledger, and unusable hledger candidates.
 - Confirmed the matrix leaves scratch state unchanged and uses `summarize --dry-run` for preflight failures where possible.
 - Updated the prototype README safety/failure sections and the root repository status.
-- Updated the Day 20 roadmap to include a Vercel-ready project dashboard UI for changelog, notes, evidence, prototype status/output, report/deck state, research, tool records, and README artifacts.
+- Updated the Day 20 roadmap to include a Vercel-ready project execution lab for changelog, notes, evidence, prototype status/output, report/deck state, research, tool records, and README artifacts.
 
 ### Why
 
@@ -36,7 +60,7 @@ Day 19 needed to prove the adapter fails clearly and safely, not just produce th
 
 ### Next
 
-Execute Day 20 by adding a one-command demo and a Vercel-ready project dashboard UI scaffold with a generated read-only artifact manifest.
+Execute Day 20 by adding a one-command demo and a Vercel-ready project execution lab scaffold with a generated read-only artifact manifest.
 
 ## 07-13-2026 - Phase 18: Balance and Report Summary
 

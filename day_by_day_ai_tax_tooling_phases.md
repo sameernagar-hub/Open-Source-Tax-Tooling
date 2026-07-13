@@ -400,9 +400,9 @@ Done when:
 
 - The prototype shows both happy-path behavior and safe failure behavior.
 
-### Day 20 - 07-20-2026 - Phase 20: Demo Packaging and Project Dashboard UI
+### Day 20 - 07-20-2026 - Phase 20: Demo Packaging and Project Execution Lab UI
 
-Objective: make the prototype easy to run and explain, and create a Vercel-ready read-only dashboard for the project.
+Objective: make the prototype easy to run and explain, and create a Vercel-ready project execution lab that shows the prototype functioning.
 
 Tasks:
 
@@ -412,19 +412,27 @@ Tasks:
 - Clean up fixture names and comments.
 - Confirm no real data or secrets are present.
 - Create a lightweight web application under the prototype workspace that can be deployed later on Vercel.
+- Build the UI as a project execution lab, not a generic dashboard: the first screen should show the synthetic prototype run, current status, key totals, and evidence trace.
 - Surface the project process in one place: changelog, notes, evidence, prototype status/output, research, tool records, report/deck placeholders, and README files.
 - Generate or load a project-manifest JSON from repository files so the UI can show current artifacts during local development and future deployments without exposing private paths or secrets.
-- Include a live/demo status view for the adapter workflow, recent verification results, and failure-matrix outcomes.
+- Include `about` and `why` manifest sections explaining the research question, hledger target choice, synthetic-data boundary, adapter design, safety matrix, and why each major artifact exists.
+- Include a local live execution mode that can run the synthetic adapter demo and failure matrix from the website during development.
+- Include a Vercel-friendly verified replay mode that animates committed command evidence when a deployed environment cannot execute a local hledger binary.
+- Show command-to-result progression: validation, hledger discovery, version probe, scratch setup, report execution, reconciliation, summary aggregation, failure matrix, cleanup, and output excerpts.
+- Include a Git contribution view covering branch, checks, commit, push, and review flow for future contributors.
+- Keep copy specific to the project; avoid generic filler, prompt-related wording, or unrelated marketing sections.
 
 Exit artifact:
 
 - Runnable demo command.
 - Updated README.
-- Vercel-ready project dashboard UI scaffold and data-manifest contract.
+- Vercel-ready project execution lab UI scaffold and data-manifest contract.
+- Local live-run and Vercel replay interaction design.
+- Contribution-to-Git workflow panel.
 
 Done when:
 
-- A reviewer can run the prototype and open the dashboard locally without needing private context, and the dashboard structure is ready for a future Vercel deployment.
+- A reviewer can run the prototype, open the execution lab locally, see the synthetic workflow functioning or replaying from verified evidence, inspect relevant artifacts, and understand how to contribute changes through Git.
 
 ### Day 21 - 07-21-2026 - Phase 21: Prototype Review and Freeze
 

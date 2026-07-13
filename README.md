@@ -64,4 +64,4 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 19 completed safety and failure handling for the hledger adapter. The prototype now has a stable failure matrix for validation, context, dry-run, and hledger discovery failures, while retaining the Day 18 end-to-end summary over `print`, `balance`, and `incomestatement` JSON. Phase 20 is now scoped to demo packaging plus a Vercel-ready project dashboard UI for notes, evidence, prototype output, research, tool records, report/deck state, and the changelog.
+Phase 19 completed safety and failure handling for the hledger adapter. The prototype now has a stable failure matrix for validation, context, dry-run, and hledger discovery failures, while retaining the Day 18 end-to-end summary over `print`, `balance`, and `incomestatement` JSON. Phase 20 is scoped to demo packaging plus a Vercel-ready project execution lab: a responsive app with local live synthetic runs, verified replay for deployment, artifact and `why` manifests, evidence traceability, and Git contribution guidance.

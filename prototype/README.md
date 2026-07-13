@@ -4,7 +4,7 @@
 
 Phase 19 safety and failure handling is complete. The CLI can load committed configuration, validate the canonical synthetic fixtures, discover and version-probe hledger, run real read-only `print -O json`, `balance --flat -O json`, and `incomestatement --depth 3 -O json` reports through scratch copies, reconcile the results, emit normalized transactions/account balances/controlled Schedule C-style totals/tax-adjacent facts, and run a stable failure matrix for expected bad inputs and hledger discovery failures.
 
-Demo packaging, a Vercel-ready project dashboard UI, and optional Markdown output are still planned for later phases.
+Demo packaging, a Vercel-ready project execution lab UI, and optional Markdown output are still planned for later phases.
 
 The implementation contract is in [`design.md`](design.md). The selected target and comparison rationale are in [`research/prototype_target_decision.md`](../research/prototype_target_decision.md).
 
@@ -178,9 +178,15 @@ The repository's prototype code is covered by the repository's MIT license. hled
 Phase 20 will:
 
 - Add a one-command demo wrapper and expected-output sample.
-- Create a lightweight Vercel-ready project dashboard UI under the prototype workspace.
-- Generate or load a read-only project manifest covering the changelog, notes, evidence, prototype files/output, report/deck state, research files, tool records, and README files.
-- Show adapter workflow status, recent verification results, and failure-matrix outcomes in the dashboard without exposing private paths, secrets, or real data.
-- Keep the dashboard local-first now and deployable later on Vercel.
+- Create a lightweight Vercel-ready project execution lab UI under the prototype workspace.
+- Make the first screen show something functioning: local live execution of the pinned synthetic demo and failure matrix, or a Vercel-safe verified replay from committed command evidence.
+- Generate or load a read-only artifact manifest covering the changelog, notes, evidence, prototype files/output, report/deck state, research files, tool records, and README files.
+- Include `about` and `why` manifest entries for the research question, hledger target choice, synthetic-data boundary, adapter design, safety matrix, and artifact purpose.
+- Show command-to-result progression across validation, hledger discovery, version probe, scratch setup, report execution, reconciliation, summary aggregation, failure matrix, cleanup, and output excerpts.
+- Include a Git contribution panel for branch creation, checks, commit, push, and review.
+- Keep copy specific to this project and avoid generic filler, prompt-related wording, or unrelated marketing sections.
+- Keep the app local-first now and deployable later on Vercel without exposing private paths, secrets, or real data.
 
 Markdown rendering and final clean-checkout verification follow in Phase 21 as defined in [`design.md`](design.md).
+
+The detailed Day 20 UI brief is [`day20_project_lab_ui_brief.md`](day20_project_lab_ui_brief.md).

@@ -830,7 +830,7 @@ Make the prototype honest and safe by proving clear structured failure behavior 
 - Confirmed preflight failures use `summarize --dry-run` where possible and stop before hledger report execution.
 - Confirmed the failure matrix leaves scratch state unchanged.
 - Updated `prototype/README.md`, `prototype/design.md`, the day-by-day plan, root README, changelog, Day 19 note, and command evidence.
-- Updated Day 20 scope to include a Vercel-ready project dashboard UI with a generated read-only artifact manifest covering changelog, notes, evidence, prototype, report/deck state, research, tool records, and README files.
+- Updated Day 20 scope to include a Vercel-ready project execution lab with a generated read-only artifact manifest covering changelog, notes, evidence, prototype, report/deck state, research, tool records, and README files.
 
 ### Evidence Captured
 
@@ -853,16 +853,50 @@ Verified error codes: `SYNTHETIC_CONFIRMATION_REQUIRED`, `INPUT_DATE_INVALID`, `
 ### Decisions Made
 
 - Keep Day 19 focused on stable safety/failure behavior rather than UI implementation.
-- Move the requested live project dashboard into Day 20 demo packaging, where it naturally belongs.
-- Plan the dashboard as a Vercel-ready read-only app backed by a generated project manifest, so it can show repository artifacts without leaking host paths or secrets.
+- Move the requested live project execution lab into Day 20 demo packaging, where it naturally belongs.
+- Plan the execution lab as a Vercel-ready read-only app backed by a generated project manifest, so it can show repository artifacts without leaking host paths or secrets.
 - Leave hledger timeout and corrupted-engine-output simulation for later hardening if time remains.
 
 ### Problems / Open Questions
 
 - The failure matrix does not yet simulate backend timeouts, malformed hledger JSON, or reconciliation mutations.
 - Day 20 needs to choose the lightest frontend stack that fits the repository and Vercel target.
-- The dashboard should display live/local workflow status during development while staying static or serverless-friendly for Vercel.
+- The execution lab should display live/local workflow status during development while staying static or serverless-friendly for Vercel.
 
 ### Tomorrow's Starting Point
 
-Execute Day 20 by adding demo packaging and a Vercel-ready dashboard UI scaffold for the full project trail.
+Execute Day 20 by adding demo packaging and a Vercel-ready project execution lab scaffold for the full project trail.
+
+## 07-13-2026 - Phase 20 UI Scope Refinement
+
+### Goal
+
+Make the Day 20 UI requirement specific enough to build: a functioning project execution lab, not a regular dashboard.
+
+### What I Did
+
+- Added `prototype/day20_project_lab_ui_brief.md`.
+- Updated the day-by-day plan to require local live execution, Vercel verified replay, command-to-result progression, `about`/`why` manifests, artifact categories, evidence traceability, and Git contribution guidance.
+- Updated `prototype/design.md`, `prototype/README.md`, root `README.md`, and `CHANGELOG.md` with the refined Day 20 scope.
+
+### Decisions Made
+
+- The Day 20 app should open on the synthetic prototype workflow, not on a generic landing page.
+- Local development should support a real run of the pinned synthetic demo and failure matrix from the UI.
+- Vercel deployment should use verified replay from committed command evidence when hledger cannot execute in the deployed environment.
+- The manifest should include both artifact inventory and rationale: what each major artifact is for and why it matters.
+- The UI should include a Git contribution path so future reviewers or collaborators can see how to branch, run checks, commit, push, and review.
+- Copy should stay tied to this project and avoid generic filler or prompt-related wording.
+
+### Evidence Captured
+
+- `prototype/day20_project_lab_ui_brief.md`
+- `day_by_day_ai_tax_tooling_phases.md`
+- `prototype/design.md`
+- `prototype/README.md`
+- `README.md`
+- `CHANGELOG.md`
+
+### Tomorrow's Starting Point
+
+Execute Day 20 by building the project execution lab UI and manifest generator.
