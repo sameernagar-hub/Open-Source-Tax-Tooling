@@ -19,6 +19,31 @@ The open-source ecosystem has strong bookkeeping and personal-finance integratio
 - Comparison and decision artifacts: `research/comparison_matrix.md`, `research/prototype_target_decision.md`.
 - Prototype artifacts: `prototype/design.md`, `prototype/README.md`, `prototype/run_day20_demo.py`, `prototype/execution_lab/`, `prototype/retrospective.md`.
 
+## Day 23 Draft Artifact
+
+- `report/opening_sections_draft.md` contains the first prose draft for the introduction, method, and landscape sections.
+- It is based on repository evidence captured through 07-15-2026 and intentionally leaves public release/project-health refreshes for final publication.
+
+## Day 24 Draft Artifact
+
+- `report/tool_evaluations_draft.md` contains the first prose draft for the hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine evaluation sections.
+- It is based on `tool_records/tool_1.md` through `tool_records/tool_5.md`, supporting command transcripts, fixtures, and `research/comparison_matrix.md`.
+
+## Day 25 Draft Artifact
+
+- `report/comparison_recommendation_draft.md` contains the first prose draft for the cross-tool comparison and recommendation sections.
+- It includes the final comparison table, recommendations by use case, tools to avoid for automation, and the rationale for selecting hledger as the prototype target.
+
+## Day 26 Draft Artifact
+
+- `report/prototype_writeup_draft.md` contains the first prose draft for the hledger adapter prototype section.
+- It covers architecture, demo workflow, setup summary, Day 26 live sample output, safety choices, limitations, and what the prototype proves.
+
+## Day 27 Full Draft Artifact
+
+- `report/full_report_draft.md` consolidates the opening, tool-evaluation, comparison/recommendation, prototype, limitations, future-work, evidence-index, and publication-checklist sections into one mentor-reviewable report draft.
+- It keeps public project metadata framed as point-in-time evidence pending final publication refresh.
+
 ## 1. Introduction
 
 Purpose:

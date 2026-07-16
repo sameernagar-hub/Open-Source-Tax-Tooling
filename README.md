@@ -64,7 +64,7 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 22 completed the final report structure early at user request. The report skeleton is now in `report/outline.md`, with sections for introduction, method, landscape, tool evaluations, comparison, prototype, recommendation, limitations, future work, appendices, and missing-evidence checks.
+Phase 27 consolidated the report into `report/full_report_draft.md` early at user request. The earlier section drafts remain in `report/` as supporting artifacts, and `report/outline.md` remains the structural reference.
 
 The frozen prototype includes the repo-root `run_day20_demo.py` wrapper, `prototype/run_day20_demo.py`, a generated repo-relative manifest, a Next.js execution lab under `prototype/execution_lab/`, local live-run API behavior for configured hledger environments, verified replay for deployed/static review, clickable lifecycle phase popups with commands/output, a prototype architecture tab, evidence drawers, artifact inventory, changelog/details tabs, safety results, and `prototype/retrospective.md`.
 

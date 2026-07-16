@@ -1033,3 +1033,266 @@ Execute the Day 22 report-structure phase early and make the prototype execution
 ### Next Starting Point
 
 Draft the report introduction, method, and landscape sections from `report/outline.md`.
+
+## 07-16-2026 - Phase 23: Landscape and Method Draft
+
+### Goal
+
+Draft the opening half of the written report: research question, motivation, evaluation method, open-source landscape, and shortlist rationale.
+
+### What I Did
+
+- Added `report/opening_sections_draft.md` with prose for the introduction, method, and landscape sections.
+- Framed the report around the missing bridge between bookkeeping systems, tax calculation tools, form-level engines, and filing-adjacent artifacts.
+- Described the evidence-first method and shared evaluation rubric.
+- Summarized the synthetic-data workflow and failure-testing method.
+- Organized the landscape into import infrastructure, plain-text accounting, personal-finance apps, tax calculation/policy models, form-level tax engines, and filing/submission reference points.
+- Updated `README.md`, `report/README.md`, and `report/outline.md` to reference the Day 23 draft.
+- Added the Day 23 exit note at `notes/day_23_landscape_and_method_draft.md`.
+
+### Evidence Captured
+
+- `report/opening_sections_draft.md`
+- `notes/day_23_landscape_and_method_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Decisions Made
+
+- Keep the Day 23 draft in a separate file instead of replacing the outline.
+- Avoid claiming public release/project-health metadata was refreshed during this phase.
+- Preserve the central recommendation frame: a validated bookkeeping fact layer is the near-term integration win.
+
+### Problems / Open Questions
+
+- Public metadata should be refreshed before final publication if the report uses latest/current wording.
+- The final report still needs a decision about which tables stay in the body versus appendix.
+- Mentor or reviewer feedback may adjust the opening framing.
+
+### Tomorrow's Starting Point
+
+Execute Day 24 by drafting the per-tool findings from the five completed tool records.
+
+## 07-16-2026 - Phase 24: Tool Evaluation Draft
+
+### Goal
+
+Draft the per-tool report findings for the five hands-on evaluated tools.
+
+### What I Did
+
+- Added `report/tool_evaluations_draft.md`.
+- Drafted sections for hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine.
+- Covered each tool's role, programmatic surface, synthetic workflow result, safety/failure behavior, health/licensing posture, and integration fit.
+- Kept the comparison argument mostly out of this draft so Day 25 can focus on recommendations.
+- Added `notes/day_24_tool_evaluation_draft.md`.
+- Updated `README.md`, `report/README.md`, and `report/outline.md`.
+
+### Evidence Captured
+
+- `report/tool_evaluations_draft.md`
+- `notes/day_24_tool_evaluation_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Decisions Made
+
+- Treat hledger as the primary bookkeeping-to-summary prototype finding.
+- Treat Actual Budget as the local app/API backup finding.
+- Treat Firefly III as the REST-first comparator finding.
+- Treat tenforty as the tax-calculation component finding.
+- Treat Filed Open Tax Engine as the high-upside but cautious form-level finding.
+
+### Problems / Open Questions
+
+- Day 25 still needs explicit recommendations by use case.
+- Final publication still needs a public metadata refresh if current/latest wording remains.
+- License analysis remains a final-report caveat, especially for GPL, AGPL, and dual commercial licensing.
+
+### Tomorrow's Starting Point
+
+Execute Day 25 by drafting cross-tool comparison and recommendation prose from `research/comparison_matrix.md`, `report/opening_sections_draft.md`, and `report/tool_evaluations_draft.md`.
+
+## 07-16-2026 - Phase 25: Comparison and Recommendation Draft
+
+### Goal
+
+Turn the evaluated-tool findings into a clear comparison and recommendation.
+
+### What I Did
+
+- Added `report/comparison_recommendation_draft.md`.
+- Built a final comparison table for hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine.
+- Drafted capability, safety, and licensing/deployment comparisons.
+- Separated recommendations by use case: transparent bookkeeping, local app/API integration, REST API integration, tax-liability scenarios, tax-form experimentation, and production filing/live automation.
+- Explained why hledger was chosen as the prototype target.
+- Added `notes/day_25_comparison_and_recommendation_draft.md`.
+- Updated `README.md`, `report/README.md`, and `report/outline.md`.
+
+### Evidence Captured
+
+- `report/comparison_recommendation_draft.md`
+- `notes/day_25_comparison_and_recommendation_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Decisions Made
+
+- Recommend a layered architecture rather than a single universal winner.
+- Use hledger as the prototype-backed transparent bookkeeping fact layer.
+- Keep Actual Budget as the local app/API alternative.
+- Keep Firefly III as the REST API comparator.
+- Keep tenforty as the downstream tax-liability component.
+- Keep Filed Open Tax Engine as high-upside but cautious form-level experimentation.
+- Avoid production filing, live taxpayer data, GUI scraping, and forced export claims.
+
+### Problems / Open Questions
+
+- Day 26 still needs the prototype writeup.
+- Final report revision still needs metadata refresh, citation cleanup, and table-density decisions.
+- License wording still needs a careful final pass.
+
+### Tomorrow's Starting Point
+
+Execute Day 26 by drafting the prototype section from the frozen hledger adapter and execution lab evidence.
+
+## 07-16-2026 - Phase 26: Prototype Writeup
+
+### Goal
+
+Draft the prototype section of the report and make sure it matches the frozen prototype behavior.
+
+### What I Did
+
+- Added `report/prototype_writeup_draft.md`.
+- Covered the hledger adapter architecture, demo workflow, setup summary, sample output, safety choices, limitations, and proof statement.
+- Ran the packaged demo with `python run_day20_demo.py --json`.
+- Updated `README.md`, `report/README.md`, `report/outline.md`, and `prototype/README.md`.
+- Added `notes/day_26_prototype_writeup.md`.
+
+### Evidence Captured
+
+- `report/prototype_writeup_draft.md`
+- `notes/day_26_prototype_writeup.md`
+- `report/outline.md`
+- `report/README.md`
+- `prototype/README.md`
+- `README.md`
+
+### Decisions Made
+
+- Treat the execution lab as a reviewer surface, not a production service.
+- Keep the report wording centered on validated bookkeeping-to-summary infrastructure.
+- Keep JSON as the canonical output contract and leave optional Markdown deferred.
+- Use the Day 26 live run as the sample-output evidence for the prototype section.
+
+### Verification
+
+- `python run_day20_demo.py --json` passed locally.
+- Live output reported 19 transactions, 38 postings, 14 accounts, checking balance `8964.77`, Schedule C-style net before mileage `9107.02`, hledger `1.52.1`, reconciliation `passed`, and 15/15 failure-matrix cases passed.
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Problems / Open Questions
+
+- Day 27 still needs full report revision and consolidation.
+- Final report publication still needs public metadata refresh if current/latest language remains.
+- Final screenshots or execution-lab figures remain optional.
+
+### Tomorrow's Starting Point
+
+Execute Day 27 by consolidating the report drafts, tightening prose, checking citations/evidence links, removing unsupported claims, and deciding table placement.
+
+## 07-16-2026 - Phase 27: Report Revision
+
+### Goal
+
+Create a mentor-reviewable full report draft from the existing section drafts.
+
+### What I Did
+
+- Added `report/full_report_draft.md`.
+- Consolidated the Day 23 opening draft, Day 24 tool evaluation draft, Day 25 comparison/recommendation draft, and Day 26 prototype writeup.
+- Added executive summary, limitations, future work, evidence index, and publication checklist sections.
+- Standardized tool names, recommendation roles, and scope limitations.
+- Kept public release/project-health claims framed as point-in-time evidence pending final refresh.
+- Added `notes/day_27_report_revision.md`.
+- Updated `README.md`, `report/README.md`, and `report/outline.md`.
+
+### Evidence Captured
+
+- `report/full_report_draft.md`
+- `notes/day_27_report_revision.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Decisions Made
+
+- Use `report/full_report_draft.md` as the main mentor-review entrypoint.
+- Keep the earlier section drafts as supporting artifacts instead of deleting or replacing them.
+- Preserve the conservative architecture recommendation: validated bookkeeping fact layer first, tax calculation/form engines later.
+- Leave final public metadata refresh and table-density decisions in the publication checklist.
+
+### Verification
+
+- Checked key local evidence paths referenced by the full report.
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Problems / Open Questions
+
+- Day 28 still needs the presentation outline.
+- Final publication still needs public metadata refresh if current/latest language remains.
+- Final report polish still needs table-density and screenshot/figure decisions.
+
+### Tomorrow's Starting Point
+
+Execute Day 28 by drafting `deck/outline.md` from `report/full_report_draft.md`.
+
+## 07-16-2026 - Final Verification and README Refresh
+
+### Goal
+
+Recheck the current project picture, including the prototype, README files, generated execution-lab manifest, and report state before committing and pushing.
+
+### What I Did
+
+- Reviewed the root README, prototype README, report README, and execution-lab manifest state.
+- Refreshed `prototype/README.md` from future-tense prototype wording to current implemented behavior.
+- Updated `prototype/execution_lab/scripts/generate-manifest.mjs` so the execution lab reports Phase 27 and points next to the deck outline.
+- Regenerated the execution-lab manifests.
+
+### Evidence Captured
+
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `prototype/execution_lab/data/project-manifest.json`
+- `prototype/execution_lab/public/project-manifest.json`
+
+### Verification
+
+- `python -m compileall hledger_adapter tests run_day20_demo.py`
+- `python tests/run_failure_matrix.py`
+- `python run_day20_demo.py --json`
+- `npm run generate:manifest`
+- `npm run build`
+- `git diff --check`
+- Non-ASCII scan over the main updated Markdown files.
+
+### Decisions Made
+
+- Keep `report/full_report_draft.md` as the current report entrypoint.
+- Keep the next project action as the presentation deck outline.
+- Commit the report drafts, README refresh, regenerated manifests, and project logs together.
+
+### Problems / Open Questions
+
+- None for the verification pass.
+
+### Tomorrow's Starting Point
+
+Execute Day 28 by drafting `deck/outline.md`.

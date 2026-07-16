@@ -1,13 +1,13 @@
 {
   "schema_version": "1.0.0",
-  "generated_at": "2026-07-15T03:49:58.112Z",
+  "generated_at": "2026-07-16T18:21:20.674Z",
   "project": {
     "name": "AI Engineering Internship Tax Tooling Prototype",
     "research_question": "What does the current open-source ecosystem for consumer tax bookkeeping and US tax-return preparation/submission look like, and how feasible is it to connect representative tools to other software?",
     "scope": "Consumer and freelancer-oriented bookkeeping and US tax-adjacent workflows, evaluated through public tools and synthetic data.",
     "synthetic_boundary": "Only committed synthetic fixtures are supported. The prototype does not accept real taxpayer data or provide tax advice.",
-    "current_phase": "Phase 22 - report structure complete",
-    "next_phase": "Draft report introduction, method, and landscape",
+    "current_phase": "Phase 27 - full report draft complete",
+    "next_phase": "Draft the presentation deck outline from report/full_report_draft.md",
     "prototype_target": "Synthetic hledger CLI and JSON adapter"
   },
   "architecture": {
@@ -369,8 +369,8 @@
       "files": [
         {
           "path": "CHANGELOG.md",
-          "bytes": 39873,
-          "sha256": "808232e8d7e3c87be35c8d0eb9af269fafa306f19735039ea2a50542f3a23d74",
+          "bytes": 47859,
+          "sha256": "f34a25b665ae2b94143a027740fcbe15dbfa1b2ae1448d8fb342bd88e6c2bb0d",
           "title": "Changelog"
         }
       ]
@@ -501,6 +501,36 @@
           "title": "Day 22 - Report Structure"
         },
         {
+          "path": "notes/day_23_landscape_and_method_draft.md",
+          "bytes": 2371,
+          "sha256": "e107f49e28eedb9a916eb197dcfcda06bcd7687f12579ee28ddaad2d76763708",
+          "title": "Day 23 - Landscape and Method Draft"
+        },
+        {
+          "path": "notes/day_24_tool_evaluation_draft.md",
+          "bytes": 2224,
+          "sha256": "437e48e809a35e6cd16dbc6e31ab2fe00f2fcd5fde110e83d1d54fc634967e5d",
+          "title": "Day 24 - Tool Evaluation Draft"
+        },
+        {
+          "path": "notes/day_25_comparison_and_recommendation_draft.md",
+          "bytes": 2429,
+          "sha256": "04f1bebb0b37a863267a00ce2ac3f2b7a3eb972bb00b01cc02d7ab9d17a156e6",
+          "title": "Day 25 - Comparison and Recommendation Draft"
+        },
+        {
+          "path": "notes/day_26_prototype_writeup.md",
+          "bytes": 2133,
+          "sha256": "51c0242a06cd119c531c3bde494f509ac8bea2f02f83b14c5d7f993c4732adbc",
+          "title": "Day 26 - Prototype Writeup"
+        },
+        {
+          "path": "notes/day_27_report_revision.md",
+          "bytes": 2187,
+          "sha256": "ea767274c8b4215127b6c944b13bb1666767cb02d26917fb7c92070fbed3d1c5",
+          "title": "Day 27 - Report Revision"
+        },
+        {
           "path": "notes/internship_brief_alignment.md",
           "bytes": 3525,
           "sha256": "f618fe0e9cbd5e574753081c5725caccd9910df52a5769fe21b61ed52124704e",
@@ -508,8 +538,8 @@
         },
         {
           "path": "notes/research_log.md",
-          "bytes": 53802,
-          "sha256": "99fee7a2433ce83f5d9c55a4d453f42982f0cc15714b0787e319634ef5e5974a",
+          "bytes": 64444,
+          "sha256": "14c43d52fdedd614f385f22774b3acf4723f4cf3d8147e60be8e20b8ac0d0995",
           "title": "Research Log"
         },
         {
@@ -948,8 +978,8 @@
         },
         {
           "path": "prototype/execution_lab/data/project-manifest.json",
-          "bytes": 59948,
-          "sha256": "e88fa615503583784e2b0a7f09cd24bad4f831ff2ede507ff421fb350ea535a4",
+          "bytes": 61784,
+          "sha256": "cf70e637ff11ac748303ccb65e0d5da4cb9d6fc765882d9ed2b9799270ac7f68",
           "title": null
         },
         {
@@ -978,14 +1008,14 @@
         },
         {
           "path": "prototype/execution_lab/public/project-manifest.json",
-          "bytes": 59948,
-          "sha256": "e88fa615503583784e2b0a7f09cd24bad4f831ff2ede507ff421fb350ea535a4",
+          "bytes": 61784,
+          "sha256": "cf70e637ff11ac748303ccb65e0d5da4cb9d6fc765882d9ed2b9799270ac7f68",
           "title": null
         },
         {
           "path": "prototype/execution_lab/scripts/generate-manifest.mjs",
-          "bytes": 21677,
-          "sha256": "8d3889354be4f63290420da59eb67a7d3f735c05fb4a4506101981e07fcf1f0d",
+          "bytes": 21698,
+          "sha256": "5c2eb6ca0e5ffb9c93caf00216a442ad68f9e16e7c0df1d8de527e014dac23a9",
           "title": null
         },
         {
@@ -1056,8 +1086,8 @@
         },
         {
           "path": "prototype/README.md",
-          "bytes": 12885,
-          "sha256": "8fc9015bda99031d89c69e22da6681db547612e3e4a3005cc81ec262008665aa",
+          "bytes": 12957,
+          "sha256": "0e1a283f6e11cca5a24f1062e84f6f15926e8b450454eeb6f01772b73ecb7d9f",
           "title": "Synthetic Freelancer hledger Adapter"
         },
         {
@@ -1202,16 +1232,46 @@
       "purpose": "Written report workspace and placeholder state for final delivery.",
       "files": [
         {
+          "path": "report/comparison_recommendation_draft.md",
+          "bytes": 14222,
+          "sha256": "256801b0ed0ba3e31aeb106a257aab1e34dca20fd8dddf91f92a29694400e014",
+          "title": "Comparison and Recommendation Draft"
+        },
+        {
+          "path": "report/full_report_draft.md",
+          "bytes": 27139,
+          "sha256": "33a4d8dec63bf716f366f80e331ded23bcdeeed026e90102bd36b7bb8bfe8d81",
+          "title": "Open-Source Consumer Tax Tooling and Programmatic Integration Surfaces"
+        },
+        {
+          "path": "report/opening_sections_draft.md",
+          "bytes": 19458,
+          "sha256": "b087769582e20ea352f79beba49ee568ebd55306bb9e2ec5468b34ffa62b153d",
+          "title": "Opening Sections Draft"
+        },
+        {
           "path": "report/outline.md",
-          "bytes": 13459,
-          "sha256": "f1c099a9c647d2883d5529413c55f11773eef673f233a0f5012f0e236531ce69",
+          "bytes": 15091,
+          "sha256": "827cca748362a32fd2bc6a657b2f86beea74cfa7779e6a6c037db55a30092a56",
           "title": "Final Report Outline"
         },
         {
+          "path": "report/prototype_writeup_draft.md",
+          "bytes": 11052,
+          "sha256": "00f46134514d44e0da2b924406a114a2fd8cee57c004de9d6a511a338d3886e0",
+          "title": "Prototype Writeup Draft"
+        },
+        {
           "path": "report/README.md",
-          "bytes": 427,
-          "sha256": "89ee9c5cacb80e2b1a49921363599bb4caad31c8af5bb5aa9b79e96ddc2d8a58",
+          "bytes": 1093,
+          "sha256": "c5f8d71faaac5cfe9c0fa192f2858487e6be4768fdbd7816f0313a60aeb4f175",
           "title": "Report Workspace"
+        },
+        {
+          "path": "report/tool_evaluations_draft.md",
+          "bytes": 21626,
+          "sha256": "cd80a21800aaf9988bd1f791011e9cd05a8065fcd462c1f5629592cd666a16b0",
+          "title": "Tool Evaluations Draft"
         }
       ]
     },
@@ -1247,20 +1307,20 @@
         },
         {
           "path": "prototype/README.md",
-          "bytes": 12885,
-          "sha256": "8fc9015bda99031d89c69e22da6681db547612e3e4a3005cc81ec262008665aa",
+          "bytes": 12957,
+          "sha256": "0e1a283f6e11cca5a24f1062e84f6f15926e8b450454eeb6f01772b73ecb7d9f",
           "title": "Synthetic Freelancer hledger Adapter"
         },
         {
           "path": "README.md",
-          "bytes": 4484,
-          "sha256": "5eb066e5f6d335dd970ce6e8f43ee5ce99288265179f067cde3ca07fc5e2694a",
+          "bytes": 4410,
+          "sha256": "3081ee2c8a529621858fddf3699bf96ef682baa4d3fe00633d6f61d512520a02",
           "title": "AI Engineering Internship: Open-Source Tax Tooling Research"
         },
         {
           "path": "report/README.md",
-          "bytes": 427,
-          "sha256": "89ee9c5cacb80e2b1a49921363599bb4caad31c8af5bb5aa9b79e96ddc2d8a58",
+          "bytes": 1093,
+          "sha256": "c5f8d71faaac5cfe9c0fa192f2858487e6be4768fdbd7816f0313a60aeb4f175",
           "title": "Report Workspace"
         },
         {
@@ -1406,63 +1466,63 @@
     "source_path": "CHANGELOG.md",
     "entries": [
       {
-        "title": "07-15-2026 - Local hledger Setup and Live Backend Completion",
+        "title": "07-16-2026 - Final Verification and README Refresh",
         "bullets": [
-          "Installed hledger `1.52.1` locally with Winget.",
-          "Added Windows Winget package discovery after `--hledger-bin`, `HLEDGER_BIN`, and `PATH` resolution.",
-          "Kept the missing-hledger failure-matrix case deterministic with an explicit local-discovery opt-out.",
-          "Added a repo-root `run_day20_demo.py` wrapper so `python run_day20_demo.py --json` works from the project root.",
-          "Updated the execution lab copy and generated manifest source so `python run_day20_demo.py --json` is the canonical live command."
+          "Rechecked the repository after the Day 23-27 report drafting work.",
+          "Refreshed `prototype/README.md` so it describes the implemented prototype in current tense and points to `report/full_report_draft.md`.",
+          "Updated the execution-lab manifest source so the UI reports `Phase 27 - full report draft complete` and the next step as the deck outline.",
+          "Regenerated `prototype/execution_lab/data/project-manifest.json` and `prototype/execution_lab/public/project-manifest.json`.",
+          "`README.md`"
         ]
       },
       {
-        "title": "07-15-2026 - Phase 22: Report Structure and Prototype UI Refinement",
+        "title": "07-16-2026 - Phase 27: Report Revision",
         "bullets": [
-          "Executed the Day 22 report-structure phase early at user request.",
-          "Added `report/outline.md` as the final report skeleton with sections for introduction, method, landscape, tool evaluations, comparison, prototype, recommendation, limitations, future work, appendices, and missing-evidence checks.",
-          "Added `notes/day_22_report_structure.md`.",
-          "Updated the execution lab so lifecycle phases open a focused popup showing the selected phase command, command output, status, key outputs, and evidence.",
-          "Added a prototype architecture tab generated from the repo manifest."
+          "Executed the Day 27 report-revision phase early at user request.",
+          "Added `report/full_report_draft.md` as the consolidated full report draft for mentor review.",
+          "Added `notes/day_27_report_revision.md`.",
+          "Consolidated the Day 23-26 report drafts into one report with executive summary, introduction, method, landscape, tool evaluations, comparison, prototype, recommendation, limitations, future work, evidence index, and publication checklist.",
+          "Updated `README.md`, `report/README.md`, and `report/outline.md` to point to the full report draft."
         ]
       },
       {
-        "title": "07-14-2026 - Phase 21: Prototype Review and Freeze",
+        "title": "07-16-2026 - Phase 26: Prototype Writeup",
         "bullets": [
-          "Executed the Day 21 prototype freeze early at user request.",
-          "Fixed the execution lab layout so the homepage stays focused on live prototype testing: synthetic inputs, command interface, enlarged execution lifecycle, output tables, and results.",
-          "Moved project details into tabs, including project scope, evidence, artifacts, changelog, and contribution guidance.",
-          "Added a generated synthetic CSV preview and recent changelog entries to the execution-lab manifest without exposing host-absolute paths.",
-          "Tightened `/api/run` input handling for the optional hledger binary path and marked responses `no-store`."
+          "Executed the Day 26 prototype-writeup phase early at user request.",
+          "Added `report/prototype_writeup_draft.md` with the hledger adapter architecture, demo workflow, setup summary, sample output, safety choices, limitations, and proof statement.",
+          "Added `notes/day_26_prototype_writeup.md`.",
+          "Updated `README.md`, `report/README.md`, `report/outline.md`, and `prototype/README.md` to reference the Day 26 prototype writeup.",
+          "`report/prototype_writeup_draft.md`"
         ]
       },
       {
-        "title": "07-14-2026 - Phase 20: Demo Packaging and Project Execution Lab UI",
+        "title": "07-16-2026 - Phase 25: Comparison and Recommendation Draft",
         "bullets": [
-          "Added `prototype/run_day20_demo.py` as the one-command Day 20 demo package for the canonical synthetic adapter demo plus the safety failure matrix.",
-          "Added the Vercel-ready Next.js execution lab under `prototype/execution_lab/`.",
-          "Added generated repo-relative manifests at `prototype/execution_lab/data/project-manifest.json` and `prototype/execution_lab/public/project-manifest.json`.",
-          "Built local live-run behavior through `/api/run` and verified replay behavior for environments without hledger.",
-          "Added UI surfaces for the execution rail, result totals, safety matrix, evidence drawer, artifact manifest, unsupported capabilities, and Git contribution workflow."
+          "Executed the Day 25 report-drafting phase early at user request.",
+          "Added `report/comparison_recommendation_draft.md` with cross-tool comparison and recommendation prose.",
+          "Included a compact final comparison table, capability summary, safety comparison, licensing/deployment notes, recommendations by use case, automation targets to avoid, and the hledger prototype-target rationale.",
+          "Added `notes/day_25_comparison_and_recommendation_draft.md`.",
+          "Updated `README.md`, `report/README.md`, and `report/outline.md` to reference the new Day 25 draft."
         ]
       },
       {
-        "title": "07-13-2026 - Phase 20 UI Scope Refinement",
+        "title": "07-16-2026 - Phase 24: Tool Evaluation Draft",
         "bullets": [
-          "Added `prototype/day20_project_lab_ui_brief.md` as the detailed target for the Day 20 web application.",
-          "Reframed Day 20 from a dashboard to a responsive project execution lab with local live execution, Vercel verified replay, artifact manifests, `about`/`why` rationale entries, evidence traceability, and Git contribution guidance.",
-          "Updated the day-by-day roadmap, prototype design, prototype README, and root README to require command-to-result progression and project-specific content.",
-          "`prototype/day20_project_lab_ui_brief.md`",
-          "`day_by_day_ai_tax_tooling_phases.md`"
+          "Executed the Day 24 report-drafting phase early at user request.",
+          "Added `report/tool_evaluations_draft.md` with per-tool report sections for hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine.",
+          "Covered each tool's programmatic surface, code drivability, synthetic workflow coverage, safety/failure behavior, health/licensing posture, and integration fit.",
+          "Added `notes/day_24_tool_evaluation_draft.md`.",
+          "Updated `README.md`, `report/README.md`, and `report/outline.md` to reference the new Day 24 draft."
         ]
       },
       {
-        "title": "07-13-2026 - Phase 19: Safety and Failure Handling",
+        "title": "07-16-2026 - Phase 23: Landscape and Method Draft",
         "bullets": [
-          "Added `prototype/tests/run_failure_matrix.py`, a dependency-free subprocess matrix for expected validation, context, policy, dry-run, and hledger-discovery failures.",
-          "Verified 15 cases covering malformed dates, invalid amounts, unknown categories/accounts, duplicate IDs, missing files, tax-hint mismatch, wrong signs, context failures, missing acknowledgement, dry-run kept-scratch conflict, missing hledger, and unusable hledger candidates.",
-          "Confirmed the matrix leaves scratch state unchanged and uses `summarize --dry-run` for preflight failures where possible.",
-          "Updated the prototype README safety/failure sections and the root repository status.",
-          "Updated the Day 20 roadmap to include a Vercel-ready project execution lab for changelog, notes, evidence, prototype status/output, report/deck state, research, tool records, and README artifacts."
+          "Executed the Day 23 report-drafting phase early at user request.",
+          "Added `report/opening_sections_draft.md` with prose for the introduction, method, and landscape sections.",
+          "Drafted the research motivation around the gap between bookkeeping facts, tax calculation, form output, and filing-adjacent workflows.",
+          "Explained the evaluation method: longlist, health snapshot, programmatic-surface survey, shortlist, shared synthetic workflow, failure tests, comparison, and prototype decision.",
+          "Summarized the open-source landscape by integration role rather than popularity."
         ]
       }
     ]

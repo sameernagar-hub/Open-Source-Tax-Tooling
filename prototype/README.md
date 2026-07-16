@@ -8,11 +8,11 @@ The frozen package includes a one-command demo wrapper at [`run_day20_demo.py`](
 
 The implementation contract is in [`design.md`](design.md). The selected target and comparison rationale are in [`research/prototype_target_decision.md`](../research/prototype_target_decision.md).
 
-## What This Prototype Will Prove
+## What This Prototype Proves
 
-The prototype will drive a real hledger executable through its local CSV, CLI, and JSON surfaces. It will turn controlled synthetic freelancer transactions into reconciled, normalized bookkeeping and tax-adjacent facts that another program or AI agent can consume.
+The prototype drives a real hledger executable through its local CSV, CLI, and JSON surfaces. It turns controlled synthetic freelancer transactions into reconciled, normalized bookkeeping and tax-adjacent facts that another program or AI agent can consume.
 
-The planned flow is:
+The implemented flow is:
 
 ```text
 synthetic CSV + strict category map + optional mileage context
@@ -20,18 +20,18 @@ synthetic CSV + strict category map + optional mileage context
   -> isolated read-only hledger reports
   -> JSON reconciliation
   -> normalized JSON
-  -> optional Markdown view
+  -> execution lab live run or verified replay
 ```
 
-The adapter will:
+The adapter:
 
-- Validate dates, exact decimal amounts, amount direction, source IDs, accounts, categories, tax-hint pairs, and synthetic context before hledger runs.
-- Reject duplicate IDs and unknown categories that hledger itself accepted during the Day 9 evaluation.
-- Run only read-only hledger `print`, `balance`, and `incomestatement` reports.
-- Return normalized transactions, accounts, checking balance, controlled Schedule C-style bookkeeping totals, interest, charity, estimated-payment tracking, mileage status, warnings, limitations, and provenance.
-- Preserve mileage without choosing a rate or calculating a deduction.
+- Validates dates, exact decimal amounts, amount direction, source IDs, accounts, categories, tax-hint pairs, and synthetic context before hledger runs.
+- Rejects duplicate IDs and unknown categories that hledger itself accepted during the Day 9 evaluation.
+- Runs only read-only hledger `print`, `balance`, and `incomestatement` reports.
+- Returns normalized transactions, accounts, checking balance, controlled Schedule C-style bookkeeping totals, interest, charity, estimated-payment tracking, mileage status, warnings, limitations, and provenance.
+- Preserves mileage without choosing a rate or calculating a deduction.
 
-It will not:
+It does not:
 
 - Support real taxpayer or financial data. Real data is prohibited by project policy, although the adapter cannot reliably detect a user violating that policy.
 - Prepare, calculate, validate, or file a tax return.
@@ -43,7 +43,7 @@ It will not:
 
 The implementation uses Python 3.11+ with no third-party runtime dependencies. hledger remains a separate prerequisite; on Windows, a user-scoped Winget install can be discovered after the explicit and PATH-based options. The package lives directly under `prototype/hledger_adapter/`, so the examples run from `prototype/` without installation; this is why fixture paths begin with `../evidence/`.
 
-Implemented CLI commands through Day 18:
+Implemented CLI commands:
 
 ```text
 python -m hledger_adapter validate --transactions ../evidence/fixtures/synthetic_freelancer_transactions.csv --context ../evidence/fixtures/synthetic_freelancer_tax_profile.json --confirm-synthetic
@@ -57,7 +57,7 @@ The `demo` command selects the repository's canonical synthetic inputs automatic
 
 The repository root also includes `run_day20_demo.py`, a small wrapper around this package's Day 20 runner, so reviewers can run `python run_day20_demo.py --json` from the project root.
 
-Implemented safety check through Day 19:
+Implemented safety check:
 
 ```text
 python tests/run_failure_matrix.py
@@ -171,14 +171,14 @@ Verified cases:
 
 ## hledger Setup Boundary
 
-The adapter will look for hledger in this order:
+The adapter looks for hledger in this order:
 
 1. `--hledger-bin PATH`
 2. `HLEDGER_BIN`
 3. `hledger` or `hledger.exe` on `PATH`
 4. Windows Winget's user-scoped `simonmichael.hledger` package directory
 
-It will run `--version` before reports and record the detected version. The project tested hledger 1.52.1 during Day 9; other versions will be labeled untested and must still pass output-shape and reconciliation checks.
+It runs `--version` before reports and records the detected version. The project tested hledger 1.52.1 during Day 9; other versions are labeled untested and must still pass output-shape and reconciliation checks.
 
 No executable is committed, auto-downloaded, or installed by this project. This workspace has hledger 1.52.1 installed locally with Winget so the plain Day 20 demo command can run live. See [`tool_records/tool_1.md`](../tool_records/tool_1.md) and the [Day 9 workflow evidence](../evidence/commands/07-08-2026_hledger_workflow.txt) for the evaluated setup and behavior.
 
@@ -198,4 +198,4 @@ Phase 21 completed the freeze review:
 - Captured the retrospective covering what worked, what failed, what the integration proves, and what remains out of scope.
 - Deferred optional Markdown rendering until final report polish.
 
-Next work should draft the report from [`../report/outline.md`](../report/outline.md), the frozen prototype, [`retrospective.md`](retrospective.md), and the detailed Day 20 UI brief at [`day20_project_lab_ui_brief.md`](day20_project_lab_ui_brief.md).
+Day 27 added the consolidated report draft at [`../report/full_report_draft.md`](../report/full_report_draft.md). Next work should draft the presentation deck outline from the full report, the frozen prototype, [`retrospective.md`](retrospective.md), and the detailed Day 20 UI brief at [`day20_project_lab_ui_brief.md`](day20_project_lab_ui_brief.md).

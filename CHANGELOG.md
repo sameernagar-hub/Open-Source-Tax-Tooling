@@ -11,6 +11,200 @@ Each entry should answer:
 - What evidence or files were added?
 - What is next?
 
+## 07-16-2026 - Final Verification and README Refresh
+
+### What Changed
+
+- Rechecked the repository after the Day 23-27 report drafting work.
+- Refreshed `prototype/README.md` so it describes the implemented prototype in current tense and points to `report/full_report_draft.md`.
+- Updated the execution-lab manifest source so the UI reports `Phase 27 - full report draft complete` and the next step as the deck outline.
+- Regenerated `prototype/execution_lab/data/project-manifest.json` and `prototype/execution_lab/public/project-manifest.json`.
+
+### Why
+
+Before committing and pushing, the main README, prototype README, report workspace, generated manifest, and prototype checks needed to show the same current project picture.
+
+### Evidence / Files
+
+- `README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `prototype/execution_lab/data/project-manifest.json`
+- `prototype/execution_lab/public/project-manifest.json`
+- `report/full_report_draft.md`
+
+### Verification
+
+- `python -m compileall hledger_adapter tests run_day20_demo.py`
+- `python tests/run_failure_matrix.py`
+- `python run_day20_demo.py --json`
+- `npm run generate:manifest`
+- `npm run build`
+- `git diff --check`
+- Non-ASCII scan over the main updated Markdown files.
+
+### Next
+
+Commit and push the Day 23-27 report drafts, README refresh, and regenerated execution-lab manifests.
+
+## 07-16-2026 - Phase 27: Report Revision
+
+### What Changed
+
+- Executed the Day 27 report-revision phase early at user request.
+- Added `report/full_report_draft.md` as the consolidated full report draft for mentor review.
+- Added `notes/day_27_report_revision.md`.
+- Consolidated the Day 23-26 report drafts into one report with executive summary, introduction, method, landscape, tool evaluations, comparison, prototype, recommendation, limitations, future work, evidence index, and publication checklist.
+- Updated `README.md`, `report/README.md`, and `report/outline.md` to point to the full report draft.
+
+### Why
+
+Day 27 needed to turn separate report sections into one coherent draft. The report now has a single entrypoint for mentor review while preserving the section drafts as supporting artifacts.
+
+### Evidence / Files
+
+- `report/full_report_draft.md`
+- `notes/day_27_report_revision.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Verification
+
+- Checked key local evidence paths referenced by the full report.
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 28 by creating `deck/outline.md` from `report/full_report_draft.md`.
+
+## 07-16-2026 - Phase 26: Prototype Writeup
+
+### What Changed
+
+- Executed the Day 26 prototype-writeup phase early at user request.
+- Added `report/prototype_writeup_draft.md` with the hledger adapter architecture, demo workflow, setup summary, sample output, safety choices, limitations, and proof statement.
+- Added `notes/day_26_prototype_writeup.md`.
+- Updated `README.md`, `report/README.md`, `report/outline.md`, and `prototype/README.md` to reference the Day 26 prototype writeup.
+
+### Why
+
+Day 26 needed to make the frozen prototype understandable in report form. The writeup now explains what the adapter proves without requiring a reader to inspect every Python module or execution-lab component.
+
+### Evidence / Files
+
+- `report/prototype_writeup_draft.md`
+- `notes/day_26_prototype_writeup.md`
+- `report/outline.md`
+- `report/README.md`
+- `prototype/README.md`
+- `README.md`
+
+### Verification
+
+- `python run_day20_demo.py --json` passed locally.
+- The demo reported 19 transactions, 38 postings, 14 accounts, checking balance `8964.77`, Schedule C-style net before mileage `9107.02`, hledger `1.52.1`, reconciliation `passed`, and 15/15 failure-matrix cases passed.
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 27 by consolidating the report drafts, tightening prose, checking evidence links, removing unsupported claims, and deciding which tables belong in the main body versus appendices.
+
+## 07-16-2026 - Phase 25: Comparison and Recommendation Draft
+
+### What Changed
+
+- Executed the Day 25 report-drafting phase early at user request.
+- Added `report/comparison_recommendation_draft.md` with cross-tool comparison and recommendation prose.
+- Included a compact final comparison table, capability summary, safety comparison, licensing/deployment notes, recommendations by use case, automation targets to avoid, and the hledger prototype-target rationale.
+- Added `notes/day_25_comparison_and_recommendation_draft.md`.
+- Updated `README.md`, `report/README.md`, and `report/outline.md` to reference the new Day 25 draft.
+
+### Why
+
+Day 25 needed to turn the per-tool findings into an actual recommendation. The draft now argues for a layered architecture: validate and summarize bookkeeping facts first, then connect to tax calculation or form-level tools only with additional guardrails.
+
+### Evidence / Files
+
+- `report/comparison_recommendation_draft.md`
+- `notes/day_25_comparison_and_recommendation_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Verification
+
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 26 by drafting the prototype report section from the prototype design, README, demo wrapper, execution lab, and retrospective.
+
+## 07-16-2026 - Phase 24: Tool Evaluation Draft
+
+### What Changed
+
+- Executed the Day 24 report-drafting phase early at user request.
+- Added `report/tool_evaluations_draft.md` with per-tool report sections for hledger, Actual Budget, Firefly III, tenforty, and Filed Open Tax Engine.
+- Covered each tool's programmatic surface, code drivability, synthetic workflow coverage, safety/failure behavior, health/licensing posture, and integration fit.
+- Added `notes/day_24_tool_evaluation_draft.md`.
+- Updated `README.md`, `report/README.md`, and `report/outline.md` to reference the new Day 24 draft.
+
+### Why
+
+Day 24 needed the per-tool findings in prose form before the report can move into cross-tool comparison and recommendations. The draft keeps the evidence tied to completed tool records and avoids treating point-in-time public metadata as freshly refreshed.
+
+### Evidence / Files
+
+- `report/tool_evaluations_draft.md`
+- `notes/day_24_tool_evaluation_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Verification
+
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 25 by drafting the cross-tool comparison and recommendation sections from the comparison matrix and report drafts.
+
+## 07-16-2026 - Phase 23: Landscape and Method Draft
+
+### What Changed
+
+- Executed the Day 23 report-drafting phase early at user request.
+- Added `report/opening_sections_draft.md` with prose for the introduction, method, and landscape sections.
+- Drafted the research motivation around the gap between bookkeeping facts, tax calculation, form output, and filing-adjacent workflows.
+- Explained the evaluation method: longlist, health snapshot, programmatic-surface survey, shortlist, shared synthetic workflow, failure tests, comparison, and prototype decision.
+- Summarized the open-source landscape by integration role rather than popularity.
+- Updated `README.md`, `report/README.md`, `report/outline.md`, and added `notes/day_23_landscape_and_method_draft.md`.
+
+### Why
+
+Day 23 needed the first real report prose before moving into per-tool findings. Separating the prose draft from the outline keeps the Day 22 skeleton useful while giving the final report a starting narrative.
+
+### Evidence / Files
+
+- `report/opening_sections_draft.md`
+- `notes/day_23_landscape_and_method_draft.md`
+- `report/outline.md`
+- `report/README.md`
+- `README.md`
+
+### Verification
+
+- `git diff --check`
+
+### Next
+
+Execute Day 24 by drafting the per-tool evaluation sections from `tool_records/tool_1.md` through `tool_records/tool_5.md`.
+
 ## 07-15-2026 - Local hledger Setup and Live Backend Completion
 
 ### What Changed
