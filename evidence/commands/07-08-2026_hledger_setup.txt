@@ -1,6 +1,6 @@
 # hledger setup transcript
 # Started: 2026-07-07 20:48:24 -07:00
-# Workspace: C:\Users\nagar\OneDrive\Documents\AI Engineering Internship
+# Workspace: [repo]
 
 
 PS> Get-CimInstance Win32_OperatingSystem | Select-Object Caption, Version, OSArchitecture
@@ -23,16 +23,16 @@ MinorRevision : 8737
 PS> Get-Command winget -ErrorAction SilentlyContinue
 
 
-Source : C:\Users\nagar\AppData\Local\Microsoft\WindowsApps\winget.exe
+Source : [windowsapps]\winget.exe
 
 PS> Get-Command hledger -ErrorAction SilentlyContinue
 
-Temp install dir: C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1
+Temp install dir: [temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1
 
 PS> Invoke-WebRequest https://github.com/simonmichael/hledger/releases/download/1.52.1/hledger-windows-x64.zip -OutFile <temp>\hledger-windows-x64-1.52.1.zip
 
 
-FullName : C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-windows-x64-1
+FullName : [temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-windows-x64-1
            .52.1.zip
 Length   : 51994551
 
@@ -45,10 +45,10 @@ FullName                                                                        
                                                                                                                       t
                                                                                                                       h
 --------                                                                                                              -
-C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger-ui.exe  2
-C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger-web.exe 8
-C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe     0
+[temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger-ui.exe  2
+[temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger-web.exe 8
+[temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe     0
 
-hledger.exe: C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
+hledger.exe: [temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
 
 Version evidence: evidence/commands/07-08-2026_hledger_version.txt

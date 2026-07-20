@@ -1,6 +1,6 @@
-﻿Actual Budget Day 10 setup transcript
-Working directory: C:\Users\nagar\OneDrive\Documents\AI Engineering Internship
-Temp dependency directory: C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded
+Actual Budget Day 10 setup transcript
+Working directory: [repo]
+Temp dependency directory: [temp]\actual-day10-eval-recorded
 
 Command: remove existing temp dependency directory
 No existing temp directory found.

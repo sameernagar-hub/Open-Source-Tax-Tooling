@@ -77,7 +77,7 @@ Create a persistent changelog and compare the repository plan against the attach
 
 ### What I Did
 
-- Extracted text from `C:\Users\nagar\Downloads\intern_project_description.pdf` with `pypdf`.
+- Extracted text from `[private source]/intern_project_description.pdf` with `pypdf`.
 - Searched the execution plan, day-by-day plan, README, day notes, research log, and tool template for brief-specific requirements.
 - Created `CHANGELOG.md` and backfilled Day 1 and Day 2 entries.
 - Created `notes/internship_brief_alignment.md`.
@@ -1296,3 +1296,156 @@ Recheck the current project picture, including the prototype, README files, gene
 ### Tomorrow's Starting Point
 
 Execute Day 28 by drafting `deck/outline.md`.
+
+## 07-20-2026 - Phase 28: Deck Outline
+
+### Goal
+
+Translate the Day 27 full report draft into a coherent 20-30 minute presentation outline.
+
+### What I Did
+
+- Added `deck/outline.md` as the Day 28 exit artifact.
+- Built an 18-slide presentation structure with timing guidance.
+- Kept the story aligned to the full report: research question, safety boundary, evidence method, ecosystem map, five-tool comparison, hledger prototype, recommendation, limitations, and next steps.
+- Decided where the prototype demo appears in the talk.
+- Chose the priority comparison visuals for Day 29.
+- Added `notes/day_28_deck_outline.md`.
+- Updated README/status files and the execution-lab manifest source to point next to Day 29 deck build work.
+
+### Evidence Captured
+
+- `deck/outline.md`
+- `notes/day_28_deck_outline.md`
+- `deck/README.md`
+- `README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `CHANGELOG.md`
+
+### Decisions Made
+
+- Place the prototype demo after the cross-tool comparison and before the final recommendation.
+- Prioritize six visuals: ecosystem role map, five-tool role matrix, capability gap ladder, prototype architecture flow, demo result/safety readout, and recommendation table.
+- Keep dense evidence paths and full matrices as appendix candidates rather than main-slide material.
+
+### Problems / Open Questions
+
+- Day 29 still needs the actual deck build and slide visuals.
+- Execution-lab screenshots may be useful for the deck but are not yet captured.
+- Final publication still needs metadata refresh if current/latest wording remains.
+
+### Tomorrow's Starting Point
+
+Execute Day 29 by building the draft deck from `deck/outline.md`.
+
+## 07-20-2026 - Phase 29: Deck Build
+
+### Goal
+
+Build the actual presentation deck from the Day 28 slide outline.
+
+### What I Did
+
+- Added `deck/open_source_tax_tooling_draft_deck.pptx` as the Day 29 draft deck.
+- Built an 18-slide PowerPoint deck aligned to `deck/outline.md` and `report/full_report_draft.md`.
+- Included the project story from research question through recommendation, with the prototype demo and demo readout in the middle of the talk.
+- Added speaker notes with source pointers and demo guidance.
+- Used the current local `python run_day20_demo.py --json` output for the demo result slide.
+- Added `notes/day_29_deck_build.md`.
+- Updated README/status files and the execution-lab manifest source to point next to Day 30 final QA and rehearsal.
+
+### Evidence Captured
+
+- `deck/open_source_tax_tooling_draft_deck.pptx`
+- `notes/day_29_deck_build.md`
+- `deck/README.md`
+- `README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `CHANGELOG.md`
+
+### Decisions Made
+
+- Keep the draft as an editable local PowerPoint deck.
+- Use the restrained Codex Grid visual system so the presentation feels like a technical evidence deck rather than a marketing deck.
+- Keep dense evidence paths in speaker notes and reserve appendix material for Day 30 only if needed.
+- Defer optional execution-lab screenshots unless final rehearsal shows they would improve clarity.
+
+### Verification
+
+- `python run_day20_demo.py --json` passed locally with hledger `1.52.1`, 19 transactions, 38 postings, 14 accounts, checking balance `8964.77`, and 15/15 failure-matrix cases passed.
+- Rendered the exported PowerPoint deck and inspected the contact sheet.
+- `slides_test.py` reported no overflow.
+- `npm run generate:manifest`
+- `npm run build`
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Problems / Open Questions
+
+- Day 30 still needs final consistency QA and timed rehearsal.
+- Final public metadata refresh remains open if current/latest wording stays in the final report or deck notes.
+- Execution-lab screenshots remain optional.
+
+### Tomorrow's Starting Point
+
+Execute Day 30 by running final QA and rehearsal across the report, prototype, deck, README files, and synthetic-data boundary.
+
+## 07-20-2026 - Phase 30: Final QA and Rehearsal
+
+### Goal
+
+Verify that all deliverables are consistent, runnable, and safe to package for final delivery.
+
+### What I Did
+
+- Added `notes/day_30_final_qa_rehearsal.md` as the Day 30 exit artifact and final QA checklist.
+- Re-ran the root prototype demo and direct failure matrix.
+- Recompiled the Python adapter and tests.
+- Reinstalled execution-lab dependencies from the lockfile with `npm ci`.
+- Rebuilt the execution lab and regenerated the public/data manifests.
+- Rendered the PowerPoint deck, ran the deck overflow test, and inspected the rendered contact sheet.
+- Checked the deck against the Day 28 timing plan: 29 minutes for the full 18-slide walkthrough, with the documented 20 minute compressed path still available.
+- Reviewed report/deck/prototype status wording and updated files that still pointed to Day 30 as future work.
+- Redacted host-specific absolute paths from historical command evidence, JSON fixtures, notes, and one tool record.
+- Re-ran host-path and credential-like scans.
+
+### Evidence Captured
+
+- `notes/day_30_final_qa_rehearsal.md`
+- `README.md`
+- `deck/README.md`
+- `prototype/README.md`
+- `report/full_report_draft.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `prototype/execution_lab/data/project-manifest.json`
+- `prototype/execution_lab/public/project-manifest.json`
+- Historical evidence and fixture files with host-path redactions.
+
+### Decisions Made
+
+- Keep the draft PowerPoint deck as the editable final-delivery deck candidate; no layout edits were needed after render and overflow QA.
+- Keep optional execution-lab screenshots out of the deck for now because the current deck already carries the demo path and verified result slide.
+- Carry the public metadata refresh into Day 31 only if the final report keeps current/latest public-project wording.
+
+### Verification
+
+- `python run_day20_demo.py --json` passed locally with hledger `1.52.1`, 19 transactions, 38 postings, 14 accounts, checking balance `8964.77`, reconciliation `passed`, and 15/15 failure-matrix cases passed.
+- `python tests/run_failure_matrix.py` passed 15/15 cases and reported `scratch_unchanged: true`.
+- `python -m compileall prototype/hledger_adapter prototype/tests run_day20_demo.py prototype/run_day20_demo.py` completed successfully.
+- `npm ci` completed from the lockfile and reported 0 vulnerabilities.
+- `npm run build` completed successfully.
+- `slides_test.py` reported no deck overflow.
+- The deck rendered to 18 slide PNGs and a contact sheet for visual inspection.
+- Host-path scan returned no local-user path matches after redaction.
+- Credential-like scan returned only expected non-secret code references, placeholder labels, or `[redacted]` evidence.
+- Unpacked PPTX internal scan returned no host-path or credential-like matches.
+
+### Problems / Open Questions
+
+- Public release, license, and activity metadata should still be refreshed before external publication if the final report keeps current/latest claims.
+
+### Tomorrow's Starting Point
+
+Execute Day 31 by finalizing the report, prototype repository, deck, and mentor summary for delivery.

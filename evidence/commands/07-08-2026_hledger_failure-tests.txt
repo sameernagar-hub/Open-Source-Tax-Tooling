@@ -1,6 +1,6 @@
 # hledger failure behavior transcript
 # Started: 2026-07-07 20:51:07 -07:00
-# Binary: C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
+# Binary: [temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
 # Rules: evidence\fixtures\hledger_synthetic_freelancer.rules
 
 
@@ -68,7 +68,7 @@ Liabilities:Federal Tax:Estimated Payments
 Exit code: 0
 
 PS> & hledger --rules evidence\fixtures\hledger_synthetic_freelancer.rules -f evidence\fixtures\does_not_exist.csv print
-hledger.exe : hledger.exe: Error: data file "C:\Users\nagar\OneDrive\Documents\AI Engineering
+hledger.exe : hledger.exe: Error: data file "[user-home]\OneDrive\Documents\AI Engineering
 Internship\evidence\fixtures\does_not_exist.csv" was not found.
 At line:11 char:13
 +   $output = & $hledger @hArgs 2>&1 | Out-String

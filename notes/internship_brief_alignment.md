@@ -2,7 +2,7 @@
 
 Date reviewed: 07-03-2026
 
-Source reviewed: `C:\Users\nagar\Downloads\intern_project_description.pdf`
+Source reviewed: `[private source]/intern_project_description.pdf`
 
 Extraction method: local PDF text extraction with `pypdf`.
 

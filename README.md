@@ -64,7 +64,7 @@ This project is licensed under the MIT License. See [`LICENSE`](LICENSE) for det
 
 ## Repository Status
 
-Phase 27 consolidated the report into `report/full_report_draft.md` early at user request. The earlier section drafts remain in `report/` as supporting artifacts, and `report/outline.md` remains the structural reference.
+Phase 30 completed final QA and rehearsal early at user request. The current deliverable set includes `report/full_report_draft.md`, the frozen synthetic hledger prototype, the execution lab, `deck/open_source_tax_tooling_draft_deck.pptx`, and the final QA checklist at `notes/day_30_final_qa_rehearsal.md`.
 
 The frozen prototype includes the repo-root `run_day20_demo.py` wrapper, `prototype/run_day20_demo.py`, a generated repo-relative manifest, a Next.js execution lab under `prototype/execution_lab/`, local live-run API behavior for configured hledger environments, verified replay for deployed/static review, clickable lifecycle phase popups with commands/output, a prototype architecture tab, evidence drawers, artifact inventory, changelog/details tabs, safety results, and `prototype/retrospective.md`.
 

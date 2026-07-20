@@ -48,7 +48,7 @@
     {
       "name": "missing_input_file",
       "accepted": false,
-      "message": "ENOENT: no such file or directory, open 'C:\\Users\\nagar\\OneDrive\\Documents\\AI Engineering Internship\\evidence\\fixtures\\does_not_exist.csv'",
+      "message": "ENOENT: no such file or directory, open '[repo]\\evidence\\fixtures\\does_not_exist.csv'",
       "code": "ENOENT"
     }
   ],

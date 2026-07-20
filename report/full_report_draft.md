@@ -6,7 +6,7 @@ Planned phase date: 07-27-2026. Executed early on 07-16-2026 at user request.
 
 ## Draft Status
 
-This draft consolidates the Day 23 opening sections, Day 24 tool evaluations, Day 25 comparison and recommendation, and Day 26 prototype writeup into one mentor-reviewable report. It is written from repository evidence captured through 07-16-2026. Public release and project-health metadata should be refreshed before final publication if the final report keeps current/latest wording.
+This draft consolidates the Day 23 opening sections, Day 24 tool evaluations, Day 25 comparison and recommendation, and Day 26 prototype writeup into one mentor-reviewable report. Day 30 final QA re-ran the prototype, checked the deck/report/README story for consistency, and verified the synthetic-data boundary on 07-20-2026. Public release and project-health metadata should be refreshed before final publication if the final report keeps current/latest wording.
 
 This report is educational research and prototype documentation. It is not tax advice, tax preparation, return validation, filing software, or a recommendation to use any tool with real taxpayer data.
 
@@ -232,7 +232,7 @@ That wrapper runs:
 
 The Next.js execution lab under `prototype/execution_lab/` exposes the same workflow. Local mode runs the Python demo through `/api/run`; replay mode uses committed command evidence when hledger cannot execute in a deployed environment.
 
-Day 26 local verification passed. Summary:
+Day 30 local verification passed after the deck build. Summary:
 
 | Measure | Value |
 |---|---:|
@@ -332,7 +332,7 @@ High-value follow-up work:
 - Evaluate hledger-web or Actual Budget API paths if the next goal is a service-style workflow.
 - Add deeper license analysis for GPL/AGPL distribution, embedding, and hosted-service models.
 - Expand the synthetic dataset for capital gains, rental income, credits, state taxes, depreciation/capitalization, multiple accounts, and multi-year workflows.
-- Convert this report into a 20-30 minute deck with one clear prototype demo section.
+- Finalize and package the existing 20-30 minute deck with one clear prototype demo section.
 
 ## 10. Evidence Index
 

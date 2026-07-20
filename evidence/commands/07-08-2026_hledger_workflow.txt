@@ -1,6 +1,6 @@
 # hledger common workflow transcript
 # Started: 2026-07-07 20:50:11 -07:00
-# Binary: C:\Users\nagar\AppData\Local\Temp\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
+# Binary: [temp]\ai-tax-hledger-day9-d4c56bd6f8da40cf979644bbf3f82dfb\hledger-1.52.1\hledger.exe
 # Rules: evidence\fixtures\hledger_synthetic_freelancer.rules
 # Baseline CSV: evidence\fixtures\synthetic_freelancer_transactions.csv
 # Add transaction CSV: evidence\fixtures\hledger_synthetic_freelancer_tadd.csv

@@ -1,6 +1,6 @@
 Recorded: 2026-07-08T21:19:39.8378115-07:00
 Host OS: Microsoft Windows NT 10.0.26200.0
-Temp root: C:\Users\nagar\AppData\Local\Temp\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d
+Temp root: [temp]\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d
 
 Command: python --version
 Python 3.14.5
@@ -60,11 +60,11 @@ Building wheels for collected packages: tenforty
   exit code: 1
 
   [462 lines of output]
-  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\pyprojecttoml.py
+  [temp]\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\pyprojecttoml.py
 :72: _ExperimentalConfiguration: `[tool.setuptools.ext-modules]` in `pyproject.toml` is still *experimental* and
 likely to change in future releases.
     config = read_configuration(filepath, True, ignore_option_errors, dist)
-  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
+  [temp]\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
 toml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is deprecated
   !!
 
@@ -80,7 +80,7 @@ toml.py:82: SetuptoolsDeprecationWarning: `project.license` as a TOML table is d
 
   !!
     corresp(dist, value, root_dir)
-  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
+  [temp]\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\config\_apply_pyproject
 toml.py:61: SetuptoolsDeprecationWarning: License classifiers are deprecated.
   !!
 
@@ -94,7 +94,7 @@ toml.py:61: SetuptoolsDeprecationWarning: License classifiers are deprecated.
 
   !!
     dist._finalize_license_expression()
-  C:\Users\nagar\AppData\Local\Temp\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\dist.py:765:
+  [temp]\pip-build-env-aa1ich2_\overlay\Lib\site-packages\setuptools\dist.py:765:
 SetuptoolsDeprecationWarning: License classifiers are deprecated.
   !!
 
@@ -542,7 +542,7 @@ https://visualstudio.microsoft.com/visual-cpp-build-tools/
 
 [notice] A new release of pip is available: 26.1.1 -> 26.1.2
 [notice] To update, run:
-C:\Users\nagar\AppData\Local\Temp\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d\.venv\Scripts\python.exe -m
+[temp]\tenforty-day12-windows-039d6dcdcfb148daaf3cf36911f4801d\.venv\Scripts\python.exe -m
 pip install --upgrade pip
 error: failed-wheel-build-for-install
 

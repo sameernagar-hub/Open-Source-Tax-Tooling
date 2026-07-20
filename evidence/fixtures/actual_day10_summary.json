@@ -9,7 +9,7 @@
     "node": "v24.16.0",
     "platform": "win32",
     "arch": "x64",
-    "dataDir": "C:\\Users\\nagar\\AppData\\Local\\Temp\\actual-day10-data",
+    "dataDir": "[temp]\\actual-day10-data",
     "localOnly": true
   },
   "budget": {

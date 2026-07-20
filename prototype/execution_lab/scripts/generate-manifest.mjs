@@ -253,8 +253,8 @@ async function main() {
         "Consumer and freelancer-oriented bookkeeping and US tax-adjacent workflows, evaluated through public tools and synthetic data.",
       synthetic_boundary:
         "Only committed synthetic fixtures are supported. The prototype does not accept real taxpayer data or provide tax advice.",
-      current_phase: "Phase 27 - full report draft complete",
-      next_phase: "Draft the presentation deck outline from report/full_report_draft.md",
+      current_phase: "Phase 30 - final QA complete",
+      next_phase: "Finalize report, prototype repository, deck, and mentor summary",
       prototype_target: "Synthetic hledger CLI and JSON adapter",
     },
     architecture: ARCHITECTURE,

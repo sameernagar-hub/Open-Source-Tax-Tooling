@@ -8,5 +8,5 @@ stdout:
   "asset": "opentax-windows-x64.exe",
   "expectedSha256": "14eba305f5429c1b40643f38044ccdf004e8dd93c51fcb5241f8aeefff931e65",
   "actualSha256": "14eba305f5429c1b40643f38044ccdf004e8dd93c51fcb5241f8aeefff931e65",
-  "binaryPath": "C:\\Users\\nagar\\AppData\\Local\\Temp\\opentax-day13\\opentax.exe"
+  "binaryPath": "[temp]\\opentax-day13\\opentax.exe"
 }

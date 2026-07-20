@@ -198,4 +198,4 @@ Phase 21 completed the freeze review:
 - Captured the retrospective covering what worked, what failed, what the integration proves, and what remains out of scope.
 - Deferred optional Markdown rendering until final report polish.
 
-Day 27 added the consolidated report draft at [`../report/full_report_draft.md`](../report/full_report_draft.md). Next work should draft the presentation deck outline from the full report, the frozen prototype, [`retrospective.md`](retrospective.md), and the detailed Day 20 UI brief at [`day20_project_lab_ui_brief.md`](day20_project_lab_ui_brief.md).
+Day 30 completed final QA and rehearsal across the report, prototype, deck, README files, and synthetic-data boundary. Next work should finalize the report, prototype repository, deck, and mentor summary for Day 31 delivery.

@@ -71,7 +71,7 @@ Environment:
 - OS: Microsoft Windows 11 Home, 64-bit.
 - Runtime/package manager: Node `v24.16.0`; npm `11.13.0`; PowerShell 5.1.
 - Tool version: `@actual-app/api@26.7.0`; `@actual-app/cli@26.7.0`; `actual --version` reported `26.7.0`.
-- Install source: npm install into `C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded`; no global install or server credentials.
+- Install source: npm install into `[temp]\actual-day10-eval-recorded`; no global install or server credentials.
 
 Commands attempted:
 

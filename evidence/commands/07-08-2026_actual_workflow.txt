@@ -1,22 +1,22 @@
-﻿Actual Budget Day 10 common workflow transcript
-Working directory: C:\Users\nagar\OneDrive\Documents\AI Engineering Internship
-Temp dependency directory: C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded
+Actual Budget Day 10 common workflow transcript
+Working directory: [repo]
+Temp dependency directory: [temp]\actual-day10-eval-recorded
 Evaluation helper: evidence\fixtures\actual_day10_evaluate.mjs
 
 Command: copy evaluation helper into temp dependency directory
-Copied helper to: C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded\actual_day10_evaluate.mjs
+Copied helper to: [temp]\actual-day10-eval-recorded\actual_day10_evaluate.mjs
 
 Command: node <temp>\actual_day10_evaluate.mjs
 [Breadcrumb] { message: 'Closing budget' }
 [Breadcrumb] {
-  message: 'Loading budget C:\\Users\\nagar\\AppData\\Local\\Temp\\actual-day10-data\\Synthetic-Freelancer-Day-10-f2a91a4'
+  message: 'Loading budget [temp]\\actual-day10-data\\Synthetic-Freelancer-Day-10-f2a91a4'
 }
 [Breadcrumb] { message: 'loading spreadsheet', category: 'server' }
 Loading fresh spreadsheet
 [Breadcrumb] { message: 'loaded spreadsheet', category: 'server' }
 [Breadcrumb] { message: 'Closing budget' }
 [Breadcrumb] {
-  message: 'Loading budget C:\\Users\\nagar\\AppData\\Local\\Temp\\actual-day10-data\\Synthetic-Freelancer-Day-10-f2a91a4'
+  message: 'Loading budget [temp]\\actual-day10-data\\Synthetic-Freelancer-Day-10-f2a91a4'
 }
 [Breadcrumb] { message: 'loading spreadsheet', category: 'server' }
 Loading fresh spreadsheet
@@ -69,12 +69,12 @@ Debug data for the operations: {
 }
 [Breadcrumb] { message: 'Closing budget' }
 [Breadcrumb] {
-  message: 'Loading budget C:\\Users\\nagar\\AppData\\Local\\Temp\\actual-day10-data\\does-not-exist'
+  message: 'Loading budget [temp]\\actual-day10-data\\does-not-exist'
 }
 [Exception] Error: budget directory does not exist
-    at _loadBudget (C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:121749:36)
-    at async Object.loadBudget$1 [as load-budget] (C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:121602:9)
-    at async handlers$1.api/load-budget (C:\Users\nagar\AppData\Local\Temp\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:112918:21)
+    at _loadBudget ([temp]\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:121749:36)
+    at async Object.loadBudget$1 [as load-budget] ([temp]\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:121602:9)
+    at async handlers$1.api/load-budget ([temp]\actual-day10-eval-recorded\node_modules\@actual-app\api\dist\index.js:112918:21)
 [Breadcrumb] { message: 'Closing budget' }
 {
   "budgetName": "Synthetic Freelancer Day 10",

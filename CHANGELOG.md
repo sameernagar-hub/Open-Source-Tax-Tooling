@@ -11,6 +11,124 @@ Each entry should answer:
 - What evidence or files were added?
 - What is next?
 
+## 07-20-2026 - Phase 30: Final QA and Rehearsal
+
+### What Changed
+
+- Executed the Day 30 final-QA phase early at user request.
+- Added `notes/day_30_final_qa_rehearsal.md` as the final QA checklist.
+- Re-ran the prototype demo, failure matrix, Python compile check, execution-lab clean install, execution-lab production build, and deck render/overflow checks.
+- Reviewed the report, deck, README files, prototype README, and generated manifest state for consistency.
+- Redacted host-specific absolute paths from historical command evidence, JSON fixtures, notes, and one tool record.
+- Updated `README.md`, `deck/README.md`, `prototype/README.md`, `report/full_report_draft.md`, the research log, and the execution-lab manifest source to point next to Day 31 final delivery.
+
+### Why
+
+Day 30 needed to confirm that the deliverables tell the same story, the demo still works from clean reviewer commands, the deck can support the planned walkthrough, and the repository does not expose real data, secrets, or private host paths.
+
+### Evidence / Files
+
+- `notes/day_30_final_qa_rehearsal.md`
+- `report/full_report_draft.md`
+- `README.md`
+- `deck/README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `prototype/execution_lab/data/project-manifest.json`
+- `prototype/execution_lab/public/project-manifest.json`
+- Historical evidence files with host-path redactions under `evidence/commands/` and `evidence/fixtures/`
+- `notes/research_log.md`
+
+### Verification
+
+- `python run_day20_demo.py --json`
+- `python tests/run_failure_matrix.py`
+- `python -m compileall prototype/hledger_adapter prototype/tests run_day20_demo.py prototype/run_day20_demo.py`
+- `npm ci`
+- `npm run build`
+- `slides_test.py`
+- Presentation render to 18 slide PNGs and a contact sheet for visual inspection.
+- Host-path and credential-like repository scans.
+
+### Next
+
+Execute Day 31 by finalizing the report, prototype repository, presentation deck, and mentor summary for delivery.
+
+## 07-20-2026 - Phase 29: Deck Build
+
+### What Changed
+
+- Executed the Day 29 deck-build phase early at user request.
+- Added `deck/open_source_tax_tooling_draft_deck.pptx` as the editable draft presentation deck.
+- Built an 18-slide deck from `deck/outline.md` and `report/full_report_draft.md`.
+- Included slides for the research question, scope boundary, evidence method, ecosystem map, shortlist, synthetic scenario, tool findings, comparison, prototype architecture, live/replay demo path, demo readout, recommendation, limitations, future work, and closing takeaway.
+- Added `notes/day_29_deck_build.md`.
+- Updated `README.md`, `deck/README.md`, `prototype/README.md`, the research log, and the execution-lab manifest source to point next to Day 30 final QA and rehearsal.
+
+### Why
+
+Day 29 needed to turn the slide outline into an actual presentation artifact that can support a live or recorded walkthrough. The deck now gives reviewers an editable PowerPoint version of the report's story and the prototype evidence.
+
+### Evidence / Files
+
+- `deck/open_source_tax_tooling_draft_deck.pptx`
+- `deck/outline.md`
+- `notes/day_29_deck_build.md`
+- `README.md`
+- `deck/README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `notes/research_log.md`
+
+### Verification
+
+- `python run_day20_demo.py --json`
+- Presentation rendered to slide PNGs and contact sheet for visual inspection.
+- `slides_test.py` reported no overflow.
+- `npm run generate:manifest`
+- `npm run build`
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 30 by rerunning the prototype demo from clean instructions, reviewing the report and deck for consistency, rehearsing the deck, and confirming no real data, secrets, or private files are included.
+
+## 07-20-2026 - Phase 28: Deck Outline
+
+### What Changed
+
+- Executed the Day 28 deck-outline phase early at user request.
+- Added `deck/outline.md` with an 18-slide, 20-30 minute presentation structure.
+- Added `notes/day_28_deck_outline.md`.
+- Aligned the deck story to `report/full_report_draft.md`: research question, method, landscape, tool comparison, prototype demo, recommendation, limitations, and future work.
+- Chose the prototype demo placement after cross-tool comparison and before final recommendation.
+- Updated `README.md`, `deck/README.md`, `prototype/README.md`, the research log, and the execution-lab manifest source to point to Day 29 deck build work.
+
+### Why
+
+Day 28 needed to convert the full report into a talk that can support a live or recorded 20-30 minute walkthrough. The outline now gives Day 29 a concrete slide order, timing plan, demo beat, and visual checklist.
+
+### Evidence / Files
+
+- `deck/outline.md`
+- `notes/day_28_deck_outline.md`
+- `deck/README.md`
+- `README.md`
+- `prototype/README.md`
+- `prototype/execution_lab/scripts/generate-manifest.mjs`
+- `notes/research_log.md`
+
+### Verification
+
+- Checked that the outline maps to `report/full_report_draft.md`.
+- `git diff --check`
+- Non-ASCII scan over the new and updated Markdown files.
+
+### Next
+
+Execute Day 29 by building the draft presentation deck from `deck/outline.md`.
+
 ## 07-16-2026 - Final Verification and README Refresh
 
 ### What Changed
