@@ -1,4 +1,4 @@
-# AI Engineering Internship: Open-Source Tax Tooling Research
+# Open-Source Tax Tooling - AI Engineering Research
 
 This repository is the completed July 2026 AI engineering internship project on open-source consumer tax tooling, bookkeeping systems, and programmatic integration surfaces.
 
